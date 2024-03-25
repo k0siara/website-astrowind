@@ -32,6 +32,7 @@ export interface Props {
   showToggleTheme?: boolean;
   showRssFeed?: boolean;
   position?: string;
+  hideToggleOnMobile?: boolean;
 }
 
 const {
@@ -44,6 +45,7 @@ const {
   showToggleTheme = false,
   showRssFeed = false,
   position = "center",
+  hideToggleOnMobile = false,
 } = Astro.props;
 
 const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`
@@ -71,7 +73,17 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`
         <Logo />
       </a>
       <div class="flex items-center md:hidden">
-        <ToggleMenu />
+        {
+          !hideToggleOnMobile && (
+            <ToggleMenu />
+          )
+        }
+
+        {
+          hideToggleOnMobile && (
+            <button class={"flex flex-col h-12 w-12 rounded justify-center items-center cursor-pointer group"}></button>
+          )
+        }
       </div>
     </div>
     <nav

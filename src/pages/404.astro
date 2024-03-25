@@ -1,24 +1,40 @@
 ---
 import Layout from '~/layouts/Layout.astro';
-import { getHomePermalink } from '~/utils/permalinks';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Header from '~/components/widgets/Header.astro';
 
-const title = `Error 404`;
+const metadata = {
+  title: '404',
+};
+
 ---
 
-<Layout metadata={{ title }}>
-  <section class="flex items-center h-full p-16">
-    <div class="container flex flex-col items-center justify-center px-5 mx-auto my-8">
-      <div class="max-w-md text-center">
-        <h2 class="mb-8 font-bold text-9xl">
-          <span class="sr-only">Error</span>
-          <span class="text-primary">404</span>
-        </h2>
-        <p class="text-3xl font-semibold md:text-3xl">Sorry, we couldn't find this page.</p>
-        <p class="mt-4 mb-8 text-lg text-muted dark:text-slate-400">
-          But dont worry, you can find plenty of other things on our homepage.
-        </p>
-        <a rel="noopener noreferrer" href={getHomePermalink()} class="btn ml-4">Back to homepage</a>
-      </div>
-    </div>
-  </section>
+<Layout metadata={metadata}>
+  
+  <Header
+      position="left"
+      links={[]}
+      actions={[]}
+      hideToggleOnMobile
+    />
+
+  <Hero2
+    tagline="Ups, wygląda na to, że się zgubiłeś... 404!"
+    title="Ale czekaj, mam dla Ciebie darmowy Ebook! 📚"
+    subtitle="Zgarnij <b>ponad 140 stron</b> z konkretną wiedzą o <b>bezpieczeństwie, architekturze i tworzeniu solidnych aplikacji mobilnych.</b>"
+    actions={[
+      { 
+        variant: 'primary', 
+        text: 'Pobieram darmowego Ebooka', 
+        href: 'https://archiwum.mobiledevnews.com', 
+        icon: 'tabler:download',
+        target: '_blank',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/ebook_archiwum_cover_mockup.png',
+      alt: 'Darmowy Ebook Archiwum Mobile Dev Newsletter - Wszystko, co Musisz Wiedzieć o Tworzeniu Aplikacji Mobilnych',
+    }}
+  />
+
 </Layout>

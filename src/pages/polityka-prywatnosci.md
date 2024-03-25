@@ -1,5 +1,5 @@
 ---
-title: 'Privacy Policy'
+title: 'Polityka Prywatności'
 layout: '~/layouts/MarkdownLayout.astro'
 ---
 
