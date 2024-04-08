@@ -4,31 +4,31 @@ site:
   base: '/'
   trailingSlash: false
 
-  googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
+  googleSiteVerificationId: wIKw5uyJHxvdJQioEE6nqR3CxxcPP6HMEOgOgDDNEqY
 
 # Default SEO metadata
 metadata:
   title:
     default: Patryk Kosieradzki
     template: '%s — Patryk Kosieradzki'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+  description: "\U0001F680 Od solidnej architektury po bezpieczeństwo aplikacji mobilnych"
   robots:
     index: true
     follow: true
   openGraph:
     site_name: Patryk Kosieradzki
     images:
-      - url: '~/assets/images/default.png'
+      - url: '~/assets/images/og.png'
         width: 1200
         height: 628
     type: website
   twitter:
-    handle: '@onwidget'
-    site: '@onwidget'
+    handle: '@p_kosieradzki'
+    site: '@p_kosieradzki'
     cardType: summary_large_image
 
 i18n:
-  language: en
+  language: pl
   textDirection: ltr
 
 apps:
@@ -60,7 +60,7 @@ apps:
       robots:
         index: false
 
-    isRelatedPostsEnabled: true
+    isRelatedPostsEnabled: false
     relatedPostsCount: 4
 
 analytics:

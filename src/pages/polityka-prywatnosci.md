@@ -3,183 +3,106 @@ title: 'Polityka Prywatności'
 layout: '~/layouts/MarkdownLayout.astro'
 ---
 
-_Last updated_: January 06, 2023
+_Ostatnia aktualizacja_: 1 Stycznia, 2023
 
-This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.
+Niniejsza Polityka Prywatności opisuje nasze zasady i procedury dotyczące zbierania, wykorzystywania i ujawniania Twoich informacji, gdy korzystasz z usługi, oraz informuje Cię o Twoich prawach do prywatności i o tym, jak prawo Cię chroni.
 
-We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy. This Privacy Policy is just a Demo.
+## Wstępne informacje
 
-## Interpretation and Definitions
+Cenisz sobie swoją prywatność? Świetnie, bo my też! Prywatność osób odwiedzających naszą stronę jest dla nas kluczowa. Poniższy dokument został przygotowany z myślą o Twojej prywatności, znajdziesz w nim zasady przetwarzania danych osobowych oraz wykorzystywania plików cookies, funkcjonujące na stronie internetowej https://patrykkosieradzki.com/.
 
-### Interpretation
+Administratorem strony jest Patryk Marciszek-Kosieradzki, prowadzący działalność gospodarczą pod nazwą "Patryk Marciszek-Kosieradzki" z siedzibą w Warszawie przy ul. Kryształowa 42/56, 01-356 Warszawa, wpisanego do Centralnej Ewidencji i Informacji o Działalności Gospodarczej, NIP 5223199811, REGON 388507959.
 
-The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.
+W razie pytań lub wątpliwości związanych z polityką prywatności, możesz skontaktować się z nami, wysyłając wiadomość na adres patryk@patrykkosieradzki.com.
 
-### Definitions
+## Skrócona wersja – najważniejsze informacje
 
-For the purposes of this Privacy Policy:
+- Zakładając konto użytkownika za pośrednictwem strony, składając zamówienie, zapisując się do newslettera, składając reklamację, odstępując od umowy czy po prostu kontaktując się z nami, przekazujesz nam swoje dane osobowe, a my gwarantujemy Ci, że Twoje dane pozostaną poufne, bezpieczne i nie zostaną udostępnione jakimkolwiek podmiotom trzecim bez Twojej wyraźnej zgody.
+- Powierzamy przetwarzanie danych osobowych tylko sprawdzonym i zaufanym podmiotom świadczącym usługi związane z przetwarzaniem danych osobowych.
+- Korzystamy z narzędzi analitycznych Google Analytics, które zbierają informacje na temat Twoich odwiedzin strony, takie jak podstrony, które wyświetliłeś, czas, jaki spędziłeś na stronie czy przejścia pomiędzy poszczególnymi podstronami. W tym celu wykorzystywane są pliki cookies firmy Google LLC dotyczące usługi Google Analytics. W ramach mechanizmu do zarządzania ustawieniami plików cookies masz możliwość zadecydowania, czy w ramach usługi Google Analytics będziemy mogli korzystać również z funkcji marketingowych, czy nie.
+- Korzystamy z narzędzi marketingowych, takich jak Facebook Pixel, by kierować do Ciebie reklamy. Wiążę się to z wykorzystywaniem plików cookies firmy Facebook. W ramach ustawień plików cookies możesz zadecydować, czy wyrażasz zgodę na korzystanie przez nas w Twoim przypadku z Pixela Facebooka, czy nie.
+- Osadzamy na stronie nagrania wideo z serwisu YouTube. Gdy odtwarzasz takie nagrania, wykorzystywane są pliki cookies firmy Google LLC dotyczące usługi YouTube.
+- Zapewniamy możliwość korzystania z funkcji społecznościowych, takich jak udostępnianie treści w serwisach społecznościowych oraz subskrypcja profilu społecznościowego. Korzystanie z tych funkcji wiąże się z wykorzystywaniem plików cookies administratorów serwisów społecznościowych takich jak Facebook, Instagram, YouTube, Twitter, Google+, LinkedIN.
 
-- **Account** means a unique account created for You to access our Service or parts of our Service.
-- **Company** (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to AstroWind LLC, 1 Cupertino, CA 95014.
-- **Cookies** are small files that are placed on Your computer, mobile device or any other device by a website, containing the details of Your browsing history on that website among its many uses.
-- **Country** refers to: California, United States
-- **Device** means any device that can access the Service such as a computer, a cellphone or a digital tablet.
-- **Personal Data** is any information that relates to an identified or identifiable individual.
-- **Service** refers to the Website.
-- **Service Provider** means any natural or legal person who processes the data on behalf of the Company. It refers to third-party companies or individuals employed by the Company to facilitate the Service, to provide the Service on behalf of the Company, to perform services related to the Service or to assist the Company in analyzing how the Service is used.
-- **Usage Data** refers to data collected automatically, either generated by the use of the Service or from the Service infrastructure itself (for example, the duration of a page visit).
-- **Website** refers to AstroWind, accessible from [https://astrowind.vercel.app](https://astrowind.vercel.app)
-- **You** means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.
+Jeżeli powyższe informacje nie są dla Ciebie wystarczające, poniżej znajdziesz dalej idące szczegóły.
 
-## Collecting and Using Your Personal Data
+## Dane osobowe
 
-### Types of Data Collected
+**Administratorem** Twoich danych osobowych w rozumieniu przepisów o ochronie danych osobowych jest Patryk Marciszek-Kosieradzki, prowadzący działalność gospodarczą pod nazwą "Patryk Marciszek-Kosieradzki", z siedzibą w Warszawie przy ul. Kryształowa 42/56, 01-356 Warszawa, wpisanego do Centralnej Ewidencji i Informacji o Działalności Gospodarczej, NIP 5223199811, REGON 388507959.
 
-#### Personal Data
+**Cele, podstawy prawne oraz okres przetwarzania danych osobowych** wskazane są odrębnie w stosunku do każdego celu przetwarzania danych (patrz: opis poszczególnych celów przetwarzania danych osobowych poniżej).
 
-While using Our Service, We may ask You to provide Us with certain personally identifiable information that can be used to contact or identify You. Personally identifiable information may include, but is not limited to:
+**Uprawnienia.** RODO przyznaje Ci następujące potencjalne uprawnienia związane z przetwarzaniem Twoich danych osobowych:
+- prawo dostępu do danych osobowych,
+- prawo do sprostowania danych osobowych,
+- prawo do usunięcia danych osobowych,
+- prawo do ograniczenia przetwarzania danych osobowych,
+- prawo do wniesienia sprzeciwu co do przetwarzania danych osobowych,
+- prawo do przenoszenia danych,
+- prawo do wniesienia skargi do organu nadzorczego,
+- prawo do odwołania zgody na przetwarzanie danych osobowych, jeżeli takową zgodę wyraziłeś.
 
-- Usage Data
+Zasady związane z realizacją wskazanych uprawnień zostały opisane szczegółowo w art. 16 – 21 RODO. Zachęcamy do zapoznania się z tymi przepisami. Ze swojej strony uważamy za potrzebne wyjaśnić Ci, że wskazane powyżej uprawnienia nie są bezwzględne i nie będą przysługiwać Ci w stosunku do wszystkich czynności przetwarzania Twoich danych osobowych. Dla Twojej wygody dołożyliśmy starań, by w ramach opisu poszczególnych operacji przetwarzania danych osobowych wskazać na przysługujące Ci w ramach tych operacji uprawnienia.
 
-#### Usage Data
+Podkreślamy, że jedno z uprawnień wskazanych powyżej przysługuje Ci zawsze – jeżeli uznasz, że przy przetwarzaniu Twoich danych osobowych dopuściliśmy się naruszenia przepisów o ochronie danych osobowych, masz możliwość wniesienia skargi do organu nadzorczego (Prezesa Urzędu Ochrony Danych Osobowych).
 
-Usage Data is collected automatically when using the Service.
+Zawsze możesz również zwrócić się do nas z żądaniem udostępnienia Ci informacji o tym, jakie dane na Twój temat posiadamy oraz w jakich celach je przetwarzamy. Wystarczy, że wyślesz wiadomość na adres patryk@patrykkosieradzki.com w tej domenie. Dołożyliśmy jednak wszelkich starań, by interesujące Cię informacje zostały wyczerpująco przedstawione w niniejszej polityce prywatności. Podany powyżej adres e-mail możesz wykorzystać również w razie jakichkolwiek pytań związanych z przetwarzaniem Twoich danych osobowych.
 
-Usage Data may include information such as Your Device's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers and other diagnostic data.
+**Bezpieczeństwo.** Gwarantujemy Ci poufność wszelkich przekazanych nam danych osobowych. Zapewniamy podjęcie wszelkich środków bezpieczeństwa i ochrony danych osobowych wymaganych przez przepisy o ochronie danych osobowych. Dane osobowe są gromadzone z należytą starannością i odpowiednio chronione przed dostępem do nich przez osoby do tego nieupoważnione.
 
-When You access the Service by or through a mobile device, We may collect certain information automatically, including, but not limited to, the type of mobile device You use, Your mobile device unique ID, the IP address of Your mobile device, Your mobile operating system, the type of mobile Internet browser You use, unique device identifiers and other diagnostic data.
+**Wykaz powierzeń.** Powierzamy przetwarzanie danych osobowych następującym podmiotom:
+- DigitalOcean LLC, 101 Avenue of the Americas 10th Floor New York, NY 10013 United States — w celu przechowywania danych osobowych na serwerze,
+- Cloudflare Inc., 101 Townsend Street Suite 200 San Francisco, CA 94107 United States — jako serwer proxy w celu (1) usprawnienia działania strony oraz (2) ochrony strony przed atakami,
+- MailerLite Limited, an Irish registered company at Ground Floor, 71 Lower Baggot Street, Dublin 2, D02 P593, Ireland — w celu korzystania z systemu mailingowego, w którym przetwarzane są Twoje dane, jeżeli zapisałeś się do newslettera,
 
-We may also collect information that Your browser sends whenever You visit our Service or when You access the Service by or through a mobile device.
+Ze względu na korzystanie z usług Cloudflare, który korzysta z serwerów znajdujących się poza Unią Europejską, dochodzi do przekazania Twoich danych osobowych do państwa trzeciego, jakim w tym wypadku jest USA. Nie obawiaj się, Twoje dane są bezpieczne. Dostawca systemu o gwarantuje odpowiedni poziom ochrony i bezpieczeństwa danych osobowych. Dostawca proxy stosuje zarówno szyfrowanie danych (certyfikat SSL) jak i jest zgodny z regulacjami GDPR (RODO), przeczytaj więcej [tutaj](https://www.cloudflare.com/gdpr/introduction/).
 
-#### Tracking Technologies and Cookies
+Wszystkie podmioty, którym powierzamy przetwarzanie danych osobowych gwarantują stosowanie odpowiednich środków ochrony i bezpieczeństwa danych osobowych wymaganych przez przepisy prawa.
 
-We use Cookies and similar tracking technologies to track the activity on Our Service and store certain information. Tracking technologies used are beacons, tags, and scripts to collect and track information and to improve and analyze Our Service. The technologies We use may include:
+## Cele i czynności przetwarzania
 
-- **Cookies or Browser Cookies.** A cookie is a small file placed on Your Device. You can instruct Your browser to refuse all Cookies or to indicate when a Cookie is being sent. However, if You do not accept Cookies, You may not be able to use some parts of our Service. Unless you have adjusted Your browser setting so that it will refuse Cookies, our Service may use Cookies.
-- **Web Beacons.** Certain sections of our Service and our emails may contain small electronic files known as web beacons (also referred to as clear gifs, pixel tags, and single-pixel gifs) that permit the Company, for example, to count users who have visited those pages or opened an email and for other related website statistics (for example, recording the popularity of a certain section and verifying system and server integrity).
+**Newsletter.** Jeżeli chcesz zapisać się do newslettera, musisz przekazać nam swój adres e-mail za pośrednictwem formularza zapisu do newslettera.
 
-Cookies can be "Persistent" or "Session" Cookies. Persistent Cookies remain on Your personal computer or mobile device when You go offline, while Session Cookies are deleted as soon as You close Your web browser.
+Dane przekazane nam podczas zapisu do newslettera wykorzystywane są w celu przesyłania Ci newslettera, a podstawą prawną ich przetwarzania jest Twoja zgoda (art. 6 ust. 1 lit. a RODO) wyrażona podczas zapisywania się do newslettera.
 
-We use both Session and Persistent Cookies for the purposes set out below:
+Dane przetwarzane są w ramach systemu mailingowego MailerLite i przechowywane na serwerze zapewnianym przez MailerLite Limited.
 
-- **Necessary / Essential Cookies**
+Dane będą przetwarzane przez czas funkcjonowania newslettera, chyba że wcześniej zrezygnujesz z jego otrzymywania, co spowoduje usunięcie Twoich danych z bazy.
 
-  Type: Session Cookies
+W każdej chwili możesz sprostować swoje dane zapisane w bazie newsletterowej, jak również zażądać ich usunięcia, rezygnując z otrzymywania newslettera. Przysługuje Ci również prawo do przenoszenia danych, o którym mowa w art. 20 RODO.
 
-  Administered by: Us
+**Kontakt e-mailowy.** Kontaktując się z nami za pośrednictwem poczty elektronicznej, w tym również przesyłając zapytanie poprzez formularz kontaktowy, w sposób naturalny przekazujesz nam swój adres e-mail jako adres nadawcy wiadomości. Ponadto, w treści wiadomości możesz zawrzeć również inne dane osobowe.
 
-  Purpose: These Cookies are essential to provide You with services available through the Website and to enable You to use some of its features. They help to authenticate users and prevent fraudulent use of user accounts. Without these Cookies, the services that You have asked for cannot be provided, and We only use these Cookies to provide You with those services.
+Twoje dane są w tym przypadku przetwarzane w celu kontaktu z Tobą, a podstawą przetwarzania jest art. 6 ust. 1 lit. a RODO, czyli Twoja zgoda wynikające z zainicjowania z nami kontaktu. Podstawą prawną przetwarzania po zakończeniu kontaktu jest usprawiedliwiony cel w postaci archiwizacji korespondencji na potrzeby wewnętrzne (art. 6 ust. 1 lit. c RODO).
 
-- **Cookies Policy / Notice Acceptance Cookies**
+Treść korespondencji może podlegać archiwizacji i nie jesteśmy w stanie jednoznacznie określić, kiedy zostanie usunięta. Masz prawo do domagania się przedstawienia historii korespondencji, jaką z nami prowadziłeś (jeżeli podlegała archiwizacji), jak również domagać się jej usunięcia, chyba że jej archiwizacja jest uzasadniona z uwagi na nasze nadrzędne interesy, np. obrona przed potencjalnymi roszczeniami z Twojej strony.
 
-  Type: Persistent Cookies
+## Pliki cookies i inne technologie śledzące
 
-  Administered by: Us
+Nasza strona, podobnie jak niemal wszystkie inne strony internetowe, wykorzystuje pliki cookies, by zapewnić Ci najlepsze doświadczenia związane z korzystaniem z niej.
 
-  Purpose: These Cookies identify if users have accepted the use of cookies on the Website.
+Cookies to niewielkie informacje tekstowe, przechowywane na Twoim urządzeniu końcowym (np. komputerze, tablecie, smartfonie), które mogą być odczytywane przez nasz system teleinformatyczny.
 
-- **Functionality Cookies**
+Więcej szczegółów znajdziesz poniżej.
 
-  Type: Persistent Cookies
+**Zgoda na cookies.** Podczas pierwszej wizyty na stronie wyświetlana jest Ci informacja na temat stosowania plików cookies wraz z pytaniem o zgodę na wykorzystywanie plików cookies. Dzięki specjalnemu narzędziu masz możliwość zarządzania plikami cookies z poziomu strony. Ponadto, zawsze możesz zmienić ustawienia cookies z poziomu swojej przeglądarki albo w ogóle usunąć pliki cookies. Pamiętaj jednak, że wyłączenie plików cookies może powodować trudności w korzystaniu ze strony, jak również z wielu innych stron internetowych, które stosują cookies.
 
-  Administered by: Us
+**Cookies podmiotów trzecich.** Nasza strona, podobnie jak większość współczesnych stron internetowych, wykorzystuje funkcje zapewniane przez podmioty trzecie, co wiąże się z wykorzystywaniem plików cookies pochodzących od podmiotów trzecich. Wykorzystanie tego rodzaju plików cookies zostało opisane poniżej.
 
-  Purpose: These Cookies allow us to remember choices You make when You use the Website, such as remembering your login details or language preference. The purpose of these Cookies is to provide You with a more personal experience and to avoid You having to re-enter your preferences every time You use the Website.
+**Analiza i statystyka.** Wykorzystujemy cookies do śledzenia statystyk strony, takich jak liczba osób odwiedzających, rodzaj systemu operacyjnego i przeglądarki internetowej wykorzystywanej do przeglądania strony, czas spędzony na stronie, odwiedzone podstrony etc. Korzystamy w tym zakresie z Mouseflow, co wiąże się z wykorzystaniem plików cookies firmy Mouseflow Inc. oraz (2) Google Analytics, co wiąże się z wykorzystaniem plików cookies firmy Google LLC. W ramach mechanizmu do zarządzania ustawieniami plików cookies masz możliwość zadecydowania, czy w ramach usługi Google Analytics będziemy mogli korzystać również z funkcji marketingowych, czy nie.
 
-For more information about the cookies we use and your choices regarding cookies, please visit our Cookies Policy or the Cookies section of our Privacy Policy.
+**Marketing.** Korzystamy z narzędzi marketingowych, takich jak Facebook Pixel, by kierować do Ciebie reklamy. Wiążę się to z wykorzystywaniem plików cookies firmy Facebook. W ramach ustawień plików cookies możesz zadecydować, czy wyrażasz zgodę na korzystanie przez nas w Twoim przypadku z Pixela Facebooka, czy nie.
 
-## Use of Your Personal Data
+**Narzędzia społecznościowe.** Zapewniamy możliwość korzystania z funkcji społecznościowych, takich jak udostępnianie treści w serwisach społecznościowych oraz subskrypcja profilu społecznościowego. Korzystanie z tych funkcji wiąże się z wykorzystywaniem plików cookies administratorów serwisów społecznościowych takich jak Facebook, Instagram, YouTube, Twitter, Google+, LinkedIN.
 
-The Company may use Personal Data for the following purposes:
+**Osadzamy na stronie nagrania wideo z serwisu YouTube.** Gdy odtwarzasz takie nagrania, wykorzystywane są pliki cookies firmy Google LLC dotyczące usługi YouTube.
 
-- **To provide and maintain our Service**, including to monitor the usage of our Service.
-- **To manage Your Account:** to manage Your registration as a user of the Service. The Personal Data You provide can give You access to different functionalities of the Service that are available to You as a registered user.
-- **For the performance of a contract:** the development, compliance and undertaking of the purchase contract for the products, items or services You have purchased or of any other contract with Us through the Service.
-- **To contact You:** To contact You by email, telephone calls, SMS, or other equivalent forms of electronic communication, such as a mobile application's push notifications regarding updates or informative communications related to the functionalities, products or contracted services, including the security updates, when necessary or reasonable for their implementation.
-- **To provide You** with news, special offers and general information about other goods, services and events which we offer that are similar to those that you have already purchased or enquired about unless You have opted not to receive such information.
-- **To manage Your requests:** To attend and manage Your requests to Us.
-- **For business transfers:** We may use Your information to evaluate or conduct a merger, divestiture, restructuring, reorganization, dissolution, or other sale or transfer of some or all of Our assets, whether as a going concern or as part of bankruptcy, liquidation, or similar proceeding, in which Personal Data held by Us about our Service users is among the assets transferred.
-- **For other purposes**: We may use Your information for other purposes, such as data analysis, identifying usage trends, determining the effectiveness of our promotional campaigns and to evaluate and improve our Service, products, services, marketing and your experience.
+## Logi serwera
 
-We may share Your personal information in the following situations:
+Korzystanie ze strony wiąże się z przesyłaniem zapytań do serwera, na którym przechowywana jest strona. Każde zapytanie skierowane do serwera zapisywane jest w logach serwera.
 
-- **With Service Providers:** We may share Your personal information with Service Providers to monitor and analyze the use of our Service, to contact You.
-- **For business transfers:** We may share or transfer Your personal information in connection with, or during negotiations of, any merger, sale of Company assets, financing, or acquisition of all or a portion of Our business to another company.
-- **With Affiliates:** We may share Your information with Our affiliates, in which case we will require those affiliates to honor this Privacy Policy. Affiliates include Our parent company and any other subsidiaries, joint venture partners or other companies that We control or that are under common control with Us.
-- **With business partners:** We may share Your information with Our business partners to offer You certain products, services or promotions.
-- **With other users:** when You share personal information or otherwise interact in the public areas with other users, such information may be viewed by all users and may be publicly distributed outside.
-- **With Your consent**: We may disclose Your personal information for any other purpose with Your consent.
+Logi obejmują m.in. Twój adres IP, datę i czas serwera, informacje o przeglądarce internetowej i systemie operacyjnym z jakiego korzystasz. Logi zapisywane i przechowywane są na serwerze.
 
-## Retention of Your Personal Data
+Dane zapisane w logach serwera nie są kojarzone z konkretnymi osobami korzystającymi ze strony i nie są wykorzystywane przez nas w celu Twojej identyfikacji.
 
-The Company will retain Your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use Your Personal Data to the extent necessary to comply with our legal obligations (for example, if we are required to retain your data to comply with applicable laws), resolve disputes, and enforce our legal agreements and policies.
-
-The Company will also retain Usage Data for internal analysis purposes. Usage Data is generally retained for a shorter period of time, except when this data is used to strengthen the security or to improve the functionality of Our Service, or We are legally obligated to retain this data for longer time periods.
-
-## Transfer of Your Personal Data
-
-Your information, including Personal Data, is processed at the Company's operating offices and in any other places where the parties involved in the processing are located. It means that this information may be transferred to — and maintained on — computers located outside of Your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from Your jurisdiction.
-
-Your consent to this Privacy Policy followed by Your submission of such information represents Your agreement to that transfer.
-
-The Company will take all steps reasonably necessary to ensure that Your data is treated securely and in accordance with this Privacy Policy and no transfer of Your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of Your data and other personal information.
-
-## Delete Your Personal Data
-
-You have the right to delete or request that We assist in deleting the Personal Data that We have collected about You.
-
-Our Service may give You the ability to delete certain information about You from within the Service.
-
-You may update, amend, or delete Your information at any time by signing in to Your Account, if you have one, and visiting the account settings section that allows you to manage Your personal information. You may also contact Us to request access to, correct, or delete any personal information that You have provided to Us.
-
-Please note, however, that We may need to retain certain information when we have a legal obligation or lawful basis to do so.
-
-## Disclosure of Your Personal Data
-
-### Business Transactions
-
-If the Company is involved in a merger, acquisition or asset sale, Your Personal Data may be transferred. We will provide notice before Your Personal Data is transferred and becomes subject to a different Privacy Policy.
-
-#### Law enforcement
-
-Under certain circumstances, the Company may be required to disclose Your Personal Data if required to do so by law or in response to valid requests by public authorities (e.g. a court or a government agency).
-
-#### Other legal requirements
-
-The Company may disclose Your Personal Data in the good faith belief that such action is necessary to:
-
-- Comply with a legal obligation
-- Protect and defend the rights or property of the Company
-- Prevent or investigate possible wrongdoing in connection with the Service
-- Protect the personal safety of Users of the Service or the public
-- Protect against legal liability
-
-## Security of Your Personal Data
-
-The security of Your Personal Data is important to Us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While We strive to use commercially acceptable means to protect Your Personal Data, We cannot guarantee its absolute security.
-
-## Children's Privacy
-
-Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13. If You are a parent or guardian and You are aware that Your child has provided Us with Personal Data, please contact Us. If We become aware that We have collected Personal Data from anyone under the age of 13 without verification of parental consent, We take steps to remove that information from Our servers.
-
-If We need to rely on consent as a legal basis for processing Your information and Your country requires consent from a parent, We may require Your parent's consent before We collect and use that information.
-
-## Links to Other Websites
-
-Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party's site. We strongly advise You to review the Privacy Policy of every site You visit.
-
-We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.
-
-## Changes to this Privacy Policy
-
-We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page.
-
-We will let You know via email and/or a prominent notice on Our Service, prior to the change becoming effective and update the "Last updated" date at the top of this Privacy Policy.
-
-You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.
-
-## Contact Us
-
-If you have any questions about this Privacy Policy, You can contact us:
-
-- By email: somecoolemail@domain.com
+Logi serwera stanowią wyłącznie materiał pomocniczy służący do administrowania stroną, a ich zawartość nie jest ujawniana nikomu poza osobami upoważnionymi do administrowania serwerem.
