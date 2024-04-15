@@ -6,7 +6,7 @@ import Hero from '~/components/widgets/Hero.astro';
 import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
-import Steps from '~/components/widgets/Steps.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
 import Content from '~/components/widgets/Content.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
@@ -25,8 +25,8 @@ const metadata = {
   <Hero2
     tagline="O aplikacjach mobilnych"
     actions={[
-      { variant: 'primary', target: '_blank', text: 'Dołącz do newslettera 📲', href: 'https://mobiledevnews.com' },
-      { text: 'Ostatnie wpisy', href: '#ostatnie' },
+      { variant: 'primary', text: 'Poznaj ofertę', href: '#oferta' },
+      { text: 'Dołącz do newslettera', target: '_blank', href: 'https://mobiledevnews.com' },
     ]}
     image={{
       src: '~/assets/images/hero.jpg',
@@ -34,13 +34,73 @@ const metadata = {
     }}
   >
     <Fragment slot="title">
-      Od solidnej architektury po bezpieczeństwo aplikacji mobilnych
+      Od solidnej architektury po bezpieczeństwo <span class="text-primary highlight"> aplikacji mobilnych</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      Poznaj praktyki i narzędzia, które pozwolą Ci tworzyć niezawodne aplikacje mobilne.
+      Poznaj praktyki i narzędzia, które pozwolą Ci tworzyć niezawodne aplikacje. Zostań ekspertem w tworzeniu skalowalnych, łatwych w utrzymaniu i bezpiecznych aplikacji mobilnych.
     </Fragment>
   </Hero2>
+
+  <Content
+    id="oferta"
+    callToAction={{
+      target: '_blank',
+      text: 'Zarezerwuj swój termin',
+      href: 'mailto:patryk@patrykkosieradzki.com',
+      icon: 'tabler:chevron-right',
+    }}
+    isReversed
+    items={[
+      {
+        icon: 'tabler:user-check',
+        title: 'Indywidualne podejście',
+        description: 'Spersonalizowane pytania oraz zadania sprawdzające Twoją wiedzę przed kolejnym procesem rekrutacji. Przetestujesz swoje umiejętności w realistycznych warunkach interview z doświadczonym programistą. Wszystko to dobrane pod Ciebie, Twoje wymagania i aktualny rynek.',
+      },
+      {
+        icon: 'tabler:report-analytics',
+        title: 'Dokładna analiza',
+        description: 'Podczas interview zostaniesz przetestowany pod każdym możliwym kątem. Czekają na Ciebie zadania i pytania technicze obejmujące aspekty architektury, wielowątkowości, UI, testów, bezpieczeństwa i utrzymywania aplikacji. Sprawdzisz również umiejętności miękkie, aby wypaść dobrze w pozostałych rozmowach, np. managerskich.'
+      }
+    ]}
+    image={{
+      src: '~/assets/images/mock_interview.jpg',
+      alt: 'Mock interviews dla programistów aplikacji mobilnych',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-4xl font-bold dark:text-white mb-2">
+        Mock interviews<br /><span class="text-2xl">Zyskaj przewagę na rynku mobile dev</span>
+      </h3>
+      <p>Wyróżnij się wśród innych kandydatów. Przetestuj swoją wiedzę, uzupełnij braki i przejdź gładko przez kolejny proces rekrutacji.</p>
+    </Fragment>
+  </Content>
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        icon: 'tabler:checklist',
+        title: 'Feedback w czasie rzeczywistym',
+        description: 'Firmy odrzucają kandydatów bez uzasadnienia i feedbacku. Skąd masz wiedzieć co jest do poprawy oraz gdzie masz braki wiedzy? Tutaj bezpośrednio po symulacji dowiesz się co poszło dobrze, co mogło pójść lepiej, a nad czym jeszcze musisz popracować.'
+      },
+      {
+        icon: 'tabler:terminal-2',
+        title: 'Przygotowanie techniczne i miękkie',
+        description: 'Mock interview to nie tylko test Twojego doświadczenia i wiedzy, ale również przygotowanie Cię od strony technicznej i miękkiej. Wiedząc już co poszło nie tak, omówimy wszystkie zadania i pytania, a co za tym idzie rozwiejemy Twoje wszelkie wątpliwości i braki wiedzy. Niezależnie od Twojego wyniku, z rozmowy wyjdziesz pewny siebie z konkretnym planem działania, wiedząc nad czym pracować dalej.',
+      },
+      {
+        icon: 'tabler:arrow-bear-right-2',
+        title: 'Wskazówki',
+        description: 'Oprócz testu, zadań, pytań, feedbacku oraz przygotowania do dalszego działania otrzymasz także niezbędne wskazówki, dzięki którym Twoje kolejne interview będzie tylko formalnością.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/mock_interview_2.jpg',
+      alt: 'Mock interviews dla programistów aplikacji mobilnych',
+    }}
+  >
+  </Content>
 
   <Content
       isReversed
