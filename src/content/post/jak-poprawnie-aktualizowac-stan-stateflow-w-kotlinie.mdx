@@ -9,6 +9,8 @@ tags:
   - flow
 ---
 
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
 Ostatnio została wydana nowa wersja biblioteki Kotlin Coroutines z kilkoma nowymi extensionami, które mają pomóc Ci w aktualizacjach StateFlow. Wszystko zaczęło się od tego issue na GitHubie:
 
 https://github.com/Kotlin/kotlinx.coroutines/issues/2720
@@ -86,3 +88,14 @@ _uiState.update { it.copy(title = "Something") }
 ```
 
 No! Teraz lepiej :)
+
+<CallToAction
+    actions={[{
+      variant: "primary",
+      text: 'Zapisuję się! 🚀',
+      href: 'https://mobiledevnews.com',
+      target: '_blank',
+    }]}
+    title="Dołącz do największego grona mobile developerów w Polsce!"
+    subtitle="Zdobywaj najlepszą wiedzę o tworzeniu aplikacji mobilnych prosto na swoją skrzynkę."
+  />
