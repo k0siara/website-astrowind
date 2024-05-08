@@ -12,6 +12,11 @@ export const headerData = {
       target: '_blank',
     },
     {
+      text: 'Społeczność',
+      href: 'https://discord.gg/v5CKHVrCDS',
+      target: '_blank',
+    },
+    {
       text: 'Podcast',
       href: 'https://androidtalks.com',
       target: '_blank',
