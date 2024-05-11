@@ -55,6 +55,17 @@ Chociaż kod jest bardzo prosty, istnieje coś, o czym nigdy nie mozesz zapomnie
 
 Jeśli między momentem zakończenia działania funkcji copy a momentem emisji nowej wartości przez StateFlow inny wątek spróbuje zaktualizować StateFlow (używając copy i aktualizując jedną z właściwości, której bieżąca kopia nie modyfikuje) możemy zakończyć z wynikami, których zupełnie się nie spodziewaliśmy.
 
+<CallToAction
+    actions={[{
+      variant: "primary",
+      text: 'Dołączam za darmo! 🚀',
+      href: 'https://mobiledevnews.com',
+      target: '_blank',
+    }]}
+    title="Bądź na bieżąco z Androidem 📱"
+    subtitle="Dołącz do newsletter'a i otrzymuj więcej takich treści regularnie na swoją skrzynkę mailową 📬"
+  />
+
 ## Rozwiązanie
 
 Jak rozwiązać ten problem? Poprzez użycie nowych extensionów z Kotlin Coroutines dla MutableStateFlow.
@@ -88,14 +99,3 @@ _uiState.update { it.copy(title = "Something") }
 ```
 
 No! Teraz lepiej :)
-
-<CallToAction
-    actions={[{
-      variant: "primary",
-      text: 'Zapisuję się! 🚀',
-      href: 'https://mobiledevnews.com',
-      target: '_blank',
-    }]}
-    title="Dołącz do największego grona mobile developerów w Polsce!"
-    subtitle="Zdobywaj najlepszą wiedzę o tworzeniu aplikacji mobilnych prosto na swoją skrzynkę."
-  />
