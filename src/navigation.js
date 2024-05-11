@@ -26,7 +26,7 @@ export const headerData = {
     { 
       text: 'Darmowy Ebook 📚', 
       variant: 'primary', 
-      href: 'https://mobiledevnews.com', 
+      href: 'https://archiwum.mobiledevnews.com', 
       target: '_blank' ,
     }
   ],

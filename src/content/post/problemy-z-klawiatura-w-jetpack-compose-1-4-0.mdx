@@ -1,0 +1,251 @@
+---
+publishDate: 2023-03-31T00:00:00Z
+title: 'Problemy z klawiaturą na Androidzie w Jetpack Compose 1.4.0'
+excerpt: Niedziałająca klawiatura w najnowszej wersji Jetpack Compose, czyli kolejny przypadek braku testów przez Google przed wydaniem kolejnej wersji biblioteki
+image: https://miro.medium.com/v2/resize:fit:720/format:webp/0*0knRElWeiGOFJj2A
+tags:
+  - android
+  - jetpack-compose
+---
+
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+Całkiem niedawno (22 marca 2023) Google wypuścił nową, stabilną wersję Jetpack Compose 1.4.0. Była to dobra okazja dla naszego zespołu, aby zmigrować aktualną wersję, z której korzystaliśmy w projekcie do właśnie tej, najnowszej. Jak się później okazało, wcale nie było to takie proste zadanie...
+
+Podbiliśmy wszystko co trzeba i zaczęliśmy testy całej aplikacji. Po chwili okazało się, że klawiatura i inputy zachowują się nie tak jak powinny w dialogach, które używały `ComposeView`, a takich przypadków było dość sporo.
+
+Co konkretnie się działo?
+
+W standardowym `DialogFragment` z `ComposeView` klawiatura powinna pojawić się po kliknięciu w dowolne pole tekstowe, ale nie działo się nic.
+
+**Zobaczmy co tam się dzieje od środka 🤔**
+
+## Kod początkowy
+
+Zaczynamy od prostego `DialogFragment`. W moim przypadku użyłem niestandardowego stylu, aby uzyskać dialog pełnoekranowy. W metodzie `onCreateView` zwracany jest nowy `ComposeView` z zawartością Composable. W kolejnych krokach omówimy zarówno funkcję `dialogFragmentComposeView(...)` jak i `DialogContent()`.
+
+```kotlin
+class DialogExample : DialogFragment() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        
+        // Custom style
+        setStyle(STYLE_NORMAL, R.style.FullScreenDialog_Light)
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        return dialogFragmentComposeView {
+            DialogContent()
+        }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        
+        // Full screen dialog
+        dialog?.window?.setLayout(
+            ViewGroup.LayoutParams.MATCH_PARENT, 
+            ViewGroup.LayoutParams.MATCH_PARENT,
+        )
+    }
+}
+```
+
+Następnie zadeklarowałem zawartość dialogu Composable z wykorzystaniem Scaffold i jednego pola tekstowego, aby ułatwić debugowanie i zrozumienie problemu.
+
+```kotlin
+@Composable
+fun DialogContent() {
+    var text by remember { mutableStateOf("") }
+
+    Scaffold(
+        topBar = { TopBar(onBackClicked = {}) },
+    ) { paddingValues ->
+
+        Column(
+            modifier = Modifier
+                .padding(paddingValues)
+                .padding(horizontal = 16.dp)
+        ) {
+            OutlinedTextField(
+                value = text,
+                onValueChange = { text = it }
+            )
+        }
+    }
+}
+```
+
+Ostatnim krokiem jest extension `dialogFragmentComposeView(...)`. On posłuży nam do szybkiego stworzenia `ComposeView`, poprawnie skonfigurowanego pod `DialogFragment`.
+
+Konfiguracja zakłada, że:
+- Nasz dialog ma być pełnoekranowy, stąd `layoutParams` zostały ustawione na `MATCH_PARENT`
+- Strategia kompozycji widoku powinna być ustawiona na `DisposeOnDetachedFromWindow`. Testowałem inne opcje wielokrotnie i zawsze dochodziło crashy na `DialogFragmentach`.
+- Używamy poprawnego (naszego) theme:
+
+```kotlin
+fun DialogFragment.dialogFragmentComposeView(
+    content: @Composable () -> Unit
+): ComposeView {
+    return ComposeView(requireContext()).apply {
+        layoutParams = ViewGroup.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.MATCH_PARENT
+        )
+
+        // Another interesting flaw. If you use other strategies in DialogFragment you may get crashes 🫠
+        setViewCompositionStrategy(strategy = ViewCompositionStrategy.DisposeOnDetachedFromWindow)
+        
+        setContent {
+            CustomComposeTheme(
+                darkTheme = false
+            ) {
+                content()
+            }
+        }
+    }
+}
+```
+
+Oto nasz wynik na ten moment. Jak widzisz w Compose 1.4.0 ten dialog zachowuje się niepoprawnie. `TextField` niby uzyskuje focus po kliknięciu, ale klawiature w ogóe się nie pokazuje. Przynajmniej w tej sytuacji moglibyśmy dalej pisać klawiaturą podłączoną po USB-C, ale zdecydowanie nie o to nam chodziło 😂
+
+<p align="center">
+  <img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*rlCk5_Ur-PwdS_SqEiAlgA.gif" alt="Problem z klawiaturą w Compose 1.4.0"/>
+</p>
+
+<CallToAction
+    actions={[{
+      variant: "primary",
+      text: 'Dołączam za darmo! 🚀',
+      href: 'https://mobiledevnews.com',
+      target: '_blank',
+    }]}
+    title="Bądź na bieżąco z Androidem 📱"
+    subtitle="Dołącz do newsletter'a i otrzymuj więcej takich treści regularnie na swoją skrzynkę mailową 📬"
+  />
+
+## Czas na śledztwo 🕵️‍♂️
+
+Kto tu jest winowajcą i jak to naprawić? Spędziłem kilka godzin na szukaniu przyczyny tego problemu, testowałem na 5 różnych telefonach, zmieniałem podejścia do obsługi insetów, pól tekstowych itp. Nic nie dawawało rezultatu, albo chociaż poszlaki gdzie mogę znaleźć rozwiązanie. Przeszedłem do Google Issue Tracker'a i zobaczyłem coś ciekawego, a mianowicie raport błędu regresji: https://issuetracker.google.com/issues/262140644
+
+Okazuje się, że źródłem całego zamieszania była zmiana w `InputMethodManager` ([dokładnie ta linia](https://cs.android.com/androidx/platform/frameworks/support/+/androidx-main:compose/ui/ui/src/androidMain/kotlin/androidx/compose/ui/text/input/InputMethodManager.kt;l=159;drc=16ad8c080ac1284a39ca331e4a6169646b82e62a))
+
+```kotlin
+// TODO(b/221889664) Replace with composition local when available.
+private fun View.findWindow(): Window? =
+    (parent as? DialogWindowProvider)?.window
+        ?: context.findWindow()
+```
+
+Najbardziej martwiące było to, że ta regresja została zgłoszona 12 grudnia 2022 roku, gdy ktoś testował Compose 1.4.0-alpha03, czyli ponad 3 miesiące przed wydaniem STABILNEJ wersji. To tylko pokazuje jak Google podchodzi do tematu testowania i wydawania swoich bibliotek. To już nie pierwsza sytuacja tego typu. Not cool, Google.
+
+## A może by tak naprawić to samemu? 👨‍🔧
+
+Miałem trochę czasu po pracy i byłem ciekaw czy będę w stanie sam ogarnąć ten problem. Może finalnie nie zmigrujemy do tej wersji Jetpack Compose, ale chociaż pobawię się i pohackuję. Pod dyskusją na Issue Tracker udało mi się znaleźć kilka cennych informacji, które ułatwiły mi to zadanie.
+
+Ponieważ funkcja `View.findWindow()` sprawdza czy rodzicem widoku jest typu `DialogWindowProvider`, moglibyśmy stworzyć własnę wersję `ComposeView`, która implementuje nie tylko `AbstractComposeView`, ale również `DialogWindowProvider` i nadpisać funkcję zwracającą okno tak, aby brała je z `DialogFragment`u. Brzmi jak sensowny plan to teraz przetestujmy czy rzeczywiście ma sens i zadziała.
+
+Poniżej w kodzie `DialogFragmentComposeView` przekazuję dialog w lambdzie jako provider, aby upewnić się, że jest poprawnie używany za każdym razem, gdy okno jest wywoływane. Reszta kodu to copy-paste tego, co oryginalnie znajdziesz w `ComposeView`.
+
+```kotlin
+internal class DialogFragmentComposeView(
+    context: Context,
+    private val dialogProvider: () -> Dialog,
+) : AbstractComposeView(context, null, 0),
+    DialogWindowProvider {
+
+    // Tu jest fix (a raczej hack)
+    override val window get() = dialogProvider().window!!
+
+    private val content = mutableStateOf<(@Composable () -> Unit)?>(null)
+
+    override var shouldCreateCompositionOnAttachedToWindow: Boolean = false
+        private set
+
+    @Composable
+    override fun Content() {
+        content.value?.invoke()
+    }
+
+    override fun getAccessibilityClassName(): CharSequence = ComposeView::class.java.name
+
+    /**
+     * Set the Jetpack Compose UI content for this view.
+     * Initial composition will occur when the view becomes attached to a window or when
+     * [createComposition] is called, whichever comes first.
+     */
+    fun setContent(content: @Composable () -> Unit) {
+        shouldCreateCompositionOnAttachedToWindow = true
+        this.content.value = content
+        if (isAttachedToWindow) createComposition()
+    }
+}
+
+internal var DialogFragmentComposeView.consumeWindowInsets: Boolean
+    get() = getTag(androidx.compose.ui.R.id.consume_window_insets_tag) as? Boolean ?: true
+    set(value) {
+        setTag(androidx.compose.ui.R.id.consume_window_insets_tag, value)
+    }
+```
+
+Pamiętaj, że nie możemy po prostu przekazać dialogu bezpośrednio z `DialogFragment` do naszego customowego `ComposeView`, ponieważ skończylibyśmy z crashem. W mocnym skrócie, dialog jest tworzony a potem czyszczony w `onDestroyView`, co nie ułatwia nam pracy. Dodatkowo Android ma przekombinowany cykl życia, który działa jak chce - dosłownie. Nie łudź się, że będzie działał zgodnie z dokumentacją.
+
+Testowałem różne rozwiązania, wielokrotnie i finalnie jako, że dialog będzie czyszczony od czasu do czasu, jesteśmy zmuszeni dopisać kolejnego hack'a, a konkretnie 👇
+
+```kotlin
+dialogProvider = { dialog ?: Dialog(requireContext()) },
+```
+
+Musimy zadbać o to, aby "jakiś" dialog zawsze był dostępny, dlatego najprościej (na potrzeby zabawy) stworzyć dummy dialog, gdy ten docelowy jest nullem. Przypominam raz jeszcze, my się tu bawimy. Nie piszemy rozwiązań, które wylądują na produkcji. To by było bardzo głupie.
+
+```kotlin
+fun DialogFragment.dialogFragmentComposeView(
+    consumeWindowInsets: Boolean,
+    content: @Composable () -> Unit,
+): View {
+    return DialogFragmentComposeView(
+        context = requireContext(),
+        dialogProvider = { dialog ?: Dialog(requireContext()) },
+    ).apply {
+        consumeWindowInsets = consumeWindowInsets
+        layoutParams = ViewGroup.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.MATCH_PARENT
+        )
+
+        setViewCompositionStrategy(strategy = ViewCompositionStrategy.DisposeOnDetachedFromWindow)
+        setContent {
+            CustomComposeTheme(
+                darkTheme = false
+            ) {
+                content()
+            }
+        }
+    }
+}
+```
+
+Voila, naprawione. Albo raczej, jak to mówią - u mnie działa. Problem rozwiązany to wrzucamy update na produkcję, prawda?
+
+He he he, nie.
+
+<p align="center">
+  <img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*fb01RpnCA0RP0TkM3p1iMQ.gif" alt="Problem z klawiaturą w Compose 1.4.0"/>
+</p>
+
+## To co z tym update'em Compose do 1.4.0?
+
+Nic. Problem jest na tyle krytyczny, że należało się wstrzymać i dać sobie na ten moment spokój. Hack również pozostawiał wiele do życzenia, więc nie ma tu podstaw do tego, aby ze spokojnym sumieniem wypuścić użytkownikom taką aplikację z popsutym Compose.
+
+Przy okazji, warto spojrzeć na release notes compose-ui 1.4.0 👉 https://developer.android.com/jetpack/androidx/releases/compose-ui
+
+> The focus system is rewritten using the new experimental Modifier.Node APIs
+
+Sprawa jest jasna. Google przepisało logikę obsługującą focus, bez dobrych testów i puścili to na produkcję, typowo.
+
+No nic, może kolejna wersja Compose będzie nieco lepsza 😅
