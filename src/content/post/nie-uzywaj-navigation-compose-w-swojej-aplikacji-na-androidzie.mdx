@@ -1,0 +1,215 @@
+---
+publishDate: 2022-02-13T00:00:00Z
+title: 'Nie używaj Navigation Compose w swojej aplikacji na Androidzie'
+excerpt: Problemy z Navigation Compose, które zepsują Twoją aplikację na Androidzie oraz jak ich uniknąć. 
+image: '~/assets/images/posts/cover-compose-navigation.png'
+tags:
+  - android
+  - jetpack-compose
+---
+
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+Navigation-Compose to rozwiązanie nawigacji w Jetpack Compose promowane przez Google'a, ale czy na pewno powinniśmy z niego korzystać? Może jednak zostać przy starych Fragmentach i używać Compose wewnątrz w formie ComposeView?
+
+Wszystko ma swoje plusy i minusy, ale zdecydowanie Navigation-Compose ma więcej wad niż zalet, o czym niedługo sam się przekonasz.
+
+W tym artykule opowiem o moich doświadczeniach zarówno z Navigation-Compose jak i z Fragmentami w aplikacji bazującej na Jetpack Compose. Dowiesz się jakie przeszkody mogą Cię czekać przy użyciu każdego z nich oraz dlaczego uważam, że na ten moment lepiej pozostać własnie z Fragmentami.
+
+## Rekomendacja Google
+
+Szukając rozwiązań do nawigacji w Compose prawdopodobnie od razu natrafisz na bibliotekę oficjalnie rekomendowaną przez Google, czyli Navigation Compose. Nowy komponent do nawigacji ma wspierać w pełni Compose i ułatwiać życie deweloperom.
+
+Brzmi dobrze, ale czy na pewno tak jest? Navigation Compose to framework stworzony z myślą zarządzania cyklem życia, nawigacją i wszystkim wokół, eliminując potrzebę używania Fragmentów.
+
+Stworzono nowy graf nawigacji jako kompozycje Composabli (NavHost) zamiast pliku XML, gdzie możemy definiować adresy, do których aplikacja może nawigować. No właśnie, adresy stringowe jakbyśmy tworzyli adres url.
+
+Coś tu nie gra 🤔
+
+## Adresy ekranów
+
+Tworząc nawigację dla Compose, deweloperzy z Google stwierdzili, że najprościej będzie skopiować podejście z nawigacji z popularnych rozwiązań, oferujących webowy experience, np. Flutter czy React. Każdy ekran posiada swój adres url.
+
+Idąc coraz bardziej wgłąb ekranów czy grafu, adresy byłyby coraz mocniej zagnieżdżone, np.
+
+- `/users` - adres ekranu listy użytkowników
+- `/users/2` - adres ekranu szegółów użytkownika, gdzie id = 2
+
+Teraz nawigując się do konkretnego ekranu musimy zapamiętać dokładnie jaki był jego adres oraz parametry, które również będą musiały znaleźć się w adresie.
+
+W kwestii parametrów czeka nas jeszcze więcej niespodzianek 👇
+
+## Argumenty ekranów
+
+Wcześniej, używając Fragmentów i Safe Args, mogliśmy zdefiniować w XML, jakie argumenty przyjmuje dany Fragment. Przy tworzeniu akcji z jednego ekranu do drugiego mieliśmy automatycznie generowany kod, który pytał nas o argumenty odpowiedniego typu i pakował je do Bundle'a. Następnie, aby wyodrębnić te argumenty w docelowym Fragmencie, mogliśmy użyć delegata `by navArgs()`, który robił to za nas automatycznie.
+
+Mogliśmy przekazywać wiele różnych typów jako parametry, np. Int, String, Boolean, ale także niestandardowe, takie jak enumy, Serializable czy Parcelable.
+
+To w Compose pewnie zrobili to samo, prawda? Ależ skąd.
+
+Jak już wspomniałem wcześniej, argumenty ekranów muszą znaleźć się w adresie url ekranu:
+
+1) `/users/{param_1}/details/{param_2}` - jako parametry w ścieżce (path params)
+2) `/details?{param_2}={param_2_value}&{param_3}={param_3_value}` - albo, żeby jeszcze bardziej to skomplikować, możemy przekazać też parametry (opcjonalne lub nie) po znaku zapytania
+
+A co z type safety? Nie ma go, o ile sam o to nie zadbasz. Jeśli przekażesz zły parametr to aplikacja się zcrashuje.
+
+Każdy parametr musi być odpowiednio zadeklarowany w `composable` przy `NavHost`:
+
+```kotlin
+NavHost(startDestination = "profile/{userId}") {
+    ...
+    composable(
+        "profile/{userId}",
+        arguments = listOf(navArgument("userId") { type = NavType.StringType })
+    ) {...}
+}
+```
+
+A następnie poprawnie wyciągnięty jako konkretny typ:
+
+```kotlin
+composable(
+    "profile?userId={userId}",
+    arguments = listOf(navArgument("userId") { defaultValue = "me" })
+) { backStackEntry ->
+    Profile(backStackEntry.arguments?.getString("userId")) { friendUserId ->
+        navController.navigate("profile?userId=$friendUserId")
+    }
+}
+```
+
+De facto teraz nie tylko musiz sam zarządzać wszystkimi adresami, ale również musiz zapamiętać jakie argumenty są przyjmowane przez dany ekran, jakie są klucze i typy danych parametrów oraz ich kolejność.
+
+Czy dostaniesz błędy podczas kompilacji, jeśli coś pomieszasz? Nie, dopiero później poleci crash w miejscu, gdzie coś jest źle podpięte 😅
+
+<CallToAction
+    actions={[{
+      variant: "primary",
+      text: 'Dołączam za darmo! 🚀',
+      href: 'https://mobiledevnews.com',
+      target: '_blank',
+    }]}
+    title="Bądź na bieżąco z Androidem 📱"
+    subtitle="Od czasu tego artykułu sporo <b>zmieniło się</b> w Navigation Compose. Chcesz być na bieżąco? Dołącz do newsletter'a i otrzymuj <b>regularne Androidowe update'y</b> na swoją skrzynkę mailową 📬"
+  />
+
+## Wszystko jest Stringiem
+
+Cały adres parsowany jest jako adres URL. A co za tym idzie, wszystko musi zostać przekazane jako valid String.
+
+Założmy, że chcemy przekazać taki adres jako jeden z parametrów ekranu:
+
+```kotlin
+val urlParam = "https://translate.google.com/?hl=en&tab=TT"
+```
+
+Aby poprawnie znawigować się do ekranu z tym parametrem, jako że parametr jest również adresem url, trzeba go najpierw zenokodować:
+
+```kotlin
+navController.navigate("path/arg=${URLEncoder.encode(urlParam)}")
+```
+
+A potem przy rozpakowaniu w ekranie trzeba go zdekodować:
+
+```kotlin
+URLEncoder.decode(bundle.getString("arg_key"))
+```
+
+Co więcej, jeśli użyjesz `URLEncoder.encode(…)` na Stringu, który zawiera znak ‘\n’, w aplikacji poleci zcrash z powodu ‘%0A’, więc jedynym sposobem, aby to zadziałało, jest najpierw użycie Base64.
+
+Można więc uznać, że API Navigation Compose jest ANTY Type Safe.
+
+## A co z enumami, Serializable i Parcelable?
+
+Jak wspomniałem wcześniej, każdy argument, który chcemy przekazać, niezależnie od typu, musi zostać przekonwertowany na String, aby można go było dodać do adresu ekranu.
+
+### Enumy
+
+Nawigacja w Compose nie pozwala na przekazywanie enumów jako parametrów, ale można to łatwo obejść. W teorii, możemy przekonwertować go na String, a następnie wywołać metodę `valueOf` na docelowym ekranie, aby odznaleźć oryginalną jego źródłową wartość.
+
+### Parcelable i Serializable
+
+Tu już zaczyna się zabawa. Na ten moment przekazywanie argumentu Serializable lub Parcelable nie jest wspierane przez Compose Navigation.
+
+Na Reddicie powstało wiele wątków na ten temat. Kilka osób wskazało aby skorzystać z `backStackEntry` i tam ręcznie przekazać obiekt, jednak jest to hack i nawet Googlersi przyznali w komentarzach, że nie dają gwarancji czy to zawsze zadziała czy nie.
+
+Osobiście wielokrotnie w ten sposób kończyłem z crashem apki, więc odradzam. Wszystko znajdziesz w wątku na IssueTracker [tutaj](https://issuetracker.google.com/issues/182194894).
+
+### Czy możemy coś z tym zrobić?
+
+W teorii da się, jednak jest to paskudne rozwiązanie. Możemy zserializować nasz obiekt do JSON'a i przesłać go jako String (nie zapominając oczywiście o enkodowaniu i Base64). Na ten moment uznajmy po prostu, że Google nie wspiera tych typów. Przepychanie JSON'ów pomiędzy ekranami to żart.
+
+### Update
+
+Weszły małe zmiany od wersji `1.0.3` i `NavigationX 2.4.0-alpha10`, a mianowicie możemy od teraz stworzyć własny `NavType`
+
+Załóżmy, że mamy taką klasę:
+
+```kotlin
+@Parcelize
+data class Example(val id: String, val name: String) : Parcelable
+```
+
+Zdefinujmy teraz nasz `NavType`:
+
+```kotlin
+class ExampleNavType : NavType<Example>(isNullableAllowed = false) {
+    override fun get(bundle: Bundle, key: String): Example? {
+        return bundle.getParcelable(key)
+    }
+
+    override fun parseValue(value: String): Example {
+        return Gson().fromJson(value, Example::class.java)
+    }
+
+    override fun put(bundle: Bundle, key: String, value: Example) {
+        bundle.putParcelable(key, value)
+    }
+}
+```
+
+A następnie użyć w ten sposób:
+
+```kotlin
+NavHost(...) {
+    composable("home") {
+        Home(
+            onClick = {
+                 val example = Example("1", "Example")
+                 val json = Uri.encode(Gson().toJson(example))
+                 navController.navigate("details/$json")
+            }
+        )
+    }
+    composable(
+        "details/{example}",
+        arguments = listOf(
+            navArgument("example") {
+                type = ExampleNavType()
+            }
+        )
+    ) {
+        val example = it.arguments?.getParcelable<Example>("example")
+        Details(example)
+    }
+}
+```
+
+Wygląda już nieco lepiej, w porównaniu do wcześniejszego kodu, jednak nadal wymaga skorzystania z JSON'a. Wyobraź sobie tworzenie takiego custom NavType'u za każdym razem, gdy chccesz przekazać Parcelable czy Serializable. Kolejny zbędny kod ląduje w naszej aplikacji. Co więcej, w momencie pisania tego update'u w artykule w dokumentacji nie było o tym żadnej wzmianki. Czy jest to oficjalnie wspierane? Czas pokaże.
+
+## Dlaczego?
+
+Pewnie teraz niektórzy się zastanawiają - dlaczego to tak źle wygląda? Nie dało się zrobić prostego i działającego API do nawigacji w Compose?
+
+Na pewno się dało, ale działające API to zdecydowanie rzadkość na Androidzie. Możliwe, że Google kierowało się w stronę przekazywania jedynie identyfikatorów obiektów do ekranów i zniechęcania deweloperów do przepychania ogromnych obiektów. Miałoby to jakiś sens, ale w pojedynczych przypadkach, a tego nie uwzględniono.
+
+## Po prostu używaj Fragmentów
+
+Coś, co na ten moment mogę Ci zarekomendować to zostanie przy Fragmentach i starej metodzie nawigacji. Zdaję sobie sprawę, że Fragmenty też mają swoje problemy i komplikacje - zmagam się z nimi na codzień. Jednak, wszystkie te problemy są mi - pewnie Tobie też - znane. Łatwiej jest dodać `ComposeView` do Fragmentu niż bawić się z nową nawigacją, która na każdym kroku zmusza Cię do hackowania prostych operacji (np. przekazaniu parametru String).
+
+A, i pamiętaj, że mając na ekranie jednocześnie Fragment i Composable'a musisz zadbać o obsługę dwóch oddzielnych cykli życia. W większości przypadków nie jest to problem, ale zdarzają się usecase'y, w których powstaną małe błędy. Zadbaj o użycie dobrej strategii kompozycji w `setViewCompositionStrategy`.
+
+Mała podpowiedź na koniec - dla zwykłego Fragmentu i DialogFragment'u będziesz musiał użyć innych strategii, ale to już temat na inny artykuł.
+
+Dzięki za uwagę i miłego hackowania Compose'a! 👋
