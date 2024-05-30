@@ -11,12 +11,12 @@ metadata:
   title:
     default: Patryk Kosieradzki
     template: '%s — Patryk Kosieradzki'
-  description: "\U0001F680 Od solidnej architektury po bezpieczeństwo aplikacji mobilnych"
+  description: "Zobacz jak tworzyć solidne i bezpieczne aplikacje na Androida i iOS. Od podszewki aż po architekturę i bezpieczeństwo aplikacji mobilnych"
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: Patryk Kosieradzki
+    site_name: Patryk Kosieradzki - Doradztwo, Kursy i Szkolenia dla Mobile Developerów
     images:
       - url: '~/assets/images/og.png'
         width: 1200

@@ -1,7 +1,22 @@
 ---
 import { SITE } from '~/utils/config';
+import Image from '~/components/common/Image.astro';
 ---
 
-<span class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white">
-  📱 {SITE?.name}
+<span
+  class="flex items-center self-center ml-2 mr-4 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"
+>
+  <Image
+    src="~/assets/images/logo.png"
+    class="max-w-full lg:max-w-[900px] mx-auto sm:rounded-md bg-gray-400 dark:bg-slate-700"
+    widths={[32, 32]}
+    sizes="(max-width: 32px) 32px, 32px"
+    alt=''
+    width={32}
+    height={32}
+    loading="eager"
+    decoding="async"
+  />
+
+  <span class="ml-2">{SITE?.name}</span>
 </span>
