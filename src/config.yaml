@@ -9,9 +9,9 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: Patryk Kosieradzki
+    default: Patryk Kosieradzki - Doradztwo, Kursy i Szkolenia dla Mobile Developerów
     template: '%s — Patryk Kosieradzki'
-  description: "Zobacz jak tworzyć solidne i bezpieczne aplikacje na Androida i iOS. Od podszewki aż po architekturę i bezpieczeństwo aplikacji mobilnych"
+  description: "Zobacz jak tworzyć solidne i bezpieczne aplikacje na Androida i iOS. Od solidnej architektury po bezpieczeństwo aplikacji mobilnych."
   robots:
     index: true
     follow: true
