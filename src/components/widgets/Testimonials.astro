@@ -32,7 +32,7 @@ const {
               {title && <h2 class="text-lg font-medium leading-6 pb-4">{title}</h2>}
               {testimonial && (
                 <blockquote class="flex-auto">
-                  <p class="text-muted">" {testimonial} "</p>
+                  <p class="text-muted" set:html={testimonial} />
                 </blockquote>
               )}
 

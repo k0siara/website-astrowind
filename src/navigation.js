@@ -16,18 +16,12 @@ export const headerData = {
       href: 'https://discord.gg/v5CKHVrCDS',
       target: '_blank',
     },
-    {
-      text: 'Podcast',
-      href: 'https://androidtalks.com',
-      target: '_blank',
-    },
   ],
   actions: [
     { 
-      text: 'Darmowy Ebook 📚', 
+      text: 'Czysty Webinar 📲', 
       variant: 'primary', 
-      href: 'https://archiwum.mobiledevnews.com', 
-      target: '_blank' ,
+      href: getPermalink('/webinar-architektura-na-androidzie'),
     }
   ],
 };
@@ -40,10 +34,11 @@ export const footerData = {
     { text: 'Polityka Prywatności', href: getPermalink('/polityka-prywatnosci') },
   ],
   socialLinks: [
-    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: 'https://www.facebook.com/profile.php?id=61554168906380' },
+    { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/in/patrykkosieradzki/' },
+    
     { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: 'https://instagram.com/patryk.kosieradzki' }, 
     { ariaLabel: 'Twitter', icon: 'tabler:brand-twitter', href: 'https://twitter.com/p_kosieradzki' },
-    { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/in/patrykkosieradzki/' },
+    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: 'https://www.facebook.com/profile.php?id=61554168906380' },
     { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
   ],
   footNote: `
