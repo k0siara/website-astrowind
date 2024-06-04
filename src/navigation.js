@@ -29,9 +29,11 @@ export const headerData = {
 export const footerData = {
   links: [
     { text: 'Polityka Prywatności', href: getPermalink('/polityka-prywatnosci') },
+    { text: 'Regulamin', href: getPermalink('/regulamin') },
   ],
   secondaryLinks: [
     { text: 'Polityka Prywatności', href: getPermalink('/polityka-prywatnosci') },
+    { text: 'Regulamin', href: getPermalink('/regulamin') },
   ],
   socialLinks: [
     { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/in/patrykkosieradzki/' },
