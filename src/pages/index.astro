@@ -1,18 +1,9 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
-import Hero from '~/components/widgets/Hero.astro';
-
-import Note from '~/components/widgets/Note.astro';
-import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import Steps2 from '~/components/widgets/Steps2.astro';
 import Content from '~/components/widgets/Content.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
+import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
   title: 'Patryk Kosieradzki - Doradztwo, Kursy i Szkolenia dla Mobile Developerów',
@@ -26,7 +17,7 @@ const metadata = {
     tagline="O aplikacjach mobilnych"
     actions={[
       { variant: 'primary', text: 'Poznaj ofertę', href: '#oferta' },
-      { text: 'Dołącz do newslettera', target: '_blank', href: 'https://mobiledevnews.com' },
+      { text: 'Architektura na Androidzie (WEBINAR)', href: getPermalink('/webinar-architektura-na-androidzie') },
     ]}
     image={{
       src: '~/assets/images/hero.jpg',
