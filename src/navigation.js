@@ -19,7 +19,7 @@ export const headerData = {
   ],
   actions: [
     { 
-      text: 'Czysty Webinar 📲', 
+      text: '11.07.2024 / 20:00 👀', 
       variant: 'primary', 
       href: getPermalink('/webinar-architektura-na-androidzie'),
     }
