@@ -7,6 +7,10 @@ export const headerData = {
       href: getBlogPermalink(),
     },
     {
+      text: 'Webinar',
+      href: getPermalink('/webinar-architektura-na-androidzie'),
+    },
+    {
       text: 'Newsletter',
       href: 'https://mobiledevnews.com',
       target: '_blank',
@@ -19,7 +23,7 @@ export const headerData = {
   ],
   actions: [
     { 
-      text: '11.07.2024 / 20:00 👀', 
+      text: 'Darmowe materiały', 
       variant: 'primary', 
       href: getPermalink('/webinar-architektura-na-androidzie'),
     }
