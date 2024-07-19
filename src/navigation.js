@@ -25,7 +25,7 @@ export const headerData = {
     { 
       text: 'Darmowe materiały', 
       variant: 'primary', 
-      href: getPermalink('/webinar-architektura-na-androidzie'),
+      href: 'https://archiwum.mobiledevnews.com',
     }
   ],
 };

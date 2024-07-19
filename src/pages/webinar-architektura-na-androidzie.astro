@@ -21,7 +21,7 @@ const metadata = {
   <Hero
     tagline="Architektura na Androidzie | Webinar"
     title="Opanuj architekturę swoich aplikacji mobilnych na Androidzie!"
-    subtitle="Weź udział w nadchodzącym <b>webinarze</b> i zobacz jak zbudować solidną architekturę aplikacji w <b>dużych projektach</b>, na przykładzie <b>aplikacji demo</b> z wykorzystaniem Clean Architecture, MVVM i Jetpack Compose 📲<br><br>Widzimy się <b>11.07.2024</b> o godzinie <b>20:00.</b>"
+    subtitle="Weź udział w <b>webinarze</b> i zobacz jak zbudować solidną architekturę aplikacji w <b>dużych projektach</b>, na przykładzie <b>aplikacji demo</b> z wykorzystaniem Clean Architecture, MVVM i Jetpack Compose 📲<br><br>Widzimy się <b>11.07.2024</b> o godzinie <b>20:00.</b>"
     actions={[{ variant: 'primary', text: 'Dołączam! 🚀', href: '#wybierz' }]}
     image={{
       src: '~/assets/images/webinar/hero.jpg',
@@ -129,80 +129,16 @@ const metadata = {
 
   <!-- Pricing Widget ******************* -->
 
-  <Prices
-    id="wybierz"
-    title="Dołącz do webinaru"
-    subtitle="Wybierz opcję, która spełnia Twoje potrzeby 👌"
-    prices={[
+  <CallToAction
+    actions={[
       {
-        title: 'basic',
-        subtitle: 'Webinar + Nagranie',
-        price: 149,
-        period: ' ',
-        items: [
-          {
-            description: 'Wstęp na webinar',
-          },
-          {
-            description: 'Dożywotni dostęp do nagrania prezentacji, omówienia aplikacji demo warstwa po warstwie i sesji Q&A',
-          },
-        ],
-        callToAction: {
-          target: '_blank',
-          text: 'Wybieram',
-          href: 'https://app.easycart.pl/checkout/73001086/webinar-opanuj-architekture-swoich-aplikacji-mobilnych-na-androidzie-basic',
-        },
-      },
-      {
-        title: 'standard',
-        subtitle: 'Webinar + Nagranie + Dostęp do kodu',
-        price: 199,
-        period: ' ',
-        items: [
-          {
-            description: 'Wstęp na webinar',
-          },
-          {
-            description: 'Dożywotni dostęp do nagrania prezentacji, omówienia aplikacji demo warstwa po warstwie i sesji Q&A',
-          },
-          {
-            description: 'DODATKOWO dostęp do repozytorium kodu aplikacji demo z webinaru (Clean Architecture, MVVM, Jetpack Compose, Coroutines, Retrofit, Caching, Error Handling). Kod dostaniesz od razu po zakończonym webinarze',
-          },
-        ],
-        callToAction: {
-          target: '_blank',
-          text: 'Wybieram',
-          href: 'https://app.easycart.pl/checkout/73001086/webinar-opanuj-architekture-swoich-aplikacji-mobilnych-na-androidzie-standard',
-        },
-        hasRibbon: true,
-        ribbonTitle: 'polecany',
-      },
-      {
-        title: 'pro',
-        subtitle: 'Webinar + Dostęp do kodu + Customowy klient HTTP',
-        price: 249,
-        period: ' ',
-        items: [
-          {
-            description: 'Wstęp na webinar',
-          },
-          {
-            description: 'Dożywotni dostęp do nagrania prezentacji, omówienia aplikacji demo warstwa po warstwie i sesji Q&A',
-          },
-          {
-            description: 'DODATKOWO dostęp do repozytorium kodu aplikacji demo z webinaru (Clean Architecture, MVVM, Jetpack Compose, Coroutines, Caching, Error Handling). Kod dostaniesz od razu po zakończonym webinarze',
-          },
-          {
-            description: 'DODATKOWO aplikacja demo wykorzystuje customowego klienta HTTP, zamiast Retrofita, dającego pełną kontrolę nad warstwą sieciową Twojej aplikacji. Możesz też wykupić dostęp do customowego klienta HTTP oddzielnie w formie ebooka za 99zł (premiera wkrótce)',
-          },
-        ],
-        callToAction: {
-          target: '_blank',
-          text: 'Wybieram',
-          href: 'https://app.easycart.pl/checkout/73001086/webinar-opanuj-architekture-swoich-aplikacji-mobilnych-na-androidzie-pro',
-        },
+        variant: 'primary',
+        text: 'Dołączam! 🚀',
+        href: '#wybierz',
       },
     ]}
+    title="To co, chcesz budować solidne aplikacje mobilne na Androidzie? 📱"
+    subtitle="Nie ma nad czym się zastanawiać. Dołącz do webinaru, zarezerwuj swoje miejsce i widzimy się już niedługo! 🔜"
   />
 
   <!-- AGENDA **************** -->
