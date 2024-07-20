@@ -18,11 +18,26 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- HERO **************** -->
 
+  <script>
+    document.querySelector('a[href="#formularz"]').addEventListener('click', function(event) {
+        event.preventDefault();
+        document.querySelector('.ml-onclick-form').click();
+    });
+  </script>
+  
+  <button style="display: none;" class="ml-onclick-form" onclick="ml('show', 'n0hd17', true)">Formularz</button>
+
   <Hero
     tagline="Architektura na Androidzie | Webinar"
     title="Opanuj architekturę swoich aplikacji mobilnych na Androidzie!"
-    subtitle="Weź udział w <b>webinarze</b> i zobacz jak zbudować solidną architekturę aplikacji w <b>dużych projektach</b>, na przykładzie <b>aplikacji demo</b> z wykorzystaniem Clean Architecture, MVVM i Jetpack Compose 📲<br><br>Widzimy się <b>11.07.2024</b> o godzinie <b>20:00.</b>"
-    actions={[{ variant: 'primary', text: 'Dołączam! 🚀', href: '#wybierz' }]}
+    subtitle="Weź udział w <b>webinarze</b> i zobacz jak zbudować solidną architekturę aplikacji w <b>dużych projektach</b>, na przykładzie <b>aplikacji demo</b> z wykorzystaniem Clean Architecture, MVVM i Jetpack Compose 📲<br><br>Webinar odbył się <b>11.07.2024</b> o godzinie <b>20:00.</b>"
+    actions={[
+      { 
+        variant: 'primary', 
+        text: 'Zapisz się na kolejny webinar »', 
+        href: '#formularz' 
+      }
+    ]}
     image={{
       src: '~/assets/images/webinar/hero.jpg',
       alt: 'Zdjęcie Webinar Opanuj architekturę swoich aplikacji mobilnych na Androidzie',
@@ -127,20 +142,6 @@ const metadata = {
 
   <!-- CZEGO SIĘ DOWIESZ **************** -->
 
-  <!-- Pricing Widget ******************* -->
-
-  <CallToAction
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Dołączam! 🚀',
-        href: '#wybierz',
-      },
-    ]}
-    title="To co, chcesz budować solidne aplikacje mobilne na Androidzie? 📱"
-    subtitle="Nie ma nad czym się zastanawiać. Dołącz do webinaru, zarezerwuj swoje miejsce i widzimy się już niedługo! 🔜"
-  />
-
   <!-- AGENDA **************** -->
 
   <Steps
@@ -148,9 +149,9 @@ const metadata = {
     subtitle="Nasz rozkład jazdy. Zapnij pasy! 🚀"
     items={[
       {
-        title: '11.07.2024 / 20:00: <span class="font-medium">Start!</span>',
+        title: '20:00: <span class="font-medium">Start!</span>',
         description:
-          "Spotykamy się na żywo 11 lipca 2024 <u>w czwartek</u> o godzinie 20:00. Czekamy kilka minut na spóźnialskich i <b>ruszamy z tematem.</b>",
+          "Spotykamy się na żywo o godzinie 20:00. Czekamy kilka minut na spóźnialskich i <b>ruszamy z tematem.</b>",
         icon: 'tabler:calendar-time',
       },
       {
@@ -360,13 +361,22 @@ Ponadto wprowadzał bardzo miłą atmosferę i wykazał się pełnym <b>profesjo
     actions={[
       {
         variant: 'primary',
-        text: 'Dołączam! 🚀',
-        href: '#wybierz',
+        text: 'Zapisz się na kolejny webinar »',
+        href: '#formularz2'
       },
     ]}
     title="To co, chcesz budować solidne aplikacje mobilne na Androidzie? 📱"
     subtitle="Nie ma nad czym się zastanawiać. Dołącz do webinaru, zarezerwuj swoje miejsce i widzimy się już niedługo! 🔜"
   />
+
+  <script>
+    document.querySelector('a[href="#formularz2"]').addEventListener('click', function(event) {
+        event.preventDefault();
+        document.querySelector('.ml-onclick-form').click();
+    });
+  </script>
+  
+  <button style="display: none;" class="ml-onclick-form" onclick="ml('show', 'n0hd17', true)">Formularz</button>
 
   <!-- FOOTER CTA **************** -->
 </Layout>
