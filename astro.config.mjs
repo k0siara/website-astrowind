@@ -45,6 +45,7 @@ export default defineConfig({
           'gallery',
           'approval',
           'document',
+          'webcam',
           'advertising',
           'currency-exchange',
           'voice-presentation',

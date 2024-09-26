@@ -1,0 +1,104 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+
+import FeaturesSzkolenia from '~/components/widgets/FeaturesSzkolenia.astro';
+import { getPermalink } from '~/utils/permalinks';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+
+const metadata = {
+  title: 'Opanuj architekturę swoich aplikacji mobilnych na Androidzie — Patryk Kosieradzki',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+
+  <!-- <Hero
+    title="Szkolenia"
+    subtitle="Weź udział w <b>webinarze</b> i zobacz jak zbudować solidną architekturę aplikacji w <b>dużych projektach</b>, na przykładzie <b>aplikacji demo</b> z wykorzystaniem Clean Architecture, MVVM i Jetpack Compose 📲"
+  /> -->
+
+  <FeaturesSzkolenia
+    subtitle="Dołącz do grona zadowolonych deweloperów, rozwijaj swoją mobilną pasję i zadbaj o programistyczną karierę! Najlepsze szkolenia i materiały czekają na Ciebie!"
+    items={[
+      {
+        title: 'Architektura na Androidzie WEBINAR',
+        description:
+          'Zobacz jak zbudować solidną architekturę aplikacji w dużych projektach, na przykładzie aplikacji demo z wykorzystaniem Clean Architecture, MVVM i Jetpack Compose',
+        icon: 'flat-color-icons:webcam',
+        callToAction: { 
+          variant: 'primary', 
+          text: 'Zapisz się na mailing', 
+          href: getPermalink('/webinar-architektura-na-androidzie') 
+        },
+        image: {
+          src: '~/assets/images/webinar/hero.jpg',
+          alt: 'Webinar Architektura na Androidzie',
+        },
+      },
+    ]}
+  >
+  <Fragment slot="title">
+    <h1 class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200">Szkolenia</h1>
+  </Fragment>
+  </FeaturesSzkolenia>
+
+  <Testimonials
+    title="Co mówią Absolwenci o naszych Szkoleniach?"
+    subtitle="Nasze Programy zbierają mnóstwo pozytywnych opinii. Zobacz kilka z nich!"
+    testimonials={[
+      {
+        testimonial: `Dzięki wielkie za szkolenie - olbrzymia dawka wiedzy, która dość mocno <b>wywróciła moje spojrzenie na programowanie na Androida</b> i pokazało mi co zrobić by kod był lepszy. <br><br>Wyraźnie widać, że <b>Ty nie tylko szkolisz</b>, ale w tematach o których mówisz masz też <b>praktyczne doświadczenie.</b>`,
+        name: 'Bartłomiej Blachura',
+        course: '3 dniowe szkolenie z Androida',
+        job: 'Android Developer at dmt Software House',
+        image: {
+          src: '~/assets/images/webinar/opinie/bartlomiej_b.jpeg',
+          alt: 'Zdjęcie',
+        },
+      },
+      {
+        testimonial: `Najbardziej podobało mi się przekazanie Twoich <b>Tips & Tricks</b> (różnych extensions, Twoich jak i dostępnych w sieci), które wypracowałeś sobie. <br><br><b>Są to rzeczy, które nie jest łatwo znaleźć</b>, nie mając dużego doświadczenia, a dla nas będą bazą.`,
+        name: 'Paweł',
+        course: '3 dniowe szkolenie z Androida',
+        job: 'Android Developer at dmt Software House',
+        image: {
+          src: '~/assets/images/webinar/opinie/no-profile-picture.jpg',
+          alt: 'Zdjęcie',
+        },
+      },
+      {
+        testimonial: `Bardzo ciekawie poprowadzony webinar. <b>Sporo wiedzy plus bardzo dobrze omówiony projekt!</b>`,
+        name: 'Michał Bogucki',
+        job: 'Android Developer',
+        course: 'Architektura na Androidzie (WEBINAR)',
+        image: {
+          src: '~/assets/images/webinar/opinie/no-profile-picture.jpg',
+          alt: 'Zdjęcie',
+        },
+      },
+      {
+        testimonial: `<b>Dobrze opisanie czym jest domena, czysta architektura</b>, oraz różnice pomiędzy UseCase a Interactor`,
+        name: 'Robert Sajdok',
+        job: 'Android Developer',
+        course: 'Architektura na Androidzie (WEBINAR)',
+        image: {
+          src: '~/assets/images/webinar/opinie/no-profile-picture.jpg',
+          alt: 'Zdjęcie',
+        },
+      },
+      {
+        testimonial: `Temat webinaru był bardzo trafiony bo akurat dzień później miałam w pracy architektoniczną rozkminę w tasku z długu technicznego :)`,
+        name: 'Katarzyna',
+        job: 'Android Developer',
+        course: 'Architektura na Androidzie (WEBINAR)',
+        image: {
+          src: '~/assets/images/webinar/opinie/no-profile-picture.jpg',
+          alt: 'Zdjęcie',
+        },
+      },
+    ]}
+  />
+
+</Layout>

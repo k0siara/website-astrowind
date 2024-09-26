@@ -3,12 +3,12 @@ import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: 'Blog',
-      href: getBlogPermalink(),
+      text: 'Szkolenia',
+      href: getPermalink('/szkolenia'),
     },
     {
-      text: 'Webinar',
-      href: getPermalink('/webinar-architektura-na-androidzie'),
+      text: 'Blog',
+      href: getBlogPermalink(),
     },
     {
       text: 'Newsletter',

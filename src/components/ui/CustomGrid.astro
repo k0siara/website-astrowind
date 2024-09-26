@@ -1,0 +1,87 @@
+---
+import { twMerge } from "tailwind-merge";
+import type { ItemGrid } from "~/types";
+import Button from "./Button.astro";
+import Image from '~/components/common/Image.astro';
+
+const {
+  items = [],
+  columns,
+  classes = {},
+} = Astro.props as ItemGrid;
+
+const {
+  container: containerClass = "",
+  panel: panelClass = "",
+  title: titleClass = "",
+  description: descriptionClass = "",
+  image: defaultImageClass = "w-full h-auto object-cover mb-4",
+} = classes;
+---
+
+{
+  items && (
+    <div
+      class={twMerge(
+        `grid gap-8 gap-x-12 sm:gap-y-8 ${
+          columns === 4
+            ? "lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2"
+            : columns === 3
+            ? "lg:grid-cols-3 sm:grid-cols-2"
+            : columns === 2
+            ? "sm:grid-cols-2 "
+            : ""
+        }`,
+        containerClass
+      )}
+    >
+      {items.map(
+        ({
+          title,
+          description,
+          image,
+          callToAction,
+          classes: itemClasses = {},
+        }) => (
+          <a
+            href={callToAction?.href || '#'}
+            class={twMerge(
+              "relative flex flex-col cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105",
+              panelClass,
+              itemClasses?.panel
+            )}
+          >
+            {image && (
+              <Image
+                class="mb-2 w-full h-auto object-cover"
+                widths={[400, 768]}
+                layout="responsive"
+                {...(image as any)}
+              />
+            )}
+            <div
+              class={twMerge(
+                "text-xl font-bold",
+                titleClass,
+                itemClasses?.title
+              )}
+            >
+              {title}
+            </div>
+            {description && (
+              <p
+                class={twMerge(
+                  "text-muted mt-2",
+                  descriptionClass,
+                  itemClasses?.description
+                )}
+                set:html={description}
+              />
+            )}
+            
+          </a>
+        )
+      )}
+    </div>
+  )
+}
