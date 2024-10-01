@@ -1,0 +1,95 @@
+---
+import { Icon } from 'astro-icon/components';
+import Image from '~/components/common/Image.astro';
+
+interface Props {
+  title: string;
+  subtitle: string;
+  description: string;
+  image: string;
+  link: string;
+  linkText: string;
+  tags?: string[];
+}
+
+const { title, subtitle, description, image, link, linkText, tags = [] } = Astro.props;
+---
+
+<a href={link} class="content-showcase block bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
+  <div class="flex flex-col sm:flex-row">
+    <div class="sm:w-2/5 p-6 flex items-center justify-center bg-gray-100 dark:bg-gray-700">
+      <Image 
+        src={image} 
+        alt={`Image for ${title}`}
+        width={300}
+        height={400}
+        class="w-full max-w-[250px] h-auto object-contain rounded-lg shadow-md"
+      />
+    </div>
+    <div class="sm:w-3/5 p-8 flex flex-col">
+      <div>
+        <div class="text-sm font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider mb-2">{subtitle}</div>
+        <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white mb-4 leading-tight">{title}</h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">{description}</p>
+        <div class="flex flex-wrap gap-2 mb-6">
+          {tags.map(tag => (
+            <span class="px-3 py-1 bg-gray-200 dark:bg-gray-600 text-sm font-normal rounded text-gray-600 dark:text-gray-300">
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+      <div class="button-container mt-auto">
+        <span class="btn-primary">{linkText}</span>
+      </div>
+    </div>
+  </div>
+</a>
+
+<style>
+  .content-showcase {
+    max-width: 900px;
+    margin: 2rem auto;
+  }
+
+  @media (max-width: 640px) {
+    .content-showcase {
+      margin: 1rem;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background-color: #4285F4;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 24px;
+    border-radius: 24px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background-color: #3367D6;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .button-container {
+    margin-top: auto;
+  }
+
+  @media (max-width: 640px) {
+    .button-container {
+      margin-top: 1rem;
+    }
+
+    .btn-primary {
+      display: block;
+      width: 100%;
+    }
+  }
+</style>

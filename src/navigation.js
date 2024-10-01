@@ -7,18 +7,27 @@ export const headerData = {
       href: getPermalink('/szkolenia'),
     },
     {
-      text: 'Blog',
-      href: getBlogPermalink(),
+      text: 'Do pobrania',
+      href: getPermalink('/do-pobrania'),
     },
     {
-      text: 'Newsletter',
-      href: 'https://mobiledevnews.com',
-      target: '_blank',
-    },
-    {
-      text: 'Społeczność',
-      href: 'https://discord.gg/v5CKHVrCDS',
-      target: '_blank',
+      text: 'Wiedza',
+      links: [
+        {
+          text: 'Społeczność',
+          href: 'https://discord.gg/v5CKHVrCDS',
+          target: '_blank',
+        },
+        {
+          text: 'Newsletter',
+          href: 'https://mobiledevnews.com',
+          target: '_blank',
+        },
+        {
+          text: 'Blog',
+          href: getBlogPermalink(),
+        },
+      ],
     },
   ],
   actions: [

@@ -1,0 +1,34 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import FreeProduct from '~/components/widgets/FreeProduct.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+
+const metadata = {
+  title: 'Opanuj architekturę swoich aplikacji mobilnych na Androidzie — Patryk Kosieradzki',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+
+  <HeroText
+    title="Pobierz materiały"
+    subtitle="Ciekawe materiały, które pomogą Ci rozwinąć umiejętności w tworzeniu aplikacji mobilnych. Wszystko to dostępne do pobrania całkowicie za darmo!"
+  />
+
+  <FreeProduct
+  title="Mobile Dev Newsletter - Archiwum"
+  subtitle="Darmowy Ebook"
+  description="146 stron solidnej wiedzy o tworzeniu aplikacji mobilnych, od architektury po bezpieczeństwo, testy oraz praktyki i narzędzia, które pozwolą Ci tworzyć niezawodne aplikacje mobilne. Pobierając tego ebooka, zgarniasz ZA DARMO całe archiwum Mobile Dev Newsletter'a, wysyłanego przeze mnie w okresie ostatnich 2 lat"
+  image='~/assets/images/ebook_archiwum.png'
+  link="https://archiwum.mobiledevnews.com/"
+  linkText="Pobieram ebooka"
+  tags={['Android', 'iOS', 'Architektura', 'Bezpieczeństwo', 'Testy']}
+/>
+
+<section class="flex items-center h-full p-8">
+    
+</section>
+
+</Layout>
