@@ -7,6 +7,10 @@ export const headerData = {
       href: getPermalink('/szkolenia'),
     },
     {
+      text: 'O mnie',
+      href: getPermalink('/o-mnie'),
+    },
+    {
       text: 'Do pobrania',
       href: getPermalink('/do-pobrania'),
     },
