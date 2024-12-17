@@ -3,54 +3,35 @@ import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: 'Szkolenia',
-      href: getPermalink('/szkolenia'),
+      text: 'Courses',
+      href: getPermalink('/courses'),
     },
     {
-      text: 'O mnie',
-      href: getPermalink('/o-mnie'),
+      text: 'Blog',
+      href: getBlogPermalink(),
     },
     {
-      text: 'Do pobrania',
-      href: getPermalink('/do-pobrania'),
-    },
-    {
-      text: 'Wiedza',
-      links: [
-        {
-          text: 'Społeczność',
-          href: 'https://discord.gg/v5CKHVrCDS',
-          target: '_blank',
-        },
-        {
-          text: 'Newsletter',
-          href: 'https://mobiledevnews.com',
-          target: '_blank',
-        },
-        {
-          text: 'Blog',
-          href: getBlogPermalink(),
-        },
-      ],
+      text: 'About',
+      href: getPermalink('/about'),
     },
   ],
   actions: [
     { 
-      text: 'Darmowe materiały', 
+      text: 'Newsletter', 
       variant: 'primary', 
-      href: 'https://archiwum.mobiledevnews.com',
+      href: 'https://mobiledevnews.com',
     }
   ],
 };
 
 export const footerData = {
   links: [
-    { text: 'Polityka Prywatności', href: getPermalink('/polityka-prywatnosci') },
-    { text: 'Regulamin', href: getPermalink('/regulamin') },
+    { text: 'Privacy Policy', href: getPermalink('/privacy-policy') },
+    { text: 'Regulations', href: getPermalink('/regulations') },
   ],
   secondaryLinks: [
-    { text: 'Polityka Prywatności', href: getPermalink('/polityka-prywatnosci') },
-    { text: 'Regulamin', href: getPermalink('/regulamin') },
+    { text: 'Privacy Policy', href: getPermalink('/privacy-policy') },
+    { text: 'Regulations', href: getPermalink('/regulations') },
   ],
   socialLinks: [
     { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/in/patrykkosieradzki/' },

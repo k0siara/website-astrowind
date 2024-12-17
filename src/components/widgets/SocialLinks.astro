@@ -1,0 +1,56 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { CallToAction } from '~/types';
+
+export interface Props {
+  links: Array<{
+    icon: string;
+    title?: string;
+    description?: string;
+    callToAction: CallToAction;
+  }>;
+  title?: string;
+  subtitle?: string;
+}
+
+const {
+  links = [],
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+} = Astro.props;
+---
+
+<div class="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
+  {title && <h2 class="mb-8 text-3xl font-bold text-center">{title}</h2>}
+  {subtitle && <p class="mb-8 text-xl text-muted text-center">{subtitle}</p>}
+  
+  <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+    {
+      links.map(({ icon, title, description, callToAction }) => (
+        <a
+          href={callToAction.href}
+          target={callToAction.target}
+          class="group flex flex-col items-center p-6 bg-white dark:bg-slate-800 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm transition duration-300 ease-in-out hover:shadow-md hover:border-primary dark:hover:border-primary"
+        >
+          <div class="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 dark:bg-primary/20 transition duration-300 ease-in-out group-hover:bg-primary/20 dark:group-hover:bg-primary/30">
+            <Icon name={icon} class="h-8 w-8 text-primary" />
+          </div>
+          {title && (
+            <h3 class="mb-2 text-xl font-medium text-gray-900 dark:text-white">
+              {title}
+            </h3>
+          )}
+          {description && (
+            <p class="text-center text-sm text-gray-600 dark:text-gray-400">
+              {description}
+            </p>
+          )}
+          <div class="mt-4 flex items-center text-primary">
+            <span class="text-sm font-semibold">{callToAction.text}</span>
+            <Icon name="tabler:chevron-right" class="ml-1 h-4 w-4" />
+          </div>
+        </a>
+      ))
+    }
+  </div>
+</div> 

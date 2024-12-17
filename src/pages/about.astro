@@ -1,0 +1,97 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Content from '~/components/widgets/Content.astro';
+import SocialLinks from '~/components/widgets/SocialLinks.astro';
+
+const metadata = {
+  title: 'About me — Patryk Kosieradzki',
+  ignoreTitleTemplate: true,
+};
+
+const socialLinks = [
+  {
+    icon: 'tabler:brand-linkedin',
+    title: 'LinkedIn',
+    description: 'Connect with me professionally',
+    callToAction: {
+      target: '_blank',
+      text: 'Follow me',
+      href: 'https://www.linkedin.com/in/patrykkosieradzki/',
+    },
+  },
+  {
+    icon: 'tabler:brand-twitter',
+    title: 'Twitter',
+    description: 'Latest updates and thoughts',
+    callToAction: {
+      target: '_blank',
+      text: 'Follow me',
+      href: 'https://www.twitter.com/p_kosieradzki',
+    },
+  },
+  {
+    icon: 'tabler:microphone',
+    title: 'Podcast',
+    description: 'Listen to Android Talks',
+    callToAction: {
+      target: '_blank',
+      text: 'Listen now',
+      href: 'https://androidtalks.com',
+    },
+  },
+  {
+    icon: 'tabler:circles-relation',
+    title: 'More Links',
+    description: 'Find all my other profiles',
+    callToAction: {
+      target: '_blank',
+      text: 'View all',
+      href: 'https://bio.link/patrykkosieradzki',
+    },
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    title="About me"
+    subtitle="Mobile Development Expert, Mentor, and Content Creator"
+  />
+
+  <Content
+    isReversed
+    image={{
+      src: '~/assets/images/patryk.png',
+      alt: 'Patryk Kosieradzki',
+      loading: 'eager',
+    }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-4">
+        Patryk Kosieradzki
+        <span class="block text-lg font-medium mt-1">Android & iOS Engineer</span>
+      </h2>
+
+      <p class="text-lg mb-8 text-gray-700 dark:text-gray-400">
+        I specialize in Mobile Development with extensive experience in <strong>banking and fintech</strong> applications. Throughout my career, I've worked on multiple applications focusing on financial services and <strong>biometric payment methods</strong>, including custom <strong>authorisation systems</strong>.
+      </p>
+      
+      <p class="text-lg mb-8 text-gray-700 dark:text-gray-400">
+        In my current project, I spent 2 years as a <strong>Senior Android Developer</strong> before deciding to fully transition into <strong>iOS development</strong>. Now I'm primarily responsible for our iOS app, while still supporting the Android team and contributing to backend work on <strong>mobile-related microservices</strong>.
+      </p>
+
+      <p class="text-lg text-gray-700 dark:text-gray-400">
+        When I'm not at work, you'll find me working on my <strong>indie projects</strong>. Right now, I'm developing <strong>DailyWin</strong> 📱, getting ready for beta release soon.
+      </p>
+    </Fragment>
+  </Content>
+
+  <div class="py-12">
+    <SocialLinks 
+      title="Find Me Online"
+      subtitle="Connect with me on various platforms"
+      links={socialLinks} 
+    />
+  </div>
+</Layout>

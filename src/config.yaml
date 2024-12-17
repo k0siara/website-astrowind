@@ -27,10 +27,6 @@ metadata:
     site: '@p_kosieradzki'
     cardType: summary_large_image
 
-i18n:
-  language: pl
-  textDirection: ltr
-
 apps:
   blog:
     isEnabled: true

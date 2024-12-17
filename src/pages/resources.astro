@@ -1,0 +1,34 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import FreeProduct from '~/components/widgets/FreeProduct.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+
+const metadata = {
+  title: 'Free Resources — Patryk Kosieradzki',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+
+  <HeroText
+    title="Free Resources"
+    subtitle="Interesting materials to help you develop your mobile app development skills. All available to download completely free!"
+  />
+
+  <FreeProduct
+  title="Mobile Dev Newsletter - Archive"
+  subtitle="Free Ebook"
+  description="146 pages of solid knowledge about mobile app development, from architecture to security, testing, and practices and tools that will help you create reliable mobile applications. By downloading this ebook, you get the ENTIRE archive of Mobile Dev Newsletter FOR FREE, which I've been sending out over the past 2 years"
+  image='~/assets/images/ebook_archiwum.png'
+  link="https://archiwum.mobiledevnews.com/"
+  linkText="Download ebook"
+  tags={['Android', 'iOS', 'Architecture', 'Security', 'Testing']}
+/>
+
+<section class="flex items-center h-full p-8">
+    
+</section>
+
+</Layout>
