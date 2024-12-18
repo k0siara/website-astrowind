@@ -3,6 +3,8 @@ import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import Content from '~/components/widgets/Content.astro';
 import SocialLinks from '~/components/widgets/SocialLinks.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import HeroWithNewsletter from '~/components/widgets/HeroWithNewsletter.astro';
 
 const metadata = {
   title: 'About me — Patryk Kosieradzki',
@@ -87,6 +89,17 @@ const socialLinks = [
       </p>
     </Fragment>
   </Content>
+
+  <CallToAction
+    actions={[{
+      variant: "primary",
+      text: 'Keep me up to date',
+      href: 'https://mobiledevnews.com',
+      target: '_blank',
+    }]}
+    title="How do you stay current as a Mobile Developer?"
+    subtitle="Stay up to date with my weekly newsletter. Stay ahead in the mobile development with expert tips and practical examples."
+  />
 
   <div class="py-12">
     <SocialLinks 
