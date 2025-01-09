@@ -56,7 +56,7 @@ apps:
       robots:
         index: false
 
-    isRelatedPostsEnabled: false
+    isRelatedPostsEnabled: true
     relatedPostsCount: 4
 
 analytics:

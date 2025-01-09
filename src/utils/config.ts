@@ -138,7 +138,7 @@ const getAppBlog = () => {
   const _default = {
     isEnabled: false,
     postsPerPage: 6,
-    isRelatedPostsEnabled: false,
+    isRelatedPostsEnabled: true,
     relatedPostsCount: 4,
     post: {
       isEnabled: true,
