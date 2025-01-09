@@ -1,0 +1,181 @@
+---
+publishDate: 2022-03-13T00:00:00Z
+title: 'Dagger/Hilt vs. Koin for Jetpack Compose Apps'
+excerpt: A detailed comparison of using Hilt versus Koin for dependency injection in Jetpack Compose applications.
+image: 'https://miro.medium.com/v2/resize:fit:4800/format:webp/0*_wG6vKAMYjwj3yX7'
+tags:
+  - android
+  - jetpack-compose
+  - dependency-injection
+---
+
+The eternal struggle between Dagger/Hilt and Koin. I expect a lot of arguments again in the comments about which one is better, but don't worry guys, this article was created only to show you the main differences between them. Both of them are great, so you have to choose which one you want to use on your own, but I hope I'll make this choice a little easier for you by showing you their advantages and disadvantages for Jetpack Compose apps!
+
+## Prerequisites 👋
+
+For the purposes of this article I'm gonna assume that you already know what Dependency Injection is and what are the main differences between Dagger/Hilt and Koin, for example:
+
+- Code generation vs. no code generation
+- Impact on build time vs. impact on runtime and injection time
+- And obviously Hilt is recommended and maintained by Google, while Koin is not. Of course, Google does not say that Koin is bad and to use what you think fits better to your project.
+
+Here's Manuel Vivo's opinion about Koin, for example:
+
+> Google recommends Hilt for Android apps but that's just a recommendation! Use what you think it's good for you.
+>
+> Hi! I think Koin is a great library as well. Use what you think fits better to your project.
+
+If none of this sounds familiar then you should probably stop reading for a moment and first figure out what Dependency Injection, Dagger, Hilt and Koin are before continuing.
+
+## Let's roll 🚀
+
+Okay, so now let's compare Dagger/Hilt and Koin.
+
+To best present the Pros and Cons of each of these tools, I will consider two cases where you can use Jetpack Compose to write Android Apps:
+
+1. The first case — when your app is written in pure Jetpack Compose, that is, without using Fragments, so you're probably using navigation-compose library.
+2. And the second case — when you use Fragments and ComposeView (Interoperability), which in my opinion is the best choice (at least for now), mostly because of the bad Navigation-Compose API and lack of type safety. This is quite a big and controversial topic, but hey, this is what I like the most.
+
+## Pros of using Hilt in your app 👍
+
+So what are some of the good things about Hilt?
+
+### Jetpack and Support
+First of all, Hilt is a part of Jetpack and currently, Google recommends that you use it in your Android Apps. Of course, that's not a big deal, but I must say it's really nice that Google created it, as some of you may know, using Dagger was not always as nice and enjoyable as we would like it to be — especially for programmers who were just starting to learn Dependency Injection in Android.
+
+### Easier to implement than Dagger
+Second thing, like I've just mentioned, if you were using Dagger before and you liked it, you're gonna LOVE using Hilt!
+
+- New annotations like @AndroidEntryPoint or @HiltViewModel make it much easier to manage DI code in your Android classes.
+- Creating modules is now less complicated with Generated components for Android classes like SingletonComponent, ViewModelComponent, etc.
+- And much more!
+
+### Compile-time errors 🛡️
+Dagger and Hilt are compile-time dependency injection frameworks. It means that if we accidentally forget to provide some dependency or we mess something up the build is gonna fail and our app won't run at all.
+
+Koin will behave differently in this situation. As you know Koin does not generate any code, so if we mess something up with DI the project will build anyway, but it will crash at start or later on some specific screen.
+
+The developer would have to check whether the dependencies in this specific part of the app are working well and the app does not crash. Dagger/Hilt is much safer to use in that case.
+
+### Testing 🧪
+The next big thing is Testing. For sure, writing Unit, UI, E2E, etc. tests was already possible with Dagger, BUT what we get from Hilt now is much, much more! Forget about complicated tests with Dagger. Now you have HiltAndroidRule to manage the component's state and to inject different dependencies to tests easier.
+
+```kotlin
+@HiltAndroidTest
+class SettingsActivityTest {
+  @get:Rule
+  var hiltRule = HiltAndroidRule(this)
+
+  // UI tests here.
+}
+```
+
+You can easily replace and mock dependencies or even the whole modules on the fly. Also, you can launch your Fragments (if you're using them) in a special test container launchFragmentInHiltContainer.
+
+### Process death 💀
+Securing your app against process death is also a lot easier with Hilt. You can simply inject SavedStateHandle to the ViewModel (which is just a fancy StateHandle map) to store and restore data that needs to be saved in case of process death.
+
+## Cons of using Hilt 👎
+
+Is Hilt flawless? Let's find out.
+
+### Slower build time
+As most of you probably know Hilt generates some files during build time, which means that the bigger the app and the more modules, components and dependencies you have, the longer your build time is gonna get slower.
+
+### Sometimes you have to write Dagger code
+While using Hilt is much easier than it was with Dagger, sometimes you will still need to use Dagger code in your app. If you want to create separate android modules per feature in your app then you'll have to write some of your code in an old-fashioned way with Dagger.
+
+### Limited Composable injection
+One of the major flaws for me is the fact that if you're writing a Compose only app without Fragments you can't inject dependencies into the Composables, other than ViewModels.
+
+Here are a few examples where direct injection would be useful:
+
+1. To delegate UI logic/work to other classes from Composables, so your code is more reusable and concise.
+2. To render UI differently, based on data you get from specific dependencies like AppConfig
+3. Using multiple Coil ImageLoaders in different Composables
+
+Can this problem be solved easily? Yes.
+
+As I told you before, I prefer using Compose with Fragments and this is another reason why I still use them. You can just inject dependencies inside Fragments and then pass them along to Composables.
+
+## Pros of using Koin 🌟
+
+Let's start with the Pros.
+
+### Way easier to use than Dagger and Hilt
+First of all, Koin is definitely much simpler to use and to learn than Dagger or Hilt. It can be a good choice for novice programmers that want to learn Dependency Injection.
+
+### Direct Composable injection
+Unlike Dagger or Hilt, Koin allows us to inject dependencies into Composables:
+
+```kotlin
+@Composable
+fun SomeComposable(myService: MyService = get()) {
+   // ...
+}
+```
+
+This solves the problem I've mentioned before and is really nice to have when we don't use Fragments.
+
+### More informative error logs
+If you used Dagger or Hilt before (especially Dagger) you may have noticed that they don't give much info in the logs about errors that occur and you often have to guess and figure out what is really wrong.
+
+### No code generation
+Koin won't generate any code at all. This means that your build times will be quicker.
+
+## Cons of using Koin 🚫
+
+### Verbose dependency declarations
+Every singleton, factory, viewModel, etc. you want to inject you have to add to your modules first:
+
+```kotlin
+val appModule = module {
+   single { DogRepository(get()) } 
+   
+   factory { GetDogUseCase(get()) }
+   viewModel {
+      DogDetailsViewModel(get())
+   }
+}
+```
+
+So if you have a lot of arguments in your dependencies your modules could end up like this:
+
+```kotlin
+val appModule = module {
+   single { 
+      DogRepository(get(), get(), get(), get(), get())
+   } 
+   
+   factory { 
+      GetDogUseCase(
+         repo = get()
+         cacheRepo = get(),
+         service = get(),
+         somethingElse = get()
+      ) 
+   }
+   viewModel {
+      DogDetailsViewModel(
+         imagine = get(),
+         a = get(),
+         lot = get(),
+         of = get(),
+         dependencies = get(),
+         here = get()
+      )
+   }
+}
+```
+
+### SavedStateHandle issues
+Currently, it's not possible to inject SavedStateHandle to your ViewModels if you don't use Fragments and inject your view models straight to the Composables. If you try to do that you'll get an error. This should be fixed soon, but it is something you have to consider if you want to preserve screen state in case of process death.
+
+### Impact on runtime performance 📊
+As I mentioned before Dagger/Hilt has a significant impact on build time due to code generation. On the other hand, Koin also affects time, but not build, but runtime. Koin has slightly worse runtime performance, because it resolves dependencies at runtime.
+
+## Summary 🎯
+
+So which DI should you choose to use? You have to decide for yourself. I must admit I'm not a huge fan of Dagger (sorry Dagger lovers), but I would still recommend learning it.
+
+At the end of the day, it's not about which one is better but which one allows you to write clean code that is easy to test and maintain. I used all of them (Dagger, Hilt, Koin) in a few projects before and I think all of them (especially Hilt and Koin) match this criterion.

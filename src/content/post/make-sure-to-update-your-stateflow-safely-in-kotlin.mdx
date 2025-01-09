@@ -9,8 +9,6 @@ tags:
   - flow
 ---
 
-import CallToAction from '~/components/widgets/CallToAction.astro';
-
 Recently a new version of Kotlin Coroutines library was released with a few new extensions functions to help you with StateFlow updates. It all started with this issue:
 
 https://github.com/Kotlin/kotlinx.coroutines/issues/2720
@@ -54,17 +52,6 @@ Simple, right? But you have to be careful…
 So what’s the problem? While the code is very simple, there is something you have to be aware of - **concurrency**.
 
 If between the time copy function completes and the StateFlow’s new value is emitted another thread tries to update the StateFlow — by using copy and updating one of the properties that the current copy isn’t modifying —we could end up with results we were not expecting.
-
-<CallToAction
-    actions={[{
-      variant: "primary",
-      text: 'Join for free! 🚀',
-      href: 'https://mobiledevnews.com',
-      target: '_blank',
-    }]}
-    title="Stay updated with Android 📱"
-    subtitle="Join the newsletter and receive more content like this regularly in your inbox 📬"
-  />
 
 ## The solution
 
