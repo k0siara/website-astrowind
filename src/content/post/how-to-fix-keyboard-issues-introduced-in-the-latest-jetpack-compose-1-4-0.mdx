@@ -8,8 +8,6 @@ tags:
   - jetpack-compose
 ---
 
-import CallToAction from '~/components/widgets/CallToAction.astro';
-
 Recently (March 22, 2023) Google released a new Jetpack Compose stable version 1.4.0. Our team got excited and wanted to try it out, so we found some time to migrate a few days later. At first, everything was working fine. It seemed like we could just bump the version and prepare the PR for review.
 
 A few tests later we found out that the keyboard is not working at all in Dialog Fragments with ComposeView, so basically 20% of our app was broken (all `DialogFragments` and `BottomSheetDialogFragments`).

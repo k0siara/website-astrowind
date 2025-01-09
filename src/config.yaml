@@ -65,7 +65,7 @@ analytics:
       id: "G-1ZTBD17JSC"
 
 ui:
-  theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
+  theme: 'dark:only' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
 
   tokens:
     default:

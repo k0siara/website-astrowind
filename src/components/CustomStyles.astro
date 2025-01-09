@@ -25,19 +25,28 @@ import '@fontsource-variable/inter';
     --aw-font-serif: var(--aw-font-sans);
     --aw-font-heading: var(--aw-font-sans);
 
-    --aw-color-primary: rgb(1 97 239);
-    --aw-color-secondary: rgb(1 84 207);
-    --aw-color-accent: rgb(109 40 217);
+    /* Brand colors from the image - refined */
+    --brand-teal: rgb(13, 46, 61);      /* Darker teal background */
+    --brand-green: rgb(0, 210, 127);    /* Main green accent from "architecture" */
+    --brand-green-dark: rgb(0, 190, 115);
+    --brand-green-light: rgb(72, 230, 156);
 
-    --aw-color-text-heading: rgb(0 0 0); 
+    /* Light theme */
+    --aw-color-primary: var(--brand-green);
+    --aw-color-secondary: var(--brand-green-dark);
+    --aw-color-accent: var(--brand-green-light);
+
+    --aw-color-text-heading: var(--brand-teal);
     --aw-color-text-default: rgb(16 16 16);
     --aw-color-text-muted: rgb(16 16 16 / 66%);
     --aw-color-bg-page: rgb(255 255 255);
 
-    --aw-color-bg-page-dark: rgb(3 6 32);
+    --aw-color-bg-page-dark: var(--brand-teal);
 
-    ::selection {background-color: lavender;}
-
+    ::selection {
+      background-color: var(--brand-green);
+      color: white;
+    }
   }
 
   .dark {
@@ -45,16 +54,19 @@ import '@fontsource-variable/inter';
     --aw-font-serif: var(--aw-font-sans);
     --aw-font-heading: var(--aw-font-sans);
 
-    --aw-color-primary: rgb(1 97 239);
-    --aw-color-secondary: rgb(1 84 207);
-    --aw-color-accent: rgb(109 40 217);
+    /* Dark theme - using brand colors */
+    --aw-color-primary: var(--brand-green);
+    --aw-color-secondary: var(--brand-green-dark);
+    --aw-color-accent: var(--brand-green-light);
 
-    --aw-color-text-heading: rgb(0 0 0); 
+    --aw-color-text-heading: rgb(255 255 255);
     --aw-color-text-default: rgb(229 236 246);
     --aw-color-text-muted: rgb(229 236 246 / 66%);
     --aw-color-bg-page: var(--aw-color-bg-page-dark);
 
-    ::selection {background-color: black; color: snow}
-
+    ::selection {
+      background-color: var(--brand-green);
+      color: var(--brand-teal);
+    }
   }
 </style>
