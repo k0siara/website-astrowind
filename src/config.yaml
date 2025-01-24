@@ -9,14 +9,14 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: Patryk Kosieradzki - Doradztwo, Kursy i Szkolenia dla Mobile Developerów
+    default: Patryk Kosieradzki - Mobile Development Courses, Training & Resources
     template: '%s — Patryk Kosieradzki'
-  description: "Zobacz jak tworzyć solidne i bezpieczne aplikacje na Androida i iOS. Od solidnej architektury po bezpieczeństwo aplikacji mobilnych."
+  description: "Everything on Android & iOS Development. Master the skills and tools to build reliable, high-quality mobile apps"
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: Patryk Kosieradzki - Doradztwo, Kursy i Szkolenia dla Mobile Developerów
+    site_name: Patryk Kosieradzki - Mobile Development Courses, Training & Resources
     images:
       - url: '~/assets/images/og.png'
         width: 1200
