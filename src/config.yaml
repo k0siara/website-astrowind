@@ -13,7 +13,7 @@ metadata:
     template: '%s — Mobile Dev Newsletter'
   description: "How do you stay ahead in Mobile App Development? Get expert tips and best practices to scale, maintain, and improve your mobile apps."
   robots:
-    index: true
+    index: false
     follow: true
   openGraph:
     site_name: Mobile Dev Newsletter - Free Android & iOS Development Tips, Insights, and Resources
