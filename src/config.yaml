@@ -1,6 +1,6 @@
 site:
-  name: Patryk Kosieradzki
-  site: 'https://patrykkosieradzki.com'
+  name: Mobile Dev Newsletter
+  site: 'https://mobiledevnews.com'
   base: '/'
   trailingSlash: false
 
@@ -9,14 +9,14 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: Patryk Kosieradzki - Mobile Development Courses, Training & Resources
-    template: '%s — Patryk Kosieradzki'
-  description: "Everything on Android & iOS Development. Master the skills and tools to build reliable, high-quality mobile apps"
+    default: Mobile Dev Newsletter - Free Android & iOS Development Tips, Insights and Resources
+    template: '%s — Mobile Dev Newsletter'
+  description: "How do you stay ahead in Mobile App Development? Get expert tips and best practices to scale, maintain, and improve your mobile apps."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: Patryk Kosieradzki - Mobile Development Courses, Training & Resources
+    site_name: Mobile Dev Newsletter - Free Android & iOS Development Tips, Insights, and Resources
     images:
       - url: '~/assets/images/og.png'
         width: 1200
