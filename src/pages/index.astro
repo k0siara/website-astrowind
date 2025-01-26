@@ -5,6 +5,8 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import HeroWithNewsletter from '~/components/widgets/HeroWithNewsletter.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
 import { getPermalink } from '~/utils/permalinks';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = {
   title: 'Mobile Dev Newsletter - Free Android & iOS Development Tips, Insights, and Resources',
@@ -30,10 +32,93 @@ const metadata = {
   </Fragment>
 </HeroWithNewsletter>
 
-  <BlogLatestPosts
+<Features2
+    title="What's inside?"
+    subtitle=""
+    tagline=""
+    items={[
+      {
+        title: 'All in One Place',
+        description: "Stay updated on mobile app development related topics, all in one place. Save time with curated insights, best practices, and the latest trends. Never miss the key updates that can make a difference in your work and elevate your career.",
+        icon: 'flat-color-icons:template',
+      },
+      {
+        title: 'Best Practices and Expert Tips',
+        description:
+          "Save time by having access to best practices an useful tips at your fingertips. Discover effective strategies and techniques to optimize the performance of your apps. Learn how to seamlessly apply them in your projects and daily work.",
+        icon: 'flat-color-icons:gallery',
+      },
+      {
+        title: 'Solid App Foundation',
+        description:
+          'Discover the secrets to build apps that are scalable and easy to maintain. Explore reliable approaches and principles that form the foundation of robust app architecture.',
+        icon: 'flat-color-icons:approval',
+      },
+      {
+        title: 'Security Made Simple',
+        description:
+          "Learn how to identify and tackle vulnerabilities in mobile apps with confidence. Stay ahead of the curve with up-to-date security standards and OWASP best practices.",
+        icon: 'flat-color-icons:document',
+      },
+      {
+        title: 'News and Articles',
+        description:
+          'Every week, I’ll send you a selection of the best articles, materials, and updates directly to your inbox. No fluff—just practical insights to help you stay on top of the latest trends, system updates, and tools shaping mobile app development.',
+        icon: 'flat-color-icons:advertising',
+      },
+      {
+        title: 'Useful Libraries and Tools',
+        description: 'Unlock access to must-have libraries and tools for mobile development, alongside expert tips on how to use them effectively. Whether you’re tackling small apps or scaling up bigger projects, these resources will help you code smarter and faster.',
+        icon: 'flat-color-icons:currency-exchange',
+      }
+    ]}
+  >
+  </Features2>
+
+  <!-- <BlogLatestPosts
     id="latest"
     title="See latest articles"
     information={`Architecture, security, testing and other topics related to mobile app development`}
+  /> -->
+
+
+  <FAQs
+    title="Frequently Asked Questions"
+    subtitle="Tu znajdziesz odpowiedzi na najczęściej zadawane pytania. <br>Chcesz o coś jeszcze zapytać? <a class='underline' href='mailto:patryk@patrykkosieradzki.com'>Napisz do mnie</a> 🤝"
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'Kiedy się spotykamy?',
+        description:
+          "Webinar odbędzie się <b>11.07.2024</b> o godzinie <b>20:00.</b>",
+      },
+      {
+        title: 'Czy dostanę nagranie po spotkaniu?',
+        description:
+          "Tak! Każdy po webinarze otrzyma <b>link do nagrania z dożywotnim dostępem</b>, aby móc do niego wrócić w dowolnym momencie.",
+      },
+      {
+        title: 'Dla kogo przeznaczony jest ten Webinar?',
+        description:
+          "Webinar <b>przeznaczony jest dla wszystkich</b> programistów Androida, którzy chcą opanować solidną architekturę w swoich aplikacjach.",
+      },
+      {
+        title: 'Czy będą przykłady praktyczne?',
+        description:
+          "Tak, zobaczysz aplikację demo, która <b>pokaże praktyczne zastosowanie</b> Clean Architecture, MVVM i Jetpack Compose, przechodząc przez różne <b>warstwy aplikacji</b>, obsługę danych, logikę biznesową oraz obsługę błędów.",
+      },
+      {
+        title: 'Czy mogę zadać pytania podczas webinaru?',
+        description:
+          'Jasne! Druga godzina webinaru przeznaczona jest na <b>pytania i odpowiedzi.</b> Wszystkie zaganienia, o które zapytasz będą szczegółowo omówione. A co jeśli <b>po webinarze pojawią się dodatkowe pytania?</b> <u>Zawsze możesz zapytać na Discordzie.</u>',
+      },
+      {
+        title: 'Czy muszę mieć jakieś wcześniejsze doświadczenie z Clean Architecture?',
+        description:
+          'Nie jest to konieczne, ale podstawowa znajomość platformy Androida będzie pomocna. Webinar jest zaprojektowany tak, <b>aby każdy mógł zrozumieć i zastosować</b> przedstawione przykłady.',
+      },
+    ]}
   />
 
 </Layout>

@@ -1,13 +1,13 @@
-import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
+import { getPermalink, getBlogPermalink, getAsset, getHomePermalink } from './utils/permalinks';
 
 export const headerData = {
   links: [
     {
-      text: 'Courses',
-      href: getPermalink('/courses'),
+      text: 'Latest Issue',
+      href: getHomePermalink(),
     },
     {
-      text: 'Blog',
+      text: 'Archive',
       href: getBlogPermalink(),
     },
     {
@@ -15,22 +15,15 @@ export const headerData = {
       href: getPermalink('/about'),
     },
   ],
-  actions: [
-    { 
-      text: 'Newsletter', 
-      variant: 'primary', 
-      href: 'https://mobiledevnews.com',
-    }
-  ],
 };
 
 export const footerData = {
   links: [
-    { text: 'Privacy Policy', href: getPermalink('/privacy-policy') },
+    { text: 'Privacy Policy', href: "https://patrykkosieradzki.com/privacy-policy" },
     { text: 'Regulations', href: getPermalink('/regulations') },
   ],
   secondaryLinks: [
-    { text: 'Privacy Policy', href: getPermalink('/privacy-policy') },
+    { text: 'Privacy Policy', href: "https://patrykkosieradzki.com/privacy-policy" },
     { text: 'Regulations', href: getPermalink('/regulations') },
   ],
   socialLinks: [
@@ -42,6 +35,6 @@ export const footerData = {
     { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
   ],
   footNote: `
-  © 2024 Patryk Kosieradzki
+  Copyright © 2023–2025 <a href="https://patrykkosieradzki.com">Patryk Kosieradzki</a>. All rights reserved.
   `,
 };
