@@ -65,6 +65,8 @@ const getStaggeredDelay = (index: number) => {
                     {title}
                   </h2>
                 )}
+
+                <br>
                 
                 {testimonial && (
                   <blockquote class="flex-grow mb-6 relative">
@@ -86,7 +88,7 @@ const getStaggeredDelay = (index: number) => {
                           <Fragment set:html={image} />
                         ) : (
                           <Image
-                            class="absolute inset-0 rounded-full object-cover transform transition duration-300 group-hover:scale-110"
+                            class="absolute inset-0 rounded-full object-cover transform transition duration-300"
                             width={64}
                             height={64}
                             widths={[64, 128]}
