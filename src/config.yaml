@@ -13,7 +13,7 @@ metadata:
     template: '%s — Mobile Dev Newsletter'
   description: "How do you stay ahead in Mobile App Development? Get expert tips and best practices to scale, maintain, and improve your mobile apps."
   robots:
-    index: false
+    index: true
     follow: true
   openGraph:
     site_name: Mobile Dev Newsletter - Free Android & iOS Development Tips, Insights, and Resources
@@ -34,13 +34,13 @@ apps:
 
     post:
       isEnabled: true
-      permalink: '/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
+      permalink: '/issues/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
       robots:
         index: true
 
     list:
       isEnabled: true
-      pathname: 'blog' # Blog main path, you can change this to "articles" (/articles)
+      pathname: 'issues' # Blog main path, you can change this to "articles" (/articles)
       robots:
         index: true
 

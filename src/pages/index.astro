@@ -7,9 +7,10 @@ import Hero2 from '~/components/widgets/Hero2.astro';
 import { getPermalink } from '~/utils/permalinks';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Features2 from '~/components/widgets/Features2.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
 
 const metadata = {
-  title: 'Mobile Dev Newsletter - Free Android & iOS Development Tips, Insights, and Resources',
+  title: 'Mobile Dev Newsletter - Free Android & iOS Development Tips, Insights and Resources',
   ignoreTitleTemplate: true,
 };
 ---
@@ -17,22 +18,59 @@ const metadata = {
 <Layout metadata={metadata}>
   
  <HeroWithNewsletter
-  tagline="Master Mobile Development"
   image={{
     src: '~/assets/images/hero.png',
     alt: 'Mobile App Architecture and Security',
   }}
 >
   <Fragment slot="title">
-    Build <span class="text-primary highlight">Future-Proof Mobile Apps</span> That Lead the Market
+    <span class="text-primary highlight">Elevate your skills</span> as a Mobile App Developer
   </Fragment>
 
   <Fragment slot="subtitle">
-    Master the skills and tools to <b>build reliable, high-quality mobile apps</b>. Learn how to create scalable, maintainable, and secure applications. Gain advanced knowledge through <b>expert tips and practical examples</b>.
+    Sign up for our <b>free newsletter</b> and dive deeper into architecture, security, testing and more. <b>Get expert tips and best practices</b> to scale, maintain, and improve your mobile apps!
+<!-- 
+    Get expert tips and best practices to scale, maintain, and improve your mobile apps
+    Sign up for our free newsletter and gain expert-level knowledge on mobile app development. Dive deeper into architecture, security, testing and essential tools. Start your journey to mastering the skills that set great engineers apart!
+    Master the skills and tools to <b>build reliable, high-quality mobile apps</b>. Learn how to create scalable, maintainable, and secure applications. Gain advanced knowledge through <b>expert tips and practical examples</b>. -->
   </Fragment>
 </HeroWithNewsletter>
 
-<Features2
+<Testimonials
+    title="What others say?"
+    testimonials={[
+      {
+        testimonial: `
+I’ve known Patryk personally for a long time, but recently I had the chance to experience his expertise in mobile development. His insights into app architecture and attention to detail are invaluable. The actionable tips and practical advice he shared not only improved my project but also gave me a new perspective on writing high-quality code. His professional, approachable style makes learning from him a pleasure.`,
+        name: 'Kasia Kowalczyk',
+        job: 'Android Engineer',
+        image: {
+          src: '~/assets/images/webinar/opinie/kasia_kowalczyk.jpg',
+          alt: 'Kasia\'s photo',
+        },
+      },
+      {
+        testimonial: `I loved the way you shared your Tips & Tricks, especially the ones you’ve honed over time. These are things you can’t easily find without experience—they’ll be a foundation for me.`,
+        name: 'Paul',
+        job: 'Android Developer at dmt Software House',
+        image: {
+          src: '~/assets/images/webinar/opinie/no-profile-picture.jpg',
+          alt: 'Paul\'s photo',
+        },
+      },
+      {
+        testimonial: `Huge dose of knowledge that completely shifted my perspective on Android development. It’s clear you don’t just teach but share practical experience.`,
+        name: 'Bartłomiej Blachura',
+        job: 'Android Developer at dmt Software House',
+        image: {
+          src: '~/assets/images/webinar/opinie/bartlomiej_b.jpeg',
+          alt: 'Bart\'s photo',
+        },
+      },
+    ]}
+  />
+
+<!-- <Features2
     title="What's inside?"
     subtitle=""
     tagline=""
@@ -73,7 +111,7 @@ const metadata = {
       }
     ]}
   >
-  </Features2>
+  </Features2> -->
 
   <!-- <BlogLatestPosts
     id="latest"
@@ -82,7 +120,7 @@ const metadata = {
   /> -->
 
 
-  <FAQs
+  <!-- <FAQs
     title="Frequently Asked Questions"
     subtitle="Tu znajdziesz odpowiedzi na najczęściej zadawane pytania. <br>Chcesz o coś jeszcze zapytać? <a class='underline' href='mailto:patryk@patrykkosieradzki.com'>Napisz do mnie</a> 🤝"
     tagline="FAQs"
@@ -119,6 +157,6 @@ const metadata = {
           'Nie jest to konieczne, ale podstawowa znajomość platformy Androida będzie pomocna. Webinar jest zaprojektowany tak, <b>aby każdy mógł zrozumieć i zastosować</b> przedstawione przykłady.',
       },
     ]}
-  />
+  /> -->
 
 </Layout>

@@ -3,6 +3,7 @@ import Headline from '~/components/ui/Headline.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Button from '~/components/ui/Button.astro';
 import Image from '~/components/common/Image.astro';
+import { Icon } from 'astro-icon/components';
 import type { Testimonials } from '~/types';
 
 const {
@@ -11,66 +12,146 @@ const {
   tagline = '',
   testimonials = [],
   callToAction,
-
   id,
   isDark = false,
   classes = {},
   bg = await Astro.slots.render('bg'),
 } = Astro.props as Testimonials;
+
+const getStaggeredDelay = (index: number) => {
+  return `animate-fade-up opacity-0 animation-delay-${index * 200}`;
+};
 ---
 
-<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
-  <Headline title={title} subtitle={subtitle} tagline={tagline} />
+<WidgetWrapper 
+  id={id} 
+  isDark={isDark} 
+  containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} 
+  bg={bg}
+>
+  <div class="space-y-12">
+    <Headline 
+      title={title} 
+      subtitle={subtitle} 
+      tagline={tagline}
+      classes={{
+        container: 'mb-12 md:mb-16 text-center max-w-3xl mx-auto',
+        title: 'text-4xl md:text-5xl font-bold',
+        subtitle: 'text-xl text-gray-600 dark:text-gray-400'
+      }}
+    />
 
-  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    {
-      testimonials &&
-        testimonials.map(({ title, testimonial, name, job, image, course }) => (
-          <div class="flex h-auto">
-            <div class="flex flex-col p-4 md:p-6 rounded-md shadow-xl dark:shadow-none dark:border dark:border-slate-600">
-              {title && <h2 class="text-lg font-medium leading-6 pb-4">{title}</h2>}
-              {testimonial && (
-                <blockquote class="flex-auto">
-                  <p class="text-muted" set:html={testimonial} />
-                </blockquote>
-              )}
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      {
+        testimonials &&
+          testimonials.map(({ title, testimonial, name, job, image, course, rating = 5 }, index) => (
+            <div class={`group relative flex flex-col h-full ${getStaggeredDelay(index)}`}>
+              <div class="relative flex flex-col h-full p-6 md:p-8 bg-white dark:bg-slate-900 rounded-2xl shadow-md transform transition duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1 dark:hover:bg-slate-800">
+                <div class="flex gap-1 mb-4">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Icon
+                      name="tabler:star-filled"
+                      class={`w-5 h-5 transition-colors duration-200 ${
+                        i < rating 
+                          ? 'text-yellow-500 dark:text-yellow-400 group-hover:text-yellow-600' 
+                          : 'text-gray-200 dark:text-gray-700'
+                      }`}
+                    />
+                  ))}
+                </div>
 
-              <hr class="border-slate-200 dark:border-slate-600 my-4" />
-
-              <div class="flex items-center">
-                {image && (
-                  <div class="h-10 w-10 rounded-full border border-slate-200 dark:border-slate-600">
-                    {typeof image === 'string' ? (
-                      <Fragment set:html={image} />
-                    ) : (
-                      <Image
-                        class="h-10 w-10 rounded-full border border-slate-200 dark:border-slate-600 min-w-full min-h-full"
-                        width={40}
-                        height={40}
-                        widths={[400, 768]}
-                        layout="fixed"
-                        {...(image as any)}
-                      />
-                    )}
-                  </div>
+                {title && (
+                  <h2 class="text-xl font-bold leading-normal text-gray-900 dark:text-white mb-3 group-hover:text-primary dark:group-hover:text-primary-400 transition-colors">
+                    {title}
+                  </h2>
                 )}
                 
-                <div class="grow ml-3 rtl:ml-0 rtl:mr-3">
-                  {name && <p class="text-base font-semibold">{name}</p>}
-                  {course && <p class="text-xs font-medium mt-1">{course}</p>}
-                  {job && <p class="text-xs text-muted">{job}</p>}
+                {testimonial && (
+                  <blockquote class="flex-grow mb-6 relative">
+                    <Icon 
+                      name="tabler:quote" 
+                      class="w-8 h-8 text-primary/10 dark:text-primary/20 absolute -top-3 -left-2 group-hover:text-primary/30 transition-colors duration-300"
+                    />
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed pl-6 italic">
+                      <span set:html={testimonial} />
+                    </p>
+                  </blockquote>
+                )}
+
+                <div class="flex items-center border-t border-gray-100 dark:border-gray-800 pt-6 mt-auto">
+                  {image && (
+                    <div class="flex-shrink-0 mr-4 rtl:mr-0 rtl:ml-4">
+                      <div class="relative w-16 h-16 flex items-center justify-center overflow-hidden">
+                        {typeof image === 'string' ? (
+                          <Fragment set:html={image} />
+                        ) : (
+                          <Image
+                            class="absolute inset-0 rounded-full object-cover transform transition duration-300 group-hover:scale-110"
+                            width={64}
+                            height={64}
+                            widths={[64, 128]}
+                            layout="fixed"
+                            {...(image as any)}
+                          />
+                        )}
+                      </div>
+                    </div>
+                  )}
+                  
+                  <div class="flex flex-col">
+                    {name && (
+                      <p class="font-semibold text-gray-900 dark:text-white leading-tight group-hover:text-primary dark:group-hover:text-primary-400 transition-colors">
+                        {name}
+                      </p>
+                    )}
+                    {course && (
+                      <p class="text-sm font-medium text-primary dark:text-blue-400 mt-0.5 group-hover:text-primary-600 dark:group-hover:text-blue-300 transition-colors">
+                        {course}
+                      </p>
+                    )}
+                    {job && (
+                      <p class="text-sm text-gray-600 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-gray-300 transition-colors">
+                        {job}
+                      </p>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))
+          ))
+      }
+    </div>
+
+    {
+      callToAction && (
+        <div class="flex justify-center mx-auto w-fit mt-12 md:mt-16">
+          <Button 
+            {...callToAction}
+            class="transform transition duration-300 hover:scale-105 hover:shadow-lg"
+          />
+        </div>
+      )
     }
   </div>
-  {
-    callToAction && (
-      <div class="flex justify-center mx-auto w-fit mt-8 md:mt-12 font-medium">
-        <Button {...callToAction} />
-      </div>
-    )
-  }
 </WidgetWrapper>
+
+<style>
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.6s ease-out forwards;
+  }
+
+  .animation-delay-200 { animation-delay: 0.2s; }
+  .animation-delay-400 { animation-delay: 0.4s; }
+  .animation-delay-600 { animation-delay: 0.6s; }
+</style>
