@@ -4,7 +4,7 @@ export const headerData = {
   links: [
     {
       text: 'Latest Issue',
-      href: getHomePermalink(),
+      href: getPermalink('/issues/51'),
     },
     {
       text: 'Archive',
