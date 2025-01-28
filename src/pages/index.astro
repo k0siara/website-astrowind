@@ -8,6 +8,7 @@ import { getPermalink } from '~/utils/permalinks';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
 
 const metadata = {
   title: 'Mobile Dev Newsletter - Free Android & iOS Development Tips, Insights and Resources',
@@ -29,12 +30,51 @@ const metadata = {
 
   <Fragment slot="subtitle">
     Sign up for our <b>free newsletter</b> and dive deeper into architecture, security, testing and more. <b>Get expert tips and best practices</b> to scale, maintain, and improve your mobile apps!
-<!-- 
-    Get expert tips and best practices to scale, maintain, and improve your mobile apps
-    Sign up for our free newsletter and gain expert-level knowledge on mobile app development. Dive deeper into architecture, security, testing and essential tools. Start your journey to mastering the skills that set great engineers apart!
-    Master the skills and tools to <b>build reliable, high-quality mobile apps</b>. Learn how to create scalable, maintainable, and secure applications. Gain advanced knowledge through <b>expert tips and practical examples</b>. -->
   </Fragment>
 </HeroWithNewsletter>
+
+<Features2
+    title="What's inside?"
+    subtitle=""
+    tagline=""
+    items={[
+      {
+        title: 'All in One Place',
+        description: "Stay updated on mobile app development related topics, all in one place. Save time with curated insights, best practices, and the latest trends. Never miss the key updates that can make a difference in your work and elevate your career.",
+        icon: 'tabler:layout',
+      },
+      {
+        title: 'Best Practices and Expert Tips',
+        description:
+          "Save time by having access to best practices an useful tips at your fingertips. Discover effective strategies and techniques to optimize the performance of your apps. Learn how to seamlessly apply them in your projects and daily work.",
+        icon: 'tabler:brain',
+      },
+      {
+        title: 'Solid App Foundation',
+        description:
+          'Discover the secrets to build apps that are scalable and easy to maintain. Explore reliable approaches and principles that form the foundation of robust app architecture.',
+        icon: 'tabler:box',
+      },
+      {
+        title: 'Security Made Simple',
+        description:
+          "Learn how to identify and tackle vulnerabilities in mobile apps with confidence. Stay ahead of the curve with up-to-date security standards and OWASP best practices.",
+        icon: 'tabler:lock',
+      },
+      {
+        title: 'News and Articles',
+        description:
+          'Every week, I’ll send you a selection of the best articles, materials, and updates directly to your inbox. No fluff—just practical insights to help you stay on top of the latest trends, system updates, and tools shaping mobile app development.',
+        icon: 'tabler:news',
+      },
+      {
+        title: 'Useful Libraries and Tools',
+        description: 'Unlock access to must-have libraries and tools for mobile development, alongside expert tips on how to use them effectively. Whether you’re tackling small apps or scaling up bigger projects, these resources will help you code smarter and faster.',
+        icon: 'tabler:tools',
+      }
+    ]}
+  >
+  </Features2>
 
 <Testimonials
     title="What others say?"

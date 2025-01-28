@@ -29,7 +29,11 @@ const {
     title={title}
     subtitle={subtitle}
     tagline={tagline}
-    classes={classes?.headline}
+    classes={{
+        container: 'mb-12 md:mb-16 text-center max-w-3xl mx-auto',
+        title: 'text-4xl md:text-5xl font-bold',
+        subtitle: 'text-xl text-gray-600 dark:text-gray-400'
+      }}
   />
   <ItemGrid2
     items={items}
