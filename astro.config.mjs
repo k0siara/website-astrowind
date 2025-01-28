@@ -87,6 +87,9 @@ export default defineConfig({
   },
 
   vite: {
+    optimizeDeps: {
+      exclude: ['@resvg/resvg-js'],
+    },
     resolve: {
       alias: {
         '~': path.resolve(__dirname, './src'),

@@ -25,6 +25,10 @@
     "astro-icon": "^1.1.0",
     "limax": "4.1.0",
     "lodash.merge": "^4.6.2",
+    "puppeteer": "^24.1.1",
+    "resvg": "^1.6.4",
+    "satori": "^0.12.1",
+    "satori-html": "^0.3.2",
     "typescript-esbuild": "^0.3.10",
     "unpic": "^3.17.0"
   },
