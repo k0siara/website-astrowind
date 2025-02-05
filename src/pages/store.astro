@@ -1,0 +1,112 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+
+import FeaturesSzkolenia from '~/components/widgets/FeaturesSzkolenia.astro';
+import { getPermalink } from '~/utils/permalinks';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+
+const metadata = {
+  title: 'Store — Patryk Kosieradzki',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+
+  <FeaturesSzkolenia
+    subtitle="Level up your mobile development career with expert-curated resources!"
+    items={[
+      // {
+      //   title: 'Master Modern Architecture on Android (Webinar)',
+      //   description:
+      //     'Build robust mobile apps with Clean Architecture, MVVM, and Jetpack Compose. Learn how to structure and scale large projects efficiently through a hands-on demo app 📱',
+      //   callToAction: { 
+      //     variant: 'primary', 
+      //     text: 'Get Instant Access »', 
+      //     href: getPermalink('/store/android-architecture-webinar') 
+      //   },
+      //   image: {
+      //     src: '~/assets/images/webinar/hero.jpg',
+      //     alt: 'Android Architecture Webinar',
+      //   },
+      // },
+      {
+        title: 'Fully Structured Android Clean Architecture Codebase',
+        description:
+          'Get access to a fully structured Clean Architecture project with MVVM, Jetpack Compose, Coroutines, and best practices. Start building scalable Android apps today!',
+        callToAction: { 
+          variant: 'primary', 
+          text: 'Get the Code & Build Faster »', 
+          href: getPermalink('/store/android-architecture-repo') 
+        },
+        image: {
+          src: '~/assets/images/android_architecture_repo_hero.png',
+          alt: 'Android Architecture Webinar',
+        },
+      },
+    ]}
+  >
+  <Fragment slot="title">
+    <h1 class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200">Store</h1>
+  </Fragment>
+  </FeaturesSzkolenia>
+
+  <Testimonials
+    title="What Developers Are Saying About Our Training & Resources"
+    subtitle="See how our courses and webinars have helped Android & iOS developers level up their skills!"
+    testimonials={[
+      {
+        testimonial: `Thank you so much for the training - a huge dose of knowledge that quite significantly <b>changed my perspective on Android programming</b> and showed me how to make the code better. <br><br>It's clear that <b>you don't just teach</b>, but you also have <b>practical experience</b> in the topics you talk about.`,
+        name: 'Bartłomiej Blachura',
+        course: '3-day Android training',
+        job: 'Android Developer at dmt Software House',
+        image: {
+          src: '~/assets/images/webinar/opinie/bartlomiej_b.jpeg',
+          alt: 'Photo',
+        },
+      },
+      {
+        testimonial: `What I liked most was learning your <b>Tips & Tricks</b> (various extensions, both yours and available online) that you've developed. <br><br><b>These are things that aren't easy to find</b> without extensive experience, and they'll serve as our foundation.`,
+        name: 'Paweł',
+        course: '3-day Android training',
+        job: 'Android Developer at dmt Software House',
+        image: {
+          src: '~/assets/images/webinar/opinie/no-profile-picture.jpg',
+          alt: 'Photo',
+        },
+      },
+      {
+        testimonial: `Very interesting webinar. <b>Lots of knowledge plus a very well-explained project!</b>`,
+        name: 'Michał Bogucki',
+        job: 'Android Developer',
+        course: 'Android Architecture (WEBINAR)',
+        image: {
+          src: '~/assets/images/webinar/opinie/no-profile-picture.jpg',
+          alt: 'Photo',
+        },
+      },
+      {
+        testimonial: `<b>Good explanation of what domain is, clean architecture</b>, and the differences between UseCase and Interactor`,
+        name: 'Robert Sajdok',
+        job: 'Android Developer',
+        course: 'Android Architecture (WEBINAR)',
+        image: {
+          src: '~/assets/images/webinar/opinie/no-profile-picture.jpg',
+          alt: 'Photo',
+        },
+      },
+      {
+        testimonial: `The webinar topic was very timely because the next day I had an architectural challenge at work in a technical debt task :)`,
+        name: 'Katarzyna',
+        job: 'Android Developer',
+        course: 'Android Architecture (WEBINAR)',
+        image: {
+          src: '~/assets/images/webinar/opinie/no-profile-picture.jpg',
+          alt: 'Photo',
+        },
+      },
+    ]}
+  />
+
+</Layout>

@@ -1,7 +1,7 @@
 ---
 import WidgetWrapper from "~/components/ui/WidgetWrapper.astro";
 import Headline from "~/components/ui/Headline.astro";
-import CustomGrid from "~/components/ui/CustomGrid.astro";
+import CustomGrid2 from "~/components/ui/CustomGrid2.astro";
 import type { Features } from "~/types";
 
 const {
@@ -9,7 +9,7 @@ const {
   subtitle = await Astro.slots.render("subtitle"),
   tagline = await Astro.slots.render("tagline"),
   items = [],
-  columns = 3,
+  columns = 2,
   defaultIcon,
 
   id,
@@ -31,7 +31,7 @@ const {
     tagline={tagline}
     classes={classes?.headline}
   />
-  <CustomGrid
+  <CustomGrid2
     items={items}
     columns={columns}
     defaultIcon={defaultIcon}

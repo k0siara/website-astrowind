@@ -4,6 +4,7 @@ import HeroText from '~/components/widgets/HeroText.astro';
 import Content from '~/components/widgets/Content.astro';
 import SocialLinks from '~/components/widgets/SocialLinks.astro';
 import NewsletterMidPageForm from '~/components/ui/NewsletterMidPageForm.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
 
 const metadata = {
   title: 'About me — Patryk Kosieradzki',
@@ -89,8 +90,34 @@ const socialLinks = [
     </Fragment>
   </Content>
 
-  <NewsletterMidPageForm />
+  <!-- <Steps2
+    title="Reach out to us"
+    subtitle="Have questions? Feel free to contact us using the form below. We're here to help!"
+    callToAction={{
+      text: 'Contact us',
+      href: '/',
+    }}
+    items={[
+      {
+        title: 'Email us',
+        description: 'contact@support.com',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Call us',
+        description: '+1 (234) 567-890',
+        icon: 'tabler:headset',
+      },
+      {
+        title: 'Follow us',
+        description: '@example',
+        icon: 'tabler:brand-twitter',
+      },
+    ]}
+  /> -->
 
+  <NewsletterMidPageForm />
+  
   <div class="py-12">
     <SocialLinks 
       title="Find Me Online"

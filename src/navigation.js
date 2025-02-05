@@ -3,8 +3,8 @@ import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: 'Courses',
-      href: getPermalink('/courses'),
+      text: 'Store',
+      href: getPermalink('/store'),
     },
     {
       text: 'Blog',
@@ -17,9 +17,9 @@ export const headerData = {
   ],
   actions: [
     { 
-      text: 'Newsletter', 
+      text: 'Get Clean Android Codebase', 
       variant: 'primary', 
-      href: 'https://mobiledevnews.com',
+      href: 'https://easl.ink/kxchE',
     }
   ],
 };

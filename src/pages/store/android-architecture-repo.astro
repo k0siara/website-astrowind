@@ -1,0 +1,205 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Prices from '~/components/widgets/Pricing2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Features from '~/components/widgets/Features.astro';
+
+const metadata = {
+  title: 'Fully Structured Android Clean Architecture Codebase – Patryk Kosieradzki',
+  description: 'Get access to a fully structured Clean Architecture project with MVVM, Jetpack Compose, Coroutines, and best practices. Start building scalable Android apps today!',
+  ignoreTitleTemplate: true,
+};
+
+---
+
+<Layout metadata={metadata}>
+
+  <Hero
+    tagline="GitHub Repository"
+    title="Fully Structured <span class='text-primary highlight'>Android Clean Architecture</span> Codebase"
+    subtitle="Skip the setup and dive straight into a <b>ready-to-use Clean Architecture project</b>. Follow industry best practices with MVVM, Jetpack Compose, Coroutines, DI, and more!"
+    actions={[
+      { 
+        variant: 'primary', 
+        text: 'Get the Code Now »', 
+        href: 'https://easl.ink/kxchE' 
+      }
+    ]}
+    image={{
+      src: '~/assets/images/android_architecture_repo_hero.png',
+      alt: 'Android Clean Architecture Repository',
+    }}
+  />
+
+  <Features
+    id="features"
+    title="Why This Repository?"
+    subtitle="This is not just another GitHub project – it's a <b>real-world, production-ready codebase</b> designed for maintainability and scalability."
+    columns={2}
+    items={[
+      {
+        "title": "Fully Implemented Clean Architecture",
+        "description": "Follow the industry-standard approach with <b>clear separation of concerns</b>, making your code maintainable and scalable.",
+        "icon": "tabler:layout-dashboard"
+      },
+      {
+        "title": "Modern Android Stack",
+        "description": "Includes <b>MVVM, Jetpack Compose, Coroutines</b>, Dependency Injection, Room, Retrofit, and a modular project structure.",
+        "icon": "tabler:layers-union"
+      },
+      {
+        "title": "Custom Caching & Paging",
+        "description": "Leverage an optimized <b>caching system</b> and <b>custom paging</b> to ensure smooth data loading and proper data flow",
+        "icon": "tabler:database"
+      },
+      {
+        "title": "Component-Based ViewModels",
+        "description": "Improve scalability with <b>modular ViewModels</b> that split code into reusable components, reducing complexity and improving maintainability.",
+        "icon": "tabler:table-options"
+      },
+      {
+        "title": "Focus on Scalability",
+        "description": "Learn how to structure an Android project that can <b>grow with your team</b> without turning into unmanageable spaghetti code.",
+        "icon": "tabler:graph"
+      },
+      {
+        "title": "Optimized for Performance",
+        "description": "Designed with best practices for <b>memory management</b>, efficient API calls, and smooth UI rendering with Jetpack Compose.",
+        "icon": "tabler:gauge"
+      }
+    ]}
+  />
+  
+  <Prices
+    id="pricing"
+    title="Unlock Full Access to the Codebase"
+    subtitle="Get a <b>production-ready Clean Architecture repository</b> with best practices built-in. Save time, reduce technical debt, and accelerate development!"
+    prices={[
+      {
+        "title": "GitHub Repository",
+        "subtitle": "Fully Structured Android Clean Architecture Codebase",
+        "price": 59,
+        "period": "One-time payment",
+        "items": [
+          {
+            "description": "Lifetime access to a well-structured Clean Architecture repository."
+          },
+          {
+            "description": "Complete implementation with MVVM, Jetpack Compose, Coroutines, DI, and more."
+          },
+          {
+            "description": "Modularized project structure for scalability & maintainability."
+          },
+          {
+            "description": "Custom caching & paging to optimize performance and data flow."
+          },
+          {
+            "description": "Best practices for error handling and state management to reduce bugs."
+          }
+        ],
+        "callToAction": {
+          "target": "_blank",
+          "text": "Get Instant Access »",
+          "href": "https://easl.ink/kxchE"
+        },
+        "hasRibbon": true,
+        "ribbonTitle": "Best value!"
+      }
+    ]}
+/>
+
+  <Testimonials
+    title="What Developers Are Saying?"
+    subtitle="Trusted by Android developers worldwide. See what they say about the webinar experience, where this demo app was used!"
+    testimonials={[
+      {
+        testimonial: `Very interesting webinar. <b>Lots of knowledge plus a very well-explained project!</b>`,
+        name: 'Michał Bogucki',
+        job: 'Android Developer',
+        course: 'Android Architecture (WEBINAR)',
+        image: {
+          src: '~/assets/images/webinar/opinie/no-profile-picture.jpg',
+          alt: 'Photo',
+        },
+      },
+      {
+        testimonial: `<b>Good explanation of what domain is, clean architecture</b>, and the differences between UseCase and Interactor`,
+        name: 'Robert Sajdok',
+        job: 'Android Developer',
+        course: 'Android Architecture (WEBINAR)',
+        image: {
+          src: '~/assets/images/webinar/opinie/no-profile-picture.jpg',
+          alt: 'Photo',
+        },
+      },
+      {
+        testimonial: `The webinar topic was very timely because the next day I had an architectural challenge at work in a technical debt task :)`,
+        name: 'Kathrine',
+        job: 'Android Developer',
+        course: 'Android Architecture (WEBINAR)',
+        image: {
+          src: '~/assets/images/webinar/opinie/no-profile-picture.jpg',
+          alt: 'Photo',
+        },
+      },
+    ]}
+  />
+
+  <FAQs
+    id="faq"
+    title="FAQ"
+    subtitle="Got questions? Here are the answers to common concerns."
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'Who is this repository for?',
+        description:
+          "This repository is for Android developers who want to <b>skip the setup process</b> and dive into a <b>real-world Clean Architecture project</b>."
+      },
+      {
+        title: 'Can I use this in my own projects?',
+        description:
+          "Yes! You can use this repository as a <b>reference or starting point</b> for your own projects. However, reselling or redistributing it as-is is not allowed."
+      },
+      {
+        title: 'Will I get updates?',
+        description:
+          "Yes! The repository will be updated with <b>best practices and fixes</b> over time to ensure you stay up to date with modern Android development."
+      },
+      {
+        title: 'Is this suitable for beginners?',
+        description:
+          "Some basic knowledge of Android development is recommended. However, the <b>clear documentation</b> will help guide you through the project structure and key concepts."
+      },
+      {
+        title: 'What if I need more explanations?',
+        description:
+          "If you want <b>detailed explanations and a code walkthrough</b>, consider <b>upgrading to the full webinar</b>, where everything is explained step by step."
+      },
+      {
+        title: 'Can I get an invoice?',
+        description:
+          "Yes! After purchase, you'll receive a proper invoice that you can use for business expenses."
+      }
+    ]}
+  />
+
+  <CallToAction
+    title="Get the Code & Start Building"
+    subtitle="Accelerate your development workflow with a <b>fully structured, production-ready Android Clean Architecture template</b>."
+    actions={[
+      { 
+        variant: 'primary', 
+        text: 'Get the Code Now »', 
+        href: 'https://easl.ink/kxchE' 
+      }
+    ]}
+  />
+
+</Layout>

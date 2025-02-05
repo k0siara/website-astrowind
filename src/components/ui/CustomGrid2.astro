@@ -1,0 +1,145 @@
+---
+import { twMerge } from "tailwind-merge";
+import type { ItemGrid } from "~/types";
+import Button from "./Button.astro";
+import Image from '~/components/common/Image.astro';
+
+const {
+  items = [],
+  columns,
+  classes = {},
+} = Astro.props as ItemGrid;
+
+const {
+  container: containerClass = "",
+  panel: panelClass = "",
+  title: titleClass = "",
+  description: descriptionClass = "",
+} = classes;
+---
+
+{
+  items && (
+    <div
+      class={twMerge(
+        `grid gap-8 gap-x-12 sm:gap-y-8 ${
+          columns === 4
+            ? "lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2"
+            : columns === 3
+            ? "lg:grid-cols-3 sm:grid-cols-2"
+            : columns === 2
+            ? "sm:grid-cols-2"
+            : ""
+        }`,
+        containerClass
+      )}
+    >
+      {items.map(
+        ({
+          title,
+          description,
+          image,
+          callToAction,
+          classes: itemClasses = {},
+        }) => (
+          <div
+            class={twMerge(
+              "relative flex flex-col h-full group",
+              panelClass,
+              itemClasses?.panel
+            )}
+          >
+            {callToAction?.href ? (
+              <a 
+                href={callToAction.href}
+                class="flex flex-col h-full no-underline hover:no-underline"
+              >
+                {image && (
+                  <div class="mb-4 overflow-hidden rounded-lg aspect-video">
+                    <Image
+                      class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      widths={[400, 768]}
+                      layout="responsive"
+                      {...image}
+                    />
+                  </div>
+                )}
+
+                <div class="flex flex-col flex-grow">
+                  <div
+                    class={twMerge(
+                      "text-xl font-bold mb-2",
+                      titleClass,
+                      itemClasses?.title
+                    )}
+                  >
+                    {title}
+                  </div>
+
+                  {description && (
+                    <p
+                      class={twMerge(
+                        "text-muted flex-grow",
+                        descriptionClass,
+                        itemClasses?.description
+                      )}
+                      set:html={description}
+                    />
+                  )}
+                </div>
+              </a>
+            ) : (
+              <>
+                {image && (
+                  <div class="mb-4 overflow-hidden rounded-lg aspect-video">
+                    <Image
+                      class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      widths={[400, 768]}
+                      layout="responsive"
+                      {...image}
+                    />
+                  </div>
+                )}
+
+                <div class="flex flex-col flex-grow">
+                  <div
+                    class={twMerge(
+                      "text-xl font-bold mb-2",
+                      titleClass,
+                      itemClasses?.title
+                    )}
+                  >
+                    {title}
+                  </div>
+
+                  {description && (
+                    <p
+                      class={twMerge(
+                        "text-muted flex-grow",
+                        descriptionClass,
+                        itemClasses?.description
+                      )}
+                      set:html={description}
+                    />
+                  )}
+                </div>
+              </>
+            )}
+
+            {callToAction && (
+              <div class="mt-6 flex justify-end">
+                <Button
+                  {...callToAction}
+                  class={twMerge(
+                    "transition-transform hover:translate-x-1",
+                    itemClasses?.button
+                  )}
+                />
+              </div>
+            )}
+          </div>
+        )
+      )}
+    </div>
+  )
+}
