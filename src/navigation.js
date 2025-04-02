@@ -2,32 +2,36 @@ import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 
 export const headerData = {
   links: [
-    {
-      text: 'Store',
-      href: getPermalink('/store'),
-    },
+    // {
+    //   text: 'Store',
+    //   href: getPermalink('/store'),
+    // },
     {
       text: 'Blog',
       href: getBlogPermalink(),
     },
     {
-      text: 'About',
-      href: getPermalink('/about'),
+      text: 'O mnie',
+      href: getPermalink('/o-mnie'),
     },
+    // {
+    //   text: 'Pobierz',
+    //   href: getPermalink('/pobierz'),
+    // },
   ],
   actions: [
-    { 
-      text: 'Get Clean Android Codebase', 
-      variant: 'primary', 
-      href: 'https://easl.ink/kxchE',
-    }
+    // { 
+    //   text: 'Konsultacja', 
+    //   variant: 'primary', 
+    //   href: '#',
+    // }
   ],
 };
 
 export const footerData = {
   links: [
-    { text: 'Privacy Policy', href: getPermalink('/privacy-policy') },
-    { text: 'Regulations', href: getPermalink('/regulations') },
+    { text: 'Polityka prywatności', href: getPermalink('/polityka-prywatnosci') },
+    { text: 'Regulamin', href: getPermalink('/regulamin') },
   ],
   secondaryLinks: [
     { text: 'Privacy Policy', href: getPermalink('/privacy-policy') },
@@ -42,6 +46,6 @@ export const footerData = {
     { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
   ],
   footNote: `
-  © 2024 Patryk Kosieradzki
+  © 2025 Patryk Kosieradzki
   `,
 };
