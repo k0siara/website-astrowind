@@ -31,6 +31,10 @@ export default defineConfig({
 
   output: 'static',
 
+  redirects: {
+    "/newsletter": "https://mobiledevnews.com"
+  },
+
   integrations: [
     tailwind({
       applyBaseStyles: false,
