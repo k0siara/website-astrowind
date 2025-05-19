@@ -21,7 +21,7 @@ Przedsiębiorca na prawach konsumenta - osoba fizyczna zawierająca umowę ze Sp
 
 Sklep Internetowy - sklep internetowy Usługodawcy działający pod adresem www.patrykkosieradzki.com.
 
-Usługodawca – Patryk Marciszek-Kosieradzki. ul. Kryształowa 42/56 01-356 Warszawa NIP: 5223199811 REGON: 388507959,
+Usługodawca – Patryk Kosieradzki. ul. Kryształowa 42/56 01-356 Warszawa NIP: 5223199811 REGON: 388507959,
 
 Umowa sprzedaży – Umowa sprzedaży Produktu zawarta między Klientem, a Usługodawcą za pośrednictwem Sklepu Internetowego.
 
@@ -286,7 +286,7 @@ FORMULARZ ODSTĄPIENIA OD UMOWY
 
 (formularz ten należy wypełnić i odesłać tylko w przypadku chęci odstąpienia od umowy)
 
-Adresat: Patryk Marciszek-Kosieradzki ul. Kryształowa 42/56 01-356 Warszawa NIP: 5223199811 REGON: 388507959, patryk@patrykkosieradzki.com
+Adresat: Patryk Kosieradzki ul. Kryształowa 42/56 01-356 Warszawa NIP: 5223199811 REGON: 388507959, patryk@patrykkosieradzki.com
 
 Ja/My(*) niniejszym informuję/informujemy(*) o moim/naszym odstąpieniu od umowy sprzedaży następujących rzeczy(*) umowy dostawy następujących rzeczy(*) umowy o dzieło polegającej na wykonaniu następujących rzeczy(*)/o świadczenie następującej usługi(*) "
 

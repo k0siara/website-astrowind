@@ -1,5 +1,5 @@
 ---
-title: 'Privacy Policy'
+title: 'Polityka prywatności'
 layout: '~/layouts/MarkdownLayout.astro'
 ---
 
@@ -11,7 +11,7 @@ Niniejsza Polityka Prywatności opisuje nasze zasady i procedury dotyczące zbie
 
 Cenisz sobie swoją prywatność? Świetnie, bo my też! Prywatność osób odwiedzających naszą stronę jest dla nas kluczowa. Poniższy dokument został przygotowany z myślą o Twojej prywatności, znajdziesz w nim zasady przetwarzania danych osobowych oraz wykorzystywania plików cookies, funkcjonujące na stronie internetowej https://patrykkosieradzki.com/.
 
-Administratorem strony jest Patryk Marciszek-Kosieradzki, prowadzący działalność gospodarczą pod nazwą "Patryk Marciszek-Kosieradzki" z siedzibą w Warszawie przy ul. Kryształowa 42/56, 01-356 Warszawa, wpisanego do Centralnej Ewidencji i Informacji o Działalności Gospodarczej, NIP 5223199811, REGON 388507959.
+Administratorem strony jest Patryk Kosieradzki, prowadzący działalność gospodarczą pod nazwą "Patryk Kosieradzki" z siedzibą w Warszawie przy ul. Kryształowa 42/56, 01-356 Warszawa, wpisanego do Centralnej Ewidencji i Informacji o Działalności Gospodarczej, NIP 5223199811, REGON 388507959.
 
 W razie pytań lub wątpliwości związanych z polityką prywatności, możesz skontaktować się z nami, wysyłając wiadomość na adres patryk@patrykkosieradzki.com.
 
@@ -28,7 +28,7 @@ Jeżeli powyższe informacje nie są dla Ciebie wystarczające, poniżej znajdzi
 
 ## Dane osobowe
 
-**Administratorem** Twoich danych osobowych w rozumieniu przepisów o ochronie danych osobowych jest Patryk Marciszek-Kosieradzki, prowadzący działalność gospodarczą pod nazwą "Patryk Marciszek-Kosieradzki", z siedzibą w Warszawie przy ul. Kryształowa 42/56, 01-356 Warszawa, wpisanego do Centralnej Ewidencji i Informacji o Działalności Gospodarczej, NIP 5223199811, REGON 388507959.
+**Administratorem** Twoich danych osobowych w rozumieniu przepisów o ochronie danych osobowych jest Patryk Kosieradzki, prowadzący działalność gospodarczą pod nazwą "Patryk Kosieradzki", z siedzibą w Warszawie przy ul. Kryształowa 42/56, 01-356 Warszawa, wpisanego do Centralnej Ewidencji i Informacji o Działalności Gospodarczej, NIP 5223199811, REGON 388507959.
 
 **Cele, podstawy prawne oraz okres przetwarzania danych osobowych** wskazane są odrębnie w stosunku do każdego celu przetwarzania danych (patrz: opis poszczególnych celów przetwarzania danych osobowych poniżej).
 
