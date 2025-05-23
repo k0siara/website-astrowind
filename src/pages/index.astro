@@ -5,36 +5,288 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import HeroWithNewsletter from '~/components/widgets/HeroWithNewsletter.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
 import { getPermalink } from '~/utils/permalinks';
+import ContactUs from '~/components/widgets/Contact.astro';
+import Brands from '~/components/widgets/Brands.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Image from '~/components/common/Image.astro';
 
 const metadata = {
   title: 'Patryk Kosieradzki - Doradztwo, Kursy i Szkolenia dla Mobile Developerów',
   ignoreTitleTemplate: true,
 };
+
+const testimonials = [
+  {
+    quote: 'Dzięki wielkie za szkolenie – olbrzymia dawka wiedzy, która dość mocno wywróciła moje spojrzenie na programowanie na Androida. Wyraźnie widać, że Ty nie tylko szkolisz, ale masz też praktyczne doświadczenie.',
+    author: 'Bartłomiej Blachura',
+    role: 'Android Developer at dmt Software House',
+  },
+  {
+    quote: 'Najbardziej podobało mi się przekazanie Twoich Tips & Tricks (różnych extensions, Twoich jak i dostępnych w sieci), które wypracowałeś sobie. Są to rzeczy, które nie jest łatwo znaleźć.',
+    author: 'Paweł',
+    role: 'Android Developer at dmt Software House',
+  },
+  {
+    quote: 'Bardzo ciekawie poprowadzony webinar. Sporo wiedzy plus bardzo dobrze omówiony projekt!',
+    author: 'Michał Bogucki',
+    role: 'Android Developer',
+  },
+  {
+    quote: 'Dobrze opisane czym jest domena, czysta architektura, oraz różnice pomiędzy UseCase a Interactor.',
+    author: 'Robert Sajdok',
+    role: 'Android Developer',
+  },
+  {
+    quote: 'Temat webinaru był bardzo trafiony, bo akurat dzień później miałam w pracy architektoniczną rozkminę w tasku z długu technicznego :)',
+    author: 'Katarzyna',
+    role: 'Android Developer',
+  },
+];
 ---
 
 <Layout metadata={metadata}>
   
  <HeroWithNewsletter
   image={{
-    src: '~/assets/images/hero.png',
-    alt: 'Architektura i bezpieczeństwo aplikacji mobilnych',
+    src: '~/assets/images/patryk2.jpeg',
+    alt: 'Patryk Kosieradzki',
+    loading: 'eager',
+    width: 3000,
+    height: 3000
   }}
 >
   <Fragment slot="title">
-    Pokażę Ci jak tworzyć solidne <span class="text-primary highlight">aplikacje mobilne</span>
-    <!-- Build <span class="text-primary highlight">Future-Proof Mobile Apps</span> That Lead the Market -->
+    Twórz solidne aplikacje mobilne
   </Fragment>
 
   <Fragment slot="subtitle">
-    Zostaw swojego maila i co tydzień otrzymuj <b>konkretne treści o tworzeniu i rozwijaniu aplikacji mobilnych</b> – najlepsze praktyki, przydatne wskazówki, narzędzia, linki i tipy, które <b>pomogą Ci budować lepsze aplikacje na Androida i iOS.</b>
-    <!-- Master the skills and tools to <b>build reliable, high-quality mobile apps</b>. Learn how to create scalable, maintainable, and secure applications. Gain advanced knowledge through <b>expert tips and practical examples</b>. -->
+    Dołącz do 500+ developerów i co tydzień otrzymuj SOLIDną porcję wiedzy, wskazówki, narzędzia i praktyki, które pomogą Ci budować lepsze aplikacje mobilne – na Androida i iOS.
   </Fragment>
+
 </HeroWithNewsletter>
 
-  <!-- <BlogLatestPosts
-    id="latest"
-    title="See latest articles"
-    information={`Architecture, security, testing and other topics related to mobile app development`}
-  /> -->
 
+<Features2
+  title="Pomagam programistom i firmom tworzyć nowoczesne aplikacje mobilne"
+  subtitle="Specjalizuję się w tworzeniu aplikacji mobilnych na iOS i Androida. Bazując na wieloletnim doświadczeniu zdobytym w pracy nad komercyjnymi projektami, doskonale rozumiem, co sprawia, że aplikacje są skalowalne, dobrze zaprojektowane i skutecznie rozwijane.">
+  
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-gray-800"></div>
+  </Fragment>
+</Features2>
+
+<section id="oferta" class="py-20 bg-gray-900">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-bold text-center mb-4 text-gray-900 dark:text-white">Wybierz formę współpracy</h2>
+    <p class="text-center text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto">
+      Sprawdź, w jaki sposób mogę pomóc Tobie lub Twojemu zespołowi rozwijać aplikacje mobilne — od indywidualnego mentoringu po dedykowane szkolenia dla firm.
+    </p>
+    <div class="grid md:grid-cols-3 gap-12">
+      <div>
+        <Image
+        src="~/assets/images/dla-firm.jpg"
+        class="mb-4 rounded-xl shadow-lg object-cover h-64 w-full"
+        alt='Szkolenia dla firm'
+        loading="eager"
+        decoding="async"
+      />
+        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Dla firm i zespołów</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">Dedykowane szkolenia dla zespołów mobilnych – nowoczesne podejście, realne projekty, praktyczne know-how.</p>
+        <a href="mailto:patryk@patrykkosieradzki.com?subject=Szkolenie%20dla%20firmy" class="text-primary-600 hover:underline font-semibold">
+          Zapytaj o ofertę dla Twojego zespołu →
+        </a>
+      </div>
+      <div>
+        <Image
+          src="~/assets/images/szkolenia.jpg"
+          class="mb-4 rounded-xl shadow-lg object-cover h-64 w-full"
+          alt='Mentoring Szkolenia grupowe'
+          loading="eager"
+          decoding="async"
+        />
+        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Szkolenia i warsztaty</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">Grupowe warsztaty i szkolenia z tworzenia aplikacji mobilnych – Android i iOS, architektura, Compose, SwiftUI.</p>
+        <a href="/#oferta" class="text-primary-600 hover:underline font-semibold">Zobacz ofertę →</a>
+      </div>
+      <div>
+        <Image
+          src="~/assets/images/mentoring.jpg"
+          class="mb-4 rounded-xl shadow-lg object-cover h-64 w-full"
+          alt='Mentoring indywidualny'
+          loading="eager"
+          decoding="async"
+        />
+        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Mentoring 1:1</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">Indywidualne wsparcie w rozwoju kariery i projektów mobilnych – dostosowane do Twoich celów.</p>    
+        <div
+          class="text-primary-600 hover:underline font-semibold cursor-pointer"
+          onclick="const overlay=document.getElementById('tally-overlay'); overlay.classList.remove('pointer-events-none','opacity-0'); overlay.classList.add('opacity-100')"
+        >
+          Zgłoś się na mentoring →
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<Content
+    isImageAfterContentMobile
+    image={{
+      src: '~/assets/images/patryk3.jpeg',
+      alt: 'Patryk Kosieradzki',
+      loading: 'eager',
+      width: 2300,
+      height: 3000
+    }}
+    callToAction={{
+      text: 'Poznaj mnie lepiej',
+      href: getPermalink('/o-mnie') ,
+    }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-4">
+        Kim jestem?
+      </h2>
+
+      <p class="text-lg mb-8 text-gray-700 dark:text-gray-400">
+        Specjalizuję się w tworzeniu aplikacji mobilnych, głównie w obszarze <strong>bankowości i fintechu</strong>. W trakcie mojej kariery pracowałem nad wieloma aplikacjami finansowymi, koncentrując się m.in. na <strong>biometrycznych metodach płatności</strong> i bezpiecznych <strong>systemach autoryzacji</strong>.
+      </p>
+      
+      <p class="text-lg mb-8 text-gray-700 dark:text-gray-400">
+        Na co dzień pracuję w firmie <a href="https://www.getmoss.com/" target="_blank" style="color: inherit; text-decoration: underline;">Moss</a>, gdzie odpowiadam za rozwój aplikacji na <strong>obie platformy – iOS i Android</strong>. Konsultuję realizowane projekty z szerokiej perspektywy, łącząc wiedzę z obu ekosystemów i świadomie uwzględniając ich ograniczenia i różnice. W ramach zespołu aktywnie rozwijamy też <strong>mikroserwisy mobilne</strong> – przenosząc część logiki z aplikacji do backendu, by poprawić skalowalność, bezpieczeństwo i spójność rozwiązań.
+      </p>
+
+      <p class="text-lg text-gray-700 dark:text-gray-400">
+        Po godzinach rozwijam własne aplikacje mobilne jako niezależny twórca. Obecnie pracuję nad projektem <strong>DailyWin</strong>, który wkrótce zostanie udostępniony w wersji beta.
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-gray-800"></div>
+    </Fragment>
+  </Content>
+
+  <section id="testimonials" class="py-16" role="region" aria-label="Opinie o Współpracy">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Opinie o Współpracy</h2>
+      <div id="testimonials-container" class="overflow-hidden relative">
+        <div id="testimonials-slides" class="flex transition-transform duration-700 ease-in-out" aria-live="polite">
+          {testimonials.map((t) => (
+            <div class="min-w-full p-4">
+              <blockquote class="text-gray-800 dark:text-gray-200 mb-4 italic">„{t.quote}”</blockquote>
+              <cite class="font-semibold text-gray-900 dark:text-white block mb-1">{t.author}</cite>
+              <div class="text-sm text-gray-600 dark:text-gray-400">{t.role}</div>
+            </div>
+          ))}
+        </div>
+        <button id="prev-testimonial" aria-label="Previous testimonial" class="absolute left-2 top-1/2 transform -translate-y-1/2 p-2">‹</button>
+        <button id="next-testimonial" aria-label="Next testimonial" class="absolute right-2 top-1/2 transform -translate-y-1/2 p-2">›</button>
+        <div class="flex justify-center space-x-2 mt-4" id="testimonial-dots">
+          {testimonials.map((_, idx) => (
+            <button data-slide={idx} aria-label={`Show testimonial ${idx + 1}`} class="w-2 h-2 rounded-full bg-gray-300 dark:bg-gray-600" aria-current="false"></button>
+          ))}
+        </div>
+      </div>
+    </div>
+    <script is:inline>
+      const testimonialsData = [
+        {
+          quote: 'Dzięki wielkie za szkolenie – olbrzymia dawka wiedzy, która dość mocno wywróciła moje spojrzenie na programowanie na Androida. Wyraźnie widać, że Ty nie tylko szkolisz, ale masz też praktyczne doświadczenie.',
+          author: 'Bartłomiej Blachura',
+          role: 'Android Developer at dmt Software House',
+        },
+        {
+          quote: 'Najbardziej podobało mi się przekazanie Twoich Tips & Tricks (różnych extensions, Twoich jak i dostępnych w sieci), które wypracowałeś sobie. Są to rzeczy, które nie jest łatwo znaleźć.',
+          author: 'Paweł',
+          role: 'Android Developer at dmt Software House',
+        },
+        {
+          quote: 'Bardzo ciekawie poprowadzony webinar. Sporo wiedzy plus bardzo dobrze omówiony projekt!',
+          author: 'Michał Bogucki',
+          role: 'Android Developer',
+        },
+        {
+          quote: 'Dobrze opisane czym jest domena, czysta architektura, oraz różnice pomiędzy UseCase a Interactor.',
+          author: 'Robert Sajdok',
+          role: 'Android Developer',
+        },
+        {
+          quote: 'Temat webinaru był bardzo trafiony, bo akurat dzień później miałam w pracy architektoniczną rozkminę w tasku z długu technicznego :)',
+          author: 'Katarzyna',
+          role: 'Android Developer',
+        },
+      ];
+  
+      let currentIndex = 0;
+      const slides = document.getElementById('testimonials-slides');
+      const dots = document.querySelectorAll('#testimonial-dots button');
+      function showSlide(index) {
+        currentIndex = index;
+        slides.style.transform = `translateX(-${index * 100}%)`;
+        dots.forEach((dot, i) => {
+          const isActive = i === index;
+          dot.setAttribute('aria-current', isActive ? 'true' : 'false');
+          // light mode
+          dot.classList.toggle('bg-gray-900', isActive);
+          dot.classList.toggle('bg-gray-300', !isActive);
+          // dark mode
+          dot.classList.toggle('dark:bg-gray-200', isActive);
+          dot.classList.toggle('dark:bg-gray-600', !isActive);
+        });
+      }
+      document.getElementById('prev-testimonial').addEventListener('click', () => showSlide((currentIndex - 1 + testimonialsData.length) % testimonialsData.length));
+      document.getElementById('next-testimonial').addEventListener('click', () => showSlide((currentIndex + 1) % testimonialsData.length));
+      document.getElementById('testimonial-dots').addEventListener('click', (e) => {
+        if (e.target.matches('button')) {
+          showSlide(Number(e.target.dataset.slide));
+        }
+      });
+      let interval = setInterval(() => showSlide((currentIndex + 1) % testimonialsData.length), 5000);
+      const container = document.getElementById('testimonials-container');
+      container.addEventListener('mouseenter', () => clearInterval(interval));
+      container.addEventListener('mouseleave', () => interval = setInterval(() => showSlide((currentIndex + 1) % testimonialsData.length), 5000));
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') document.getElementById('prev-testimonial').click();
+        if (e.key === 'ArrowRight') document.getElementById('next-testimonial').click();
+      });
+      showSlide(0);
+    </script>
+  
+    <style>
+      @media (prefers-reduced-motion: reduce) {
+        #testimonials-slides {
+          transition: none !important;
+        }
+      }
+    </style>
+  </section>
+  
+  <div
+    id="tally-overlay"
+    class="fixed inset-0 bg-white z-50 flex items-center justify-center transition-opacity duration-300 opacity-0 pointer-events-none"
+  >
+    <div class="w-full h-full relative">
+      <button
+        onclick="const overlay=document.getElementById('tally-overlay'); overlay.classList.remove('opacity-100'); overlay.classList.add('opacity-0','pointer-events-none')"
+        class="absolute top-4 right-4 text-black text-2xl z-50"
+        aria-label="Zamknij formularz"
+      >
+        ×
+      </button>
+      <iframe
+        src="https://tally.so/r/w75yd9?transparentBackground=1"
+        frameborder="0"
+        width="100%"
+        height="100%"
+        class="w-full h-full"
+        title="Formularz mentoringowy"
+      ></iframe>
+    </div>
+  </div>
+<style>
+  #tally-overlay.opacity-100 {
+    opacity: 1 !important;
+  }
+</style>
 </Layout>
+<script async src="https://tally.so/widgets/embed.js"></script>
