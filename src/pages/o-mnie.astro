@@ -4,6 +4,8 @@ import HeroText from '~/components/widgets/HeroText.astro';
 import Content from '~/components/widgets/Content.astro';
 import SocialLinks from '~/components/widgets/SocialLinks.astro';
 import NewsletterMidPageForm from '~/components/ui/NewsletterMidPageForm.astro';
+import Image from '~/components/common/Image.astro';
+import { getPermalink } from '~/utils/permalinks';
 import Steps2 from '~/components/widgets/Steps2.astro';
 
 const metadata = {
@@ -56,74 +58,45 @@ const socialLinks = [
 ---
 
 <Layout metadata={metadata}>
+
   <HeroText
     title="O mnie"
+    subtitle="Cześć, poznajmy się lepiej 👋"
   />
-
-  <Content
-    isReversed
-    isImageAfterContentMobile
-    image={{
-      src: '~/assets/images/patryk3.jpeg',
-      alt: 'Patryk Kosieradzki',
-      loading: 'eager',
-      width: 2300,
-      height: 3000
-    }}
-  >
-    <Fragment slot="content">
-      <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-4">
-        Patryk Kosieradzki
-        <span class="block text-lg font-medium mt-1">Android & iOS Engineer</span>
-      </h2>
-
-      <p class="text-lg mb-8 text-gray-700 dark:text-gray-400">
-        Specjalizuję się w tworzeniu aplikacji mobilnych, głównie w obszarze <strong>bankowości i fintechu</strong>. W trakcie mojej kariery pracowałem nad wieloma aplikacjami finansowymi, koncentrując się m.in. na <strong>biometrycznych metodach płatności</strong> i bezpiecznych <strong>systemach autoryzacji</strong>.
-      </p>
+  
+  <section class="relative">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-12">
       
-      <p class="text-lg mb-8 text-gray-700 dark:text-gray-400">
-        Na co dzień pracuję w firmie <a href="https://www.getmoss.com/" target="_blank" style="color: inherit; text-decoration: underline;">Moss</a>, gdzie odpowiadam za rozwój aplikacji na <strong>obie platformy – iOS i Android</strong>. Konsultuję realizowane projekty z szerokiej perspektywy, łącząc wiedzę z obu ekosystemów i świadomie uwzględniając ich ograniczenia i różnice. W ramach zespołu aktywnie rozwijamy też <strong>mikroserwisy mobilne</strong> – przenosząc część logiki z aplikacji do backendu, by poprawić skalowalność, bezpieczeństwo i spójność rozwiązań.
-      </p>
+      <div class="w-full lg:w-1/2 order-1 lg:order-2">
+        <Image
+          src="~/assets/images/patryk3.jpeg"
+          alt="Patryk Kosieradzki"
+          loading="eager"
+          width={2300}
+          height={3000}
+          class="rounded-xl shadow-lg object-cover w-full h-auto"
+        />
+      </div>
 
-      <p class="text-lg text-gray-700 dark:text-gray-400">
-        Po godzinach rozwijam własne aplikacje mobilne jako niezależny twórca. Obecnie pracuję nad projektem <strong>DailyWin</strong>, który wkrótce zostanie udostępniony w wersji beta.
-      </p>
-    </Fragment>
-  </Content>
+      <div class="w-full lg:w-1/2 text-gray-300 order-2 lg:order-1">
+        <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl mb-6">
+          Patryk Kosieradzki
+          <span class="block text-lg font-medium mt-1">Senior Mobile Engineer (Android & iOS)</span>
+        </h2>
+        <p class="text-lg mb-4">
+          Specjalizuję się w tworzeniu aplikacji mobilnych, głównie w obszarze <strong>bankowości i fintechu</strong>. Pracowałem nad wieloma aplikacjami finansowymi, koncentrując się m.in. na <strong>biometrycznych metodach płatności</strong> i bezpiecznych <strong>systemach autoryzacji</strong>.
+        </p>
+        <p class="text-lg mb-4">
+          Na co dzień pracuję w <a href="https://www.getmoss.com/" target="_blank" class="underline text-primary-400">Moss</a>, gdzie odpowiadam za rozwój aplikacji na <strong>obie platformy – iOS i Android</strong>. Konsultuję realizowane projekty z szerokiej perspektywy, łącząc wiedzę z obu ekosystemów. Rozwijamy też <strong>mikroserwisy mobilne</strong>, by zwiększyć skalowalność i bezpieczeństwo aplikacji.
+        </p>
+        <p class="text-lg mb-6">
+          Po godzinach rozwijam własne projekty jako niezależny twórca. Obecnie pracuję nad aplikacją <strong>DailyWin</strong>, która wkrótce pojawi się w wersji beta.
+        </p>
+      </div>
 
-  <!-- <Steps2
-    title="Reach out to us"
-    subtitle="Have questions? Feel free to contact us using the form below. We're here to help!"
-    callToAction={{
-      text: 'Contact us',
-      href: '/',
-    }}
-    items={[
-      {
-        title: 'Email us',
-        description: 'contact@support.com',
-        icon: 'tabler:mail',
-      },
-      {
-        title: 'Call us',
-        description: '+1 (234) 567-890',
-        icon: 'tabler:headset',
-      },
-      {
-        title: 'Follow us',
-        description: '@example',
-        icon: 'tabler:brand-twitter',
-      },
-    ]}
-  /> -->
+    </div>
+  </section>
 
   <NewsletterMidPageForm />
   
-  <!-- <div class="py-12">
-    <SocialLinks 
-      title="Find Me Online"
-      subtitle="Connect with me on various platforms"
-      links={socialLinks} 
-    />
-  </div> -->
 </Layout>
