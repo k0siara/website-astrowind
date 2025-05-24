@@ -88,11 +88,11 @@ const testimonials = [
   subtitle="Specjalizuję się w tworzeniu aplikacji mobilnych na iOS i Androida. Bazując na wieloletnim doświadczeniu zdobytym w pracy nad komercyjnymi projektami, doskonale rozumiem, co sprawia, że aplikacje są skalowalne, dobrze zaprojektowane i skutecznie rozwijane.">
   
   <Fragment slot="bg">
-    <div class="absolute inset-0 bg-gray-800 pointer-events-none"></div>
+    <div class="absolute inset-0 bg-[#112F42] pointer-events-none"></div>
   </Fragment>
 </Features2>
 
-<section id="oferta" class="py-20 bg-gray-900">
+<section id="oferta" class="py-20 bg-[#0F2A3C]">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <h2 class="text-3xl font-bold text-center mb-4 text-gray-900 dark:text-white">Wybierz formę współpracy</h2>
     <p class="text-center text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto">
@@ -146,44 +146,40 @@ const testimonials = [
   </div>
 </section>
 
-<Content
-    isImageAfterContentMobile
-    image={{
-      src: '~/assets/images/patryk3.jpeg',
-      alt: 'Patryk Kosieradzki',
-      loading: 'eager',
-      width: 2300,
-      height: 3000
-    }}
-    callToAction={{
-      text: 'Poznaj mnie lepiej',
-      href: getPermalink('/o-mnie') ,
-    }}
-  >
-    <Fragment slot="content">
-      <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-4">
+<section class="relative py-20 bg-[#0D2533]">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-12">
+    <div class="w-full lg:w-1/2">
+      <Image
+        src="~/assets/images/patryk3.jpeg"
+        alt="Patryk Kosieradzki"
+        loading="eager"
+        width={2300}
+        height={3000}
+        class="rounded-xl shadow-lg object-cover w-full h-auto"
+      />
+    </div>
+    <div class="w-full lg:w-1/2 text-gray-300">
+      <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl mb-6">
         Kim jestem?
       </h2>
-
-      <p class="text-lg mb-8 text-gray-700 dark:text-gray-400">
-        Specjalizuję się w tworzeniu aplikacji mobilnych, głównie w obszarze <strong>bankowości i fintechu</strong>. W trakcie mojej kariery pracowałem nad wieloma aplikacjami finansowymi, koncentrując się m.in. na <strong>biometrycznych metodach płatności</strong> i bezpiecznych <strong>systemach autoryzacji</strong>.
+      <p class="text-lg mb-4">
+        Specjalizuję się w tworzeniu aplikacji mobilnych, głównie w obszarze <strong>bankowości i fintechu</strong>. Pracowałem nad wieloma aplikacjami finansowymi, koncentrując się m.in. na <strong>biometrycznych metodach płatności</strong> i bezpiecznych <strong>systemach autoryzacji</strong>.
       </p>
-      
-      <p class="text-lg mb-8 text-gray-700 dark:text-gray-400">
-        Na co dzień pracuję w firmie <a href="https://www.getmoss.com/" target="_blank" style="color: inherit; text-decoration: underline;">Moss</a>, gdzie odpowiadam za rozwój aplikacji na <strong>obie platformy – iOS i Android</strong>. Konsultuję realizowane projekty z szerokiej perspektywy, łącząc wiedzę z obu ekosystemów i świadomie uwzględniając ich ograniczenia i różnice. W ramach zespołu aktywnie rozwijamy też <strong>mikroserwisy mobilne</strong> – przenosząc część logiki z aplikacji do backendu, by poprawić skalowalność, bezpieczeństwo i spójność rozwiązań.
+      <p class="text-lg mb-4">
+        Na co dzień pracuję w <a href="https://www.getmoss.com/" target="_blank" class="underline text-primary-400">Moss</a>, gdzie odpowiadam za rozwój aplikacji na <strong>obie platformy – iOS i Android</strong>. Konsultuję realizowane projekty z szerokiej perspektywy, łącząc wiedzę z obu ekosystemów. Rozwijamy też <strong>mikroserwisy mobilne</strong>, by zwiększyć skalowalność i bezpieczeństwo aplikacji.
       </p>
-
-      <p class="text-lg text-gray-700 dark:text-gray-400">
-        Po godzinach rozwijam własne aplikacje mobilne jako niezależny twórca. Obecnie pracuję nad projektem <strong>DailyWin</strong>, który wkrótce zostanie udostępniony w wersji beta.
+      <p class="text-lg mb-6">
+        Po godzinach rozwijam własne projekty jako niezależny twórca. Obecnie pracuję nad aplikacją <strong>DailyWin</strong>, która wkrótce pojawi się w wersji beta.
       </p>
-    </Fragment>
+      <a href={getPermalink('/o-mnie')} class="inline-flex items-center px-6 py-3 border border-primary-600 text-primary-600 text-base font-medium rounded-md hover:bg-primary-600 hover:text-white transition">
+        Poznaj mnie lepiej
+        <svg class="ml-2 h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0L17 8.586a1 1 0 010 1.414l-5.293 5.293a1 1 0 01-1.414-1.414L13.586 10H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
 
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-gray-800 pointer-events-none"></div>
-    </Fragment>
-  </Content>
-
-  <section id="testimonials" class="py-16" role="region" aria-label="Opinie o Współpracy">
+  <section id="testimonials" class="py-16 bg-[#112F42]" role="region" aria-label="Opinie o Współpracy">
     <div class="max-w-3xl mx-auto px-4 text-center">
       <h2 class="text-3xl font-bold text-center mb-4 text-gray-900 dark:text-white">Zaufali mi developerzy, zespoły i firmy</h2>
       <p class="text-center text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto">
