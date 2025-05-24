@@ -1,60 +1,14 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
-import Content from '~/components/widgets/Content.astro';
-import SocialLinks from '~/components/widgets/SocialLinks.astro';
 import NewsletterMidPageForm from '~/components/ui/NewsletterMidPageForm.astro';
 import Image from '~/components/common/Image.astro';
 import { getPermalink } from '~/utils/permalinks';
-import Steps2 from '~/components/widgets/Steps2.astro';
 
 const metadata = {
   title: 'O mnie — Patryk Kosieradzki',
   ignoreTitleTemplate: true,
 };
-
-const socialLinks = [
-  {
-    icon: 'tabler:brand-linkedin',
-    title: 'LinkedIn',
-    description: 'Connect with me professionally',
-    callToAction: {
-      target: '_blank',
-      text: 'Follow me',
-      href: 'https://www.linkedin.com/in/patrykkosieradzki/',
-    },
-  },
-  {
-    icon: 'tabler:brand-twitter',
-    title: 'Twitter',
-    description: 'Latest updates and thoughts',
-    callToAction: {
-      target: '_blank',
-      text: 'Follow me',
-      href: 'https://www.twitter.com/p_kosieradzki',
-    },
-  },
-  {
-    icon: 'tabler:microphone',
-    title: 'Podcast',
-    description: 'Listen to Android Talks',
-    callToAction: {
-      target: '_blank',
-      text: 'Listen now',
-      href: 'https://androidtalks.com',
-    },
-  },
-  {
-    icon: 'tabler:circles-relation',
-    title: 'More Links',
-    description: 'Find all my other profiles',
-    callToAction: {
-      target: '_blank',
-      text: 'View all',
-      href: 'https://bio.link/patrykkosieradzki',
-    },
-  },
-];
 ---
 
 <Layout metadata={metadata}>
@@ -96,7 +50,74 @@ const socialLinks = [
 
     </div>
   </section>
-
-  <NewsletterMidPageForm />
   
+  <section class="text-white py-20 px-6 sm:px-12">
+    <div class="max-w-6xl mx-auto text-center mb-12">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Jak inni oceniają współpracę ze mną?</h2>
+      <p class="text-lg text-slate-300">Prawdziwe opinie od osób, które brały udział w mentoringu, szkoleniach lub konsultacjach. Tak wygląda realna wartość współpracy 👇</p>
+    </div>
+    <div id="testimonial-wrapper" class="max-h-[1300px] overflow-hidden transition-all duration-500 ease-in-out">
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+        <div class="bg-slate-800 p-6 rounded-lg shadow-md flex flex-col animate-fadeIn">
+          <p class="text-slate-100 italic mb-4 border-l-4 border-primary-500 pl-4 text-left">“Dzięki wielkie za szkolenie – olbrzymia dawka wiedzy, która dość mocno wywróciła moje spojrzenie na programowanie na Androida. Wyraźnie widać, że Ty nie tylko szkolisz, ale masz też praktyczne doświadczenie.”</p>
+          <div class="mt-auto text-sm text-slate-400">
+            <div>Bartłomiej Blachura</div>
+            <div>Android Developer at dmt Software House • 3 dniowe szkolenie dla firm</div>
+          </div>
+        </div>
+        <div class="bg-slate-800 p-6 rounded-lg shadow-md flex flex-col animate-fadeIn">
+          <p class="text-slate-100 italic mb-4 border-l-4 border-primary-500 pl-4 text-left">“Poprosiłam Patryka o review aplikacji, którą chciałam wykorzystać podczas procesu rekrutacyjnego, i dostałam wiele cennych rad i uwag. Patryk poświęcił czas na szczegółowy call ze mną, w trakcie którego krok po kroku wyjaśnił, jak mogę poprawić architekturę mojego projektu i dodał kilka “smaczków” dotyczących tego, na co zwrócić uwagę, aby zrobić naprawdę dobre wrażenie kodem. Jego wskazówki były nieocenione i znacząco przyczyniły się do podniesienia jakości mojej aplikacji. Ponadto wprowadzał bardzo miłą atmosferę i wykazał się pełnym profesjonalizmem oraz zaangażowaniem!”</p>
+          <div class="mt-auto text-sm text-slate-400">
+            <div>Kasia Kowalczyk</div>
+            <div>Android Engineer • Konsultacja</div>
+          </div>
+        </div>
+        <div class="bg-slate-800 p-6 rounded-lg shadow-md flex flex-col animate-fadeIn">
+          <p class="text-slate-100 italic mb-4 border-l-4 border-primary-500 pl-4 text-left">“Miałem okazję współpracować z Patrykiem i mimo że nie było to długie mentorstwo, to mega mi pomogło na starcie. Zależało mi na tym, żeby nie tylko wejść w najnowsze technologie, ale też dobrze ogarnąć starsze rozwiązania jak UIKit i inne, żeby lepiej zrozumieć cały ekosystem iOS. Patryk świetnie pokazał mi, jak się za to zabrać, wskazał konkretne ścieżki i dał sporo praktycznych wskazówek, które od razu mogłem wdrożyć. Dzięki temu teraz samodzielnie rozwijam się w iOS development i wiem, na czym się skupić. Jeśli ktoś chce konkretną i rzeczową pomoc na starcie, to zdecydowanie polecam!”</p>
+          <div class="mt-auto text-sm text-slate-400">
+            <div>Mateusz Koza</div>
+            <div>Aspirujący iOS Developer • Mentoring 1:1</div>
+          </div>
+        </div>
+        <div class="bg-slate-800 p-6 rounded-lg shadow-md flex flex-col animate-fadeIn">
+          <p class="text-slate-100 italic mb-4 border-l-4 border-primary-500 pl-4 text-left">“Najbardziej podobało mi się przekazanie Twoich Tips & Tricks (różnych extensions, Twoich jak i dostępnych w sieci), które wypracowałeś sobie. Są to rzeczy, które nie jest łatwo znaleźć.”</p>
+          <div class="mt-auto text-sm text-slate-400">
+            <div>Paweł</div>
+            <div>Android Developer at dmt Software House • 3 dniowe szkolenie dla firm</div>
+          </div>
+        </div>
+        <div class="bg-slate-800 p-6 rounded-lg shadow-md flex flex-col animate-fadeIn">
+          <p class="text-slate-100 italic mb-4 border-l-4 border-primary-500 pl-4 text-left">“Bardzo ciekawie poprowadzony webinar. Sporo wiedzy plus bardzo dobrze omówiony projekt!”</p>
+          <div class="mt-auto text-sm text-slate-400">
+            <div>Michał Bogucki</div>
+            <div>Android Developer • Webinar Architektura na Androidzie</div>
+          </div>
+        </div>
+        <div class="bg-slate-800 p-6 rounded-lg shadow-md flex flex-col animate-fadeIn">
+          <p class="text-slate-100 italic mb-4 border-l-4 border-primary-500 pl-4 text-left">“Dobrze opisane czym jest domena, czysta architektura, oraz różnice pomiędzy UseCase a Interactor.”</p>
+          <div class="mt-auto text-sm text-slate-400">
+            <div>Robert Sajdok</div>
+            <div>Android Developer • Webinar Architektura na Androidzie</div>
+          </div>
+        </div>
+        <div class="bg-slate-800 p-6 rounded-lg shadow-md flex flex-col sm:col-span-2 lg:col-span-1 animate-fadeIn">
+          <p class="text-slate-100 italic mb-4 border-l-4 border-primary-500 pl-4 text-left">“Temat webinaru był bardzo trafiony, bo akurat dzień później miałam w pracy architektoniczną rozkminę w tasku z długu technicznego :)”</p>
+          <div class="mt-auto text-sm text-slate-400">
+            <div>Katarzyna</div>
+            <div>Android Developer • Webinar Architektura na Androidzie</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-8">
+      <button
+        id="showMoreBtn"
+        class="inline-block bg-slate-700 hover:bg-slate-600 transition text-white font-semibold py-3 px-6 rounded-md"
+        onclick="document.getElementById('testimonial-wrapper').classList.remove('max-h-[1300px]'); this.style.display='none';"
+      >
+        Pokaż więcej opinii
+      </button>
+    </div>
+  </section>
+
 </Layout>
