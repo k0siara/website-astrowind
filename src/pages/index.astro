@@ -16,31 +16,48 @@ const metadata = {
 };
 
 const testimonials = [
-  {
-    quote: 'Dzięki wielkie za szkolenie – olbrzymia dawka wiedzy, która dość mocno wywróciła moje spojrzenie na programowanie na Androida. Wyraźnie widać, że Ty nie tylko szkolisz, ale masz też praktyczne doświadczenie.',
-    author: 'Bartłomiej Blachura',
-    role: 'Android Developer at dmt Software House',
-  },
-  {
-    quote: 'Najbardziej podobało mi się przekazanie Twoich Tips & Tricks (różnych extensions, Twoich jak i dostępnych w sieci), które wypracowałeś sobie. Są to rzeczy, które nie jest łatwo znaleźć.',
-    author: 'Paweł',
-    role: 'Android Developer at dmt Software House',
-  },
-  {
-    quote: 'Bardzo ciekawie poprowadzony webinar. Sporo wiedzy plus bardzo dobrze omówiony projekt!',
-    author: 'Michał Bogucki',
-    role: 'Android Developer',
-  },
-  {
-    quote: 'Dobrze opisane czym jest domena, czysta architektura, oraz różnice pomiędzy UseCase a Interactor.',
-    author: 'Robert Sajdok',
-    role: 'Android Developer',
-  },
-  {
-    quote: 'Temat webinaru był bardzo trafiony, bo akurat dzień później miałam w pracy architektoniczną rozkminę w tasku z długu technicznego :)',
-    author: 'Katarzyna',
-    role: 'Android Developer',
-  },
+{
+          quote: 'Dzięki wielkie za szkolenie – olbrzymia dawka wiedzy, która dość mocno wywróciła moje spojrzenie na programowanie na Androida. Wyraźnie widać, że Ty nie tylko szkolisz, ale masz też praktyczne doświadczenie.',
+          author: 'Bartłomiej Blachura',
+          role: 'Android Developer at dmt Software House',
+          source: '3 dniowe szkolenie dla firm',
+        },
+        {
+          quote: 'Poprosiłam Patryka o review aplikacji, którą chciałam wykorzystać podczas procesu rekrutacyjnego, i dostałam wiele cennych rad i uwag. Patryk poświęcił czas na szczegółowy call ze mną, w trakcie którego krok po kroku wyjaśnił, jak mogę poprawić architekturę mojego projektu i dodał kilka “smaczków” dotyczących tego, na co zwrócić uwagę, aby zrobić naprawdę dobre wrażenie kodem. Jego wskazówki były nieocenione i znacząco przyczyniły się do podniesienia jakości mojej aplikacji. Ponadto wprowadzał bardzo miłą atmosferę i wykazał się pełnym profesjonalizmem oraz zaangażowaniem!',
+          author: 'Kasia Kowalczyk',
+          role: 'Android Engineer',
+          source: 'Konsultacja',
+        },
+        {
+          quote: 'Miałem okazję współpracować z Patrykiem i mimo że nie było to długie mentorstwo, to mega mi pomogło na starcie. Zależało mi na tym, żeby nie tylko wejść w najnowsze technologie, ale też dobrze ogarnąć starsze rozwiązania jak UIKit i inne, żeby lepiej zrozumieć cały ekosystem iOS. Patryk świetnie pokazał mi, jak się za to zabrać, wskazał konkretne ścieżki i dał sporo praktycznych wskazówek, które od razu mogłem wdrożyć. Dzięki temu teraz samodzielnie rozwijam się w iOS development i wiem, na czym się skupić. Jeśli ktoś chce konkretną i rzeczową pomoc na starcie, to zdecydowanie polecam!',
+          author: 'Mateusz Koza',
+          role: 'Aspirujący iOS Developer',
+          source: 'Mentoring 1:1',
+        },
+        {
+          quote: 'Najbardziej podobało mi się przekazanie Twoich Tips & Tricks (różnych extensions, Twoich jak i dostępnych w sieci), które wypracowałeś sobie. Są to rzeczy, które nie jest łatwo znaleźć.',
+          author: 'Paweł',
+          role: 'Android Developer at dmt Software House',
+          source: '3 dniowe szkolenie dla firm',
+        },
+        {
+          quote: 'Bardzo ciekawie poprowadzony webinar. Sporo wiedzy plus bardzo dobrze omówiony projekt!',
+          author: 'Michał Bogucki',
+          role: 'Android Developer',
+          source: 'Webinar Architektura na Androidzie',
+        },
+        {
+          quote: 'Dobrze opisane czym jest domena, czysta architektura, oraz różnice pomiędzy UseCase a Interactor.',
+          author: 'Robert Sajdok',
+          role: 'Android Developer',
+          source: 'Webinar Architektura na Androidzie',
+        },
+        {
+          quote: 'Temat webinaru był bardzo trafiony, bo akurat dzień później miałam w pracy architektoniczną rozkminę w tasku z długu technicznego :)',
+          author: 'Katarzyna',
+          role: 'Android Developer',
+          source: 'Webinar Architektura na Androidzie',
+        },
 ];
 ---
 
@@ -168,14 +185,35 @@ const testimonials = [
 
   <section id="testimonials" class="py-16" role="region" aria-label="Opinie o Współpracy">
     <div class="max-w-3xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Opinie o Współpracy</h2>
+      <h2 class="text-3xl font-bold text-center mb-4 text-gray-900 dark:text-white">Zaufali mi developerzy, zespoły i firmy</h2>
+      <p class="text-center text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto">
+        Opinie uczestników mentoringu i szkoleń, które pokazują realny wpływ moich działań na ich rozwój i projekty mobilne.
+      </p>
       <div id="testimonials-container" class="overflow-hidden relative">
         <div id="testimonials-slides" class="flex transition-transform duration-700 ease-in-out" aria-live="polite">
           {testimonials.map((t) => (
-            <div class="min-w-full p-4">
-              <blockquote class="text-gray-800 dark:text-gray-200 mb-4 italic">„{t.quote}”</blockquote>
-              <cite class="font-semibold text-gray-900 dark:text-white block mb-1">{t.author}</cite>
-              <div class="text-sm text-gray-600 dark:text-gray-400">{t.role}</div>
+            <div class="min-w-full p-4 bg-white dark:bg-gray-800 rounded-xl shadow-md max-w-xl mx-auto flex flex-col justify-between h-auto">
+              <blockquote class="text-lg text-gray-900 dark:text-white font-medium italic mb-4 px-2 py-1">
+                „<span id={`testimonials-quote-${t.author.replace(/\s/g, '')}`}>{t.quote.length > 280 ? t.quote.slice(0, 280) + '…' : t.quote}</span>”
+              </blockquote>
+              {t.quote.length > 280 && (
+                <button
+                  class="text-sm text-primary-600 hover:underline mb-4"
+                  onclick={`const el=document.getElementById('testimonials-quote-${t.author.replace(/\s/g, '')}'); const full=${JSON.stringify(t.quote)}; const isTruncated = el.innerText.length < full.length; el.innerText = isTruncated ? full : full.slice(0, 280) + '…'; this.innerText = isTruncated ? 'Zwiń' : 'Zobacz więcej';`}
+                >
+                  Zobacz więcej
+                </button>
+              )}
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-gray-300 dark:bg-gray-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                  {t.author.split(' ').map(w => w[0]).join('')}
+                </div>
+                <div class="text-left">
+                  <div class="text-base font-semibold text-gray-900 dark:text-white">{t.author}</div>
+                  <div class="text-sm text-gray-600 dark:text-gray-400">{t.role}</div>
+                  {t.source && <div class="text-sm text-gray-500 dark:text-gray-500">{t.source}</div>}
+                </div>
+              </div>
             </div>
           ))}
         </div>
@@ -194,26 +232,43 @@ const testimonials = [
           quote: 'Dzięki wielkie za szkolenie – olbrzymia dawka wiedzy, która dość mocno wywróciła moje spojrzenie na programowanie na Androida. Wyraźnie widać, że Ty nie tylko szkolisz, ale masz też praktyczne doświadczenie.',
           author: 'Bartłomiej Blachura',
           role: 'Android Developer at dmt Software House',
+          source: '3 dniowe szkolenie dla firm',
+        },
+        {
+          quote: 'Poprosiłam Patryka o review aplikacji, którą chciałam wykorzystać podczas procesu rekrutacyjnego, i dostałam wiele cennych rad i uwag. Patryk poświęcił czas na szczegółowy call ze mną, w trakcie którego krok po kroku wyjaśnił, jak mogę poprawić architekturę mojego projektu i dodał kilka “smaczków” dotyczących tego, na co zwrócić uwagę, aby zrobić naprawdę dobre wrażenie kodem. Jego wskazówki były nieocenione i znacząco przyczyniły się do podniesienia jakości mojej aplikacji. Ponadto wprowadzał bardzo miłą atmosferę i wykazał się pełnym profesjonalizmem oraz zaangażowaniem!',
+          author: 'Kasia Kowalczyk',
+          role: 'Android Engineer',
+          source: 'Konsultacja',
+        },
+        {
+          quote: 'Miałem okazję współpracować z Patrykiem i mimo że nie było to długie mentorstwo, to mega mi pomogło na starcie. Zależało mi na tym, żeby nie tylko wejść w najnowsze technologie, ale też dobrze ogarnąć starsze rozwiązania jak UIKit i inne, żeby lepiej zrozumieć cały ekosystem iOS. Patryk świetnie pokazał mi, jak się za to zabrać, wskazał konkretne ścieżki i dał sporo praktycznych wskazówek, które od razu mogłem wdrożyć. Dzięki temu teraz samodzielnie rozwijam się w iOS development i wiem, na czym się skupić. Jeśli ktoś chce konkretną i rzeczową pomoc na starcie, to zdecydowanie polecam!',
+          author: 'Mateusz Koza',
+          role: 'Aspirujący iOS Developer',
+          source: 'Mentoring 1:1',
         },
         {
           quote: 'Najbardziej podobało mi się przekazanie Twoich Tips & Tricks (różnych extensions, Twoich jak i dostępnych w sieci), które wypracowałeś sobie. Są to rzeczy, które nie jest łatwo znaleźć.',
           author: 'Paweł',
           role: 'Android Developer at dmt Software House',
+          source: '3 dniowe szkolenie dla firm',
         },
         {
           quote: 'Bardzo ciekawie poprowadzony webinar. Sporo wiedzy plus bardzo dobrze omówiony projekt!',
           author: 'Michał Bogucki',
           role: 'Android Developer',
+          source: 'Webinar Architektura na Androidzie',
         },
         {
           quote: 'Dobrze opisane czym jest domena, czysta architektura, oraz różnice pomiędzy UseCase a Interactor.',
           author: 'Robert Sajdok',
           role: 'Android Developer',
+          source: 'Webinar Architektura na Androidzie',
         },
         {
           quote: 'Temat webinaru był bardzo trafiony, bo akurat dzień później miałam w pracy architektoniczną rozkminę w tasku z długu technicznego :)',
           author: 'Katarzyna',
           role: 'Android Developer',
+          source: 'Webinar Architektura na Androidzie',
         },
       ];
   
@@ -260,7 +315,7 @@ const testimonials = [
       }
     </style>
   </section>
-  
+    
   <div
     id="tally-overlay"
     class="fixed inset-0 bg-white z-50 flex items-center justify-center transition-opacity duration-300 opacity-0 hidden"
