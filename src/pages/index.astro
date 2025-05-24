@@ -99,47 +99,46 @@ const testimonials = [
       Sprawdź, w jaki sposób mogę pomóc Tobie lub Twojemu zespołowi rozwijać aplikacje mobilne — od indywidualnego mentoringu po dedykowane szkolenia dla firm.
     </p>
     <div class="grid md:grid-cols-3 gap-12">
-      <div>
-        <Image
-        src="~/assets/images/dla-firm.jpg"
-        class="mb-4 rounded-xl shadow-lg object-cover h-64 w-full"
-        alt='Szkolenia dla firm'
-        loading="eager"
-        decoding="async"
-      />
-        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Dla firm i zespołów</h3>
-        <p class="text-gray-600 dark:text-gray-300 mb-4">Dedykowane szkolenia dla zespołów mobilnych – nowoczesne podejście, realne projekty, praktyczne know-how.</p>
-        <a href="mailto:patryk@patrykkosieradzki.com?subject=Szkolenie%20dla%20firmy" class="text-primary-600 hover:underline font-semibold">
-          Zapytaj o ofertę dla Twojego zespołu →
-        </a>
-      </div>
-      <div>
-        <Image
-          src="~/assets/images/szkolenia.jpg"
-          class="mb-4 rounded-xl shadow-lg object-cover h-64 w-full"
-          alt='Mentoring Szkolenia grupowe'
-          loading="eager"
-          decoding="async"
-        />
-        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Szkolenia i warsztaty</h3>
-        <p class="text-gray-600 dark:text-gray-300 mb-4">Grupowe warsztaty i szkolenia z tworzenia aplikacji mobilnych – Android i iOS, architektura, Compose, SwiftUI.</p>
-        <a href="/#oferta" class="text-primary-600 hover:underline font-semibold">Zobacz ofertę →</a>
-      </div>
-      <div>
-        <Image
-          src="~/assets/images/mentoring.jpg"
-          class="mb-4 rounded-xl shadow-lg object-cover h-64 w-full"
-          alt='Mentoring indywidualny'
-          loading="eager"
-          decoding="async"
-        />
-        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Mentoring 1:1</h3>
-        <p class="text-gray-600 dark:text-gray-300 mb-4">Indywidualne wsparcie w rozwoju kariery i projektów mobilnych – dostosowane do Twoich celów.</p>    
-        <div
-          class="text-primary-600 hover:underline font-semibold cursor-pointer"
-          onclick="const overlay=document.getElementById('tally-overlay'); overlay.classList.remove('hidden'); requestAnimationFrame(() => overlay.classList.remove('opacity-0'));"
-        >
-          Zgłoś się na mentoring →
+      <a href="mailto:patryk@patrykkosieradzki.com?subject=Szkolenie%20dla%20firmy" class="block group">
+        <div class="cursor-pointer group-hover:shadow-xl transition-shadow duration-300">
+          <Image
+            src="~/assets/images/dla-firm.jpg"
+            class="mb-4 rounded-xl shadow-lg object-cover h-64 w-full"
+            alt='Szkolenia dla firm'
+            loading="eager"
+            decoding="async"
+          />
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Dla firm i zespołów</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">Dedykowane szkolenia dla zespołów mobilnych – nowoczesne podejście, realne projekty, praktyczne know-how.</p>
+          <span class="text-primary-600 hover:underline font-semibold">Zapytaj o ofertę dla Twojego zespołu →</span>
+        </div>
+      </a>
+      <a href="/#oferta" class="block group">
+        <div class="cursor-pointer group-hover:shadow-xl transition-shadow duration-300">
+          <Image
+            src="~/assets/images/szkolenia.jpg"
+            class="mb-4 rounded-xl shadow-lg object-cover h-64 w-full"
+            alt='Mentoring Szkolenia grupowe'
+            loading="eager"
+            decoding="async"
+          />
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Szkolenia i warsztaty</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">Grupowe warsztaty i szkolenia z tworzenia aplikacji mobilnych – Android i iOS, architektura, Compose, SwiftUI.</p>
+          <span class="text-primary-600 hover:underline font-semibold">Zobacz ofertę →</span>
+        </div>
+      </a>
+      <div class="cursor-pointer group" onclick="const overlay=document.getElementById('tally-overlay'); overlay.classList.remove('hidden'); requestAnimationFrame(() => overlay.classList.remove('opacity-0'));">
+        <div class="group-hover:shadow-xl transition-shadow duration-300">
+          <Image
+            src="~/assets/images/mentoring.jpg"
+            class="mb-4 rounded-xl shadow-lg object-cover h-64 w-full"
+            alt='Mentoring indywidualny'
+            loading="eager"
+            decoding="async"
+          />
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Mentoring 1:1</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">Indywidualne wsparcie w rozwoju kariery i projektów mobilnych – dostosowane do Twoich celów.</p>
+          <span class="text-primary-600 hover:underline font-semibold">Zgłoś się na mentoring →</span>
         </div>
       </div>
     </div>
