@@ -32,7 +32,8 @@ export default defineConfig({
   output: 'static',
 
   redirects: {
-    "/newsletter": "https://mobiledevnews.com"
+    "/newsletter": "https://mobiledevnews.com",
+    "/pomodoro": "subscribepage.io/pomodoro"
   },
 
   integrations: [
