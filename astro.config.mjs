@@ -33,7 +33,8 @@ export default defineConfig({
 
   redirects: {
     "/newsletter": "https://mobiledevnews.com",
-    "/pomodoro": "https://subscribepage.io/pomodoro"
+    "/pomodoro": "https://subscribepage.io/pomodoro",
+    "/generator": "https://subscribepage.io/generator"
   },
 
   integrations: [
