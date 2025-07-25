@@ -1,0 +1,49 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Content from '~/components/widgets/Content.astro';
+import NewsletterMidPageForm from '~/components/ui/NewsletterMidPageForm.astro';
+
+const metadata = {
+  title: 'O autorze — Mobile Dev Newsletter',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    title="O autorze"
+    subtitle="Cześć, poznajmy się lepiej 👋"
+  />
+
+  <Content
+    isReversed
+    isImageAfterContentMobile
+    image={{
+      src: '~/assets/images/patryk.png',
+      alt: 'Patryk Kosieradzki',
+      loading: 'eager',
+    }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-4">
+        Patryk Kosieradzki
+        <span class="block text-lg font-medium mt-1">Android & iOS Engineer</span>
+      </h2>
+      
+      <p class="text-lg mb-8 text-gray-700 dark:text-gray-400">
+        Specjalizuję się w tworzeniu aplikacji mobilnych, głównie w obszarze <strong>bankowości i fintechu</strong>. Pracowałem nad wieloma aplikacjami finansowymi, koncentrując się m.in. na <strong>biometrycznych metodach płatności</strong> i bezpiecznych <strong>systemach autoryzacji</strong>.
+      </p>
+      
+      <p class="text-lg mb-8 text-gray-700 dark:text-gray-400">
+        Na co dzień pracuję w <a class="text-primary-400 underline" href="https://www.getmoss.com/" target="_blank">Moss</a>, gdzie odpowiadam za rozwój aplikacji na <strong>obie platformy – iOS i Android</strong>. Konsultuję realizowane projekty z szerokiej perspektywy, łącząc wiedzę z obu ekosystemów. Rozwijamy też <strong>mikroserwisy mobilne</strong>, by zwiększyć skalowalność i bezpieczeństwo aplikacji.
+      </p>
+
+      <p class="text-lg text-gray-700 dark:text-gray-400">
+        Po godzinach rozwijam własne projekty jako niezależny twórca. Obecnie pracuję nad aplikacją <strong>DailyWin</strong>, która wkrótce pojawi się w wersji beta.
+      </p>
+    </Fragment>
+  </Content>
+
+  <NewsletterMidPageForm />
+</Layout>
