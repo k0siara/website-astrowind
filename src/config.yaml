@@ -9,14 +9,14 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: Mobile Dev Newsletter - Free Android & iOS Development Tips, Insights and Resources
+    default: Mobile Dev Newsletter - Darmowe Porady, Wskazówki i Zasoby dla Programistów Android i iOS
     template: '%s — Mobile Dev Newsletter'
-  description: "How do you stay ahead in Mobile App Development? Get expert tips and best practices to scale, maintain, and improve your mobile apps."
+  description: "Jak być na bieżąco z rozwojem aplikacji mobilnych? Uzyskaj eksperckie porady i najlepsze praktyki, aby skalować, utrzymywać i ulepszać swoje aplikacje mobilne."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: Mobile Dev Newsletter - Free Android & iOS Development Tips, Insights, and Resources
+    site_name: Mobile Dev Newsletter - Darmowe Porady, Wskazówki i Zasoby dla Programistów Android i iOS
     images:
       - url: '~/assets/images/og.png'
         width: 1200
